@@ -62,6 +62,18 @@
     <ClInclude Include="vAudio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="vColorHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vMatrixHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vVectorHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vEngine.cpp">
@@ -104,6 +116,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vAudio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vColorHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vMatrixHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vVectorHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="vAudio.h" />
     <ClInclude Include="vClock.h" />
+    <ClInclude Include="vColorHelper.h" />
     <ClInclude Include="vComponent.h" />
     <ClInclude Include="vDrawableComponent.h" />
     <ClInclude Include="vEngine.h" />
@@ -23,15 +24,19 @@
     <ClInclude Include="vInclude.h" />
     <ClInclude Include="vJoystick.h" />
     <ClInclude Include="vKeyboard.h" />
+    <ClInclude Include="vMatrixHelper.h" />
     <ClInclude Include="vMouse.h" />
     <ClInclude Include="vRTTI.h" />
     <ClInclude Include="vService.h" />
+    <ClInclude Include="vStructs.h" />
     <ClInclude Include="vTime.h" />
     <ClInclude Include="vUtility.h" />
+    <ClInclude Include="vVectorHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vAudio.cpp" />
     <ClCompile Include="vClock.cpp" />
+    <ClCompile Include="vColorHelper.cpp" />
     <ClCompile Include="vComponent.cpp" />
     <ClCompile Include="vDrawableComponent.cpp" />
     <ClCompile Include="vEngine.cpp" />
@@ -40,10 +45,12 @@
     <ClCompile Include="vGamePad.cpp" />
     <ClCompile Include="vJoystick.cpp" />
     <ClCompile Include="vKeyboard.cpp" />
+    <ClCompile Include="vMatrixHelper.cpp" />
     <ClCompile Include="vMouse.cpp" />
     <ClCompile Include="vService.cpp" />
     <ClCompile Include="vTime.cpp" />
     <ClCompile Include="vUtility.cpp" />
+    <ClCompile Include="vVectorHelper.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{e6afd214-5307-445b-9234-90f05422994c}</ProjectGuid>
