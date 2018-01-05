@@ -9,93 +9,84 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Input">
-      <UniqueIdentifier>{79bfff2c-1864-4912-ab09-48ef633156a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Input">
-      <UniqueIdentifier>{777998d5-6b51-4a37-aa4e-71b44871af33}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Misc">
-      <UniqueIdentifier>{3d6257d0-14b0-4f51-829e-06d66961761b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Misc">
-      <UniqueIdentifier>{517fbf74-a719-44af-bc0e-dd614b39de3f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mouse.h">
-      <Filter>Header Files\Input</Filter>
+    <ClInclude Include="vInclude.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Keyboard.h">
-      <Filter>Header Files\Input</Filter>
+    <ClInclude Include="vEngine.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vUtility.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DrawableGameComponent.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vService.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FpsComponent.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vRTTI.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vMouse.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameClock.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vKeyboard.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameComponent.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vTime.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameException.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vException.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameTime.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RTTI.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vClock.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utility.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vFpsCounter.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ServiceContainer.h">
-      <Filter>Header Files\Misc</Filter>
+    <ClInclude Include="vDrawableComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vEnums.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Mouse.cpp">
-      <Filter>Source Files\Input</Filter>
+    <ClCompile Include="vEngine.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Keyboard.cpp">
-      <Filter>Source Files\Input</Filter>
+    <ClCompile Include="vUtility.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DrawableGameComponent.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vService.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FpsComponent.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vMouse.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vKeyboard.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameClock.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vTime.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameComponent.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vException.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameException.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameTime.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vClock.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utility.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vFpsCounter.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ServiceContainer.cpp">
-      <Filter>Source Files\Misc</Filter>
+    <ClCompile Include="vDrawableComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
