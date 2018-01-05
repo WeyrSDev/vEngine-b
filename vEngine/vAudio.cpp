@@ -3,12 +3,8 @@
 
 namespace vEngine {
 	RTTI_DEFINITIONS(Audio)
-	Audio::Audio()
+	Audio::Audio(Engine& game)
 	{
 	}
 
-
-	Audio::~Audio()
-	{
-	}
 }

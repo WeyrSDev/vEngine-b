@@ -1,11 +1,16 @@
 #pragma once
 #include "vComponent.h"
+#include <Audio.h>
+#include <memory>
 
 namespace vEngine {
 	class Audio : public Component {
 		RTTI_DECLARATIONS(Audio, Component)
 	public:
-		Audio();
-		~Audio();
+		Audio(Engine& game);
+	public:
+
+	private:
+
 	};
 }
