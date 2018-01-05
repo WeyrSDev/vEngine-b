@@ -53,6 +53,15 @@
     <ClInclude Include="vEnums.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="vJoystick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vGamePad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vAudio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vEngine.cpp">
@@ -86,6 +95,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vDrawableComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vJoystick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vGamePad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vAudio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

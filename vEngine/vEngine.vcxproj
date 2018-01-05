@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="vAudio.h" />
     <ClInclude Include="vClock.h" />
     <ClInclude Include="vComponent.h" />
     <ClInclude Include="vDrawableComponent.h" />
@@ -18,7 +19,9 @@
     <ClInclude Include="vEnums.h" />
     <ClInclude Include="vException.h" />
     <ClInclude Include="vFpsCounter.h" />
+    <ClInclude Include="vGamePad.h" />
     <ClInclude Include="vInclude.h" />
+    <ClInclude Include="vJoystick.h" />
     <ClInclude Include="vKeyboard.h" />
     <ClInclude Include="vMouse.h" />
     <ClInclude Include="vRTTI.h" />
@@ -27,12 +30,15 @@
     <ClInclude Include="vUtility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="vAudio.cpp" />
     <ClCompile Include="vClock.cpp" />
     <ClCompile Include="vComponent.cpp" />
     <ClCompile Include="vDrawableComponent.cpp" />
     <ClCompile Include="vEngine.cpp" />
     <ClCompile Include="vException.cpp" />
     <ClCompile Include="vFpsCounter.cpp" />
+    <ClCompile Include="vGamePad.cpp" />
+    <ClCompile Include="vJoystick.cpp" />
     <ClCompile Include="vKeyboard.cpp" />
     <ClCompile Include="vMouse.cpp" />
     <ClCompile Include="vService.cpp" />
