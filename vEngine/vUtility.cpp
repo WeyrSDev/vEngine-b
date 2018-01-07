@@ -23,59 +23,59 @@ namespace vEngine {
 		return std::wstring(buffer);
 	}
 
-	void Utility::GetFileName(const std::string& inputPath, std::string& filename)
+	void Utility::GetFileName(const std::string& p_InputPath, std::string& p_Filename)
 	{
-		std::string fullPath(inputPath);
+		std::string fullPath(p_InputPath);
 		std::replace(fullPath.begin(), fullPath.end(), '\\', '/');
 		std::string::size_type lastSlashIndex = fullPath.find_last_of('/');
 
 		if (lastSlashIndex == std::string::npos)
 		{
-			filename = fullPath;
+			p_Filename = fullPath;
 		}
 		else
 		{
-			filename = fullPath.substr(lastSlashIndex + 1, fullPath.size() - lastSlashIndex - 1);
+			p_Filename = fullPath.substr(lastSlashIndex + 1, fullPath.size() - lastSlashIndex - 1);
 		}
 	}
 
-	void Utility::GetDirectory(const std::string& inputPath, std::string& directory)
+	void Utility::GetDirectory(const std::string& p_InputPath, std::string& p_Directory)
 	{
-		std::string fullPath(inputPath);
+		std::string fullPath(p_InputPath);
 		std::replace(fullPath.begin(), fullPath.end(), '\\', '/');
 		std::string::size_type lastSlashIndex = fullPath.find_last_of('/');
 
 		if (lastSlashIndex == std::string::npos)
 		{
-			directory = "";
+			p_Directory = "";
 		}
 		else
 		{
-			directory = fullPath.substr(0, lastSlashIndex);
+			p_Directory = fullPath.substr(0, lastSlashIndex);
 		}
 	}
 
-	void Utility::GetFileNameAndDirectory(const std::string& inputPath, std::string& directory, std::string& filename)
+	void Utility::GetFileNameAndDirectory(const std::string& p_InputPath, std::string& p_Directory, std::string& p_Filename)
 	{
-		std::string fullPath(inputPath);
+		std::string fullPath(p_InputPath);
 		std::replace(fullPath.begin(), fullPath.end(), '\\', '/');
 		std::string::size_type lastSlashIndex = fullPath.find_last_of('/');
 
 		if (lastSlashIndex == std::string::npos)
 		{
-			directory = "";
-			filename = fullPath;
+			p_Directory = "";
+			p_Filename = fullPath;
 		}
 		else
 		{
-			directory = fullPath.substr(0, lastSlashIndex);
-			filename = fullPath.substr(lastSlashIndex + 1, fullPath.size() - lastSlashIndex - 1);
+			p_Directory = fullPath.substr(0, lastSlashIndex);
+			p_Filename = fullPath.substr(lastSlashIndex + 1, fullPath.size() - lastSlashIndex - 1);
 		}
 	}
 
-	void Utility::LoadBinaryFile(const std::wstring& filename, std::vector<char>& data)
+	void Utility::LoadBinaryFile(const std::wstring& p_Filename, std::vector<char>& p_Data)
 	{
-		std::ifstream file(filename.c_str(), std::ios::binary);
+		std::ifstream file(p_Filename.c_str(), std::ios::binary);
 		if (file.bad())
 		{
 			throw std::exception("Could not open file.");
@@ -86,35 +86,35 @@ namespace vEngine {
 
 		if (size > 0)
 		{
-			data.resize(size);
+			p_Data.resize(size);
 			file.seekg(0, std::ios::beg);
-			file.read(&data.front(), size);
+			file.read(&p_Data.front(), size);
 		}
 		file.close();
 	}
 
-	void Utility::ToWideString(const std::string& source, std::wstring& dest)
+	void Utility::ToWideString(const std::string& p_Source, std::wstring& p_Dest)
 	{
-		dest.assign(source.begin(), source.end());
+		p_Dest.assign(p_Source.begin(), p_Source.end());
 	}
 
-	std::wstring Utility::ToWideString(const std::string& source)
+	std::wstring Utility::ToWideString(const std::string& p_Source)
 	{
 		std::wstring dest;
-		dest.assign(source.begin(), source.end());
+		dest.assign(p_Source.begin(), p_Source.end());
 
 		return dest;
 	}
 
-	void Utility::PathJoin(std::wstring& dest, const std::wstring& sourceDirectory, const std::wstring& sourceFile)
+	void Utility::PathJoin(std::wstring& p_Dest, const std::wstring& p_SourceDirectory, const std::wstring& p_SourceFile)
 	{
 		WCHAR buffer[MAX_PATH];
-		PathCombine(buffer, sourceDirectory.c_str(), sourceFile.c_str());
-		dest = buffer;
+		PathCombine(buffer, p_SourceDirectory.c_str(), p_SourceFile.c_str());
+		p_Dest = buffer;
 	}
 
-	void Utility::GetPathExtension(const std::wstring& source, std::wstring& dest)
+	void Utility::GetPathExtension(const std::wstring& p_Source, std::wstring& p_Dest)
 	{
-		dest = PathFindExtension(source.c_str());
+		p_Dest = PathFindExtension(p_Source.c_str());
 	}
 }

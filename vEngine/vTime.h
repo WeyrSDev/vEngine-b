@@ -6,12 +6,12 @@ namespace vEngine {
 	public:
 		Time();
 	public:
-		double TotalGameTime() const;
-		void SetTotalGameTime(double totalGameTime);
-		double ElapsedGameTime() const;
-		void SetElapsedGameTime(double elapsedGameTime);
+		double TotalEngineTime() const;
+		void SetTotalEngineTime(double p_TotalEngineTime);
+		double ElapsedEngineTime() const;
+		void SetElapsedEngineTime(double p_ElapsedEngineTime);
 	private:
-		double mTotalGameTime;
-		double mElapsedGameTime;
+		double m_TotalEngineTime;
+		double m_ElapsedEngineTime;
 	};
 }

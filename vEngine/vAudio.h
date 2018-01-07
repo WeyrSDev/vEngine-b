@@ -7,7 +7,7 @@ namespace vEngine {
 	class Audio : public Component {
 		RTTI_DECLARATIONS(Audio, Component)
 	public:
-		Audio(Engine& game);
+		Audio(Engine& p_Engine);
 	public:
 
 	private:

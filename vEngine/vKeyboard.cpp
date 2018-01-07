@@ -6,103 +6,103 @@
 namespace vEngine {
 	RTTI_DEFINITIONS(Keyboard)
 
-		Keyboard::Keyboard(Engine& game, LPDIRECTINPUT8 directInput)
-		: Component(game), mDirectInput(directInput), mDevice(nullptr)
+		Keyboard::Keyboard(Engine& p_Engine, LPDIRECTINPUT8 p_DirectInput)
+		: Component(p_Engine), m_DirectInput(p_DirectInput), m_Device(nullptr)
 	{
-		assert(mDirectInput != nullptr);
-		ZeroMemory(mCurrentState, sizeof(mCurrentState));
-		ZeroMemory(mLastState, sizeof(mLastState));
+		assert(m_DirectInput != nullptr);
+		ZeroMemory(m_CurrentState, sizeof(m_CurrentState));
+		ZeroMemory(m_LastState, sizeof(m_LastState));
 	}
 
 	Keyboard::~Keyboard()
 	{
-		if (mDevice != nullptr)
+		if (m_Device != nullptr)
 		{
-			mDevice->Unacquire();
-			mDevice->Release();
-			mDevice = nullptr;
+			m_Device->Unacquire();
+			m_Device->Release();
+			m_Device = nullptr;
 		}
 	}
 
 	const byte* const Keyboard::CurrentState() const
 	{
-		return mCurrentState;
+		return m_CurrentState;
 	}
 
 	const byte* const Keyboard::LastState() const
 	{
-		return mLastState;
+		return m_LastState;
 	}
 
 	void Keyboard::Initialize()
 	{
-		if (FAILED(mDirectInput->CreateDevice(GUID_SysKeyboard, &mDevice, nullptr)))
+		if (FAILED(m_DirectInput->CreateDevice(GUID_SysKeyboard, &m_Device, nullptr)))
 		{
 			throw Exception("IDIRECTINPUT8::CreateDevice() failed");
 		}
 
-		if (FAILED(mDevice->SetDataFormat(&c_dfDIKeyboard)))
+		if (FAILED(m_Device->SetDataFormat(&c_dfDIKeyboard)))
 		{
 			throw Exception("IDIRECTINPUTDEVICE8::SetDataFormat() failed");
 		}
 
-		if (FAILED(mDevice->SetCooperativeLevel(mGame->WindowHandle(), DISCL_FOREGROUND | DISCL_NONEXCLUSIVE)))
+		if (FAILED(m_Device->SetCooperativeLevel(m_Engine->WindowHandle(), DISCL_FOREGROUND | DISCL_NONEXCLUSIVE)))
 		{
 			throw Exception("IDIRECTINPUTDEVICE8::SetCooperativeLevel() failed");
 		}
 
-		mDevice->Acquire();
+		m_Device->Acquire();
 	}
 
-	void Keyboard::Update(const Time& gameTime)
+	void Keyboard::Update(const Time& p_EngineTime)
 	{
-		if (mDevice != nullptr)
+		if (m_Device != nullptr)
 		{
-			memcpy(mLastState, mCurrentState, sizeof(mCurrentState));
+			memcpy(m_LastState, m_CurrentState, sizeof(m_CurrentState));
 
-			if (FAILED(mDevice->GetDeviceState(sizeof(mCurrentState), (LPVOID)mCurrentState)))
+			if (FAILED(m_Device->GetDeviceState(sizeof(m_CurrentState), (LPVOID)m_CurrentState)))
 			{
 				// Try to reaqcuire the device
-				if (SUCCEEDED(mDevice->Acquire()))
+				if (SUCCEEDED(m_Device->Acquire()))
 				{
-					mDevice->GetDeviceState(sizeof(mCurrentState), (LPVOID)mCurrentState);
+					m_Device->GetDeviceState(sizeof(m_CurrentState), (LPVOID)m_CurrentState);
 				}
 			}
 		}
 	}
 
-	bool Keyboard::IsKeyUp(byte key) const
+	bool Keyboard::IsKeyUp(byte p_Key) const
 	{
-		return ((mCurrentState[key] & 0x80) == 0);
+		return ((m_CurrentState[p_Key] & 0x80) == 0);
 	}
 
-	bool Keyboard::IsKeyDown(byte key) const
+	bool Keyboard::IsKeyDown(byte p_Key) const
 	{
-		return ((mCurrentState[key] & 0x80) != 0);
+		return ((m_CurrentState[p_Key] & 0x80) != 0);
 	}
 
-	bool Keyboard::WasKeyUp(byte key) const
+	bool Keyboard::WasKeyUp(byte p_Key) const
 	{
-		return ((mLastState[key] & 0x80) == 0);
+		return ((m_LastState[p_Key] & 0x80) == 0);
 	}
 
-	bool Keyboard::WasKeyDown(byte key) const
+	bool Keyboard::WasKeyDown(byte p_Key) const
 	{
-		return ((mLastState[key] & 0x80) != 0);
+		return ((m_LastState[p_Key] & 0x80) != 0);
 	}
 
-	bool Keyboard::WasKeyPressedThisFrame(byte key) const
+	bool Keyboard::WasKeyPressedThisFrame(byte p_Key) const
 	{
-		return (IsKeyDown(key) && WasKeyUp(key));
+		return (IsKeyDown(p_Key) && WasKeyUp(p_Key));
 	}
 
-	bool Keyboard::WasKeyReleasedThisFrame(byte key) const
+	bool Keyboard::WasKeyReleasedThisFrame(byte p_Key) const
 	{
-		return (IsKeyUp(key) && WasKeyDown(key));
+		return (IsKeyUp(p_Key) && WasKeyDown(p_Key));
 	}
 
-	bool Keyboard::IsKeyHeldDown(byte key) const
+	bool Keyboard::IsKeyHeldDown(byte p_Key) const
 	{
-		return (IsKeyDown(key) && WasKeyDown(key));
+		return (IsKeyDown(p_Key) && WasKeyDown(p_Key));
 	}
 }

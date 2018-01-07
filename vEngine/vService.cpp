@@ -3,24 +3,24 @@
 
 namespace vEngine {
 	Service::Service()
-		: mServices()
+		: m_Services()
 	{
 	}
 
-	void Service::AddService(UINT typeID, void* service)
+	void Service::AddService(UINT p_TypeID, void* p_Service)
 	{
-		mServices.insert(std::pair<UINT, void*>(typeID, service));
+		m_Services.insert(std::pair<UINT, void*>(p_TypeID, p_Service));
 	}
 
-	void Service::RemoveService(UINT typeID)
+	void Service::RemoveService(UINT p_TypeID)
 	{
-		mServices.erase(typeID);
+		m_Services.erase(p_TypeID);
 	}
 
-	void* Service::GetService(UINT typeID) const
+	void* Service::GetService(UINT p_TypeID) const
 	{
-		std::map<UINT, void*>::const_iterator it = mServices.find(typeID);
+		std::map<UINT, void*>::const_iterator it = m_Services.find(p_TypeID);
 
-		return (it != mServices.end() ? it->second : nullptr);
+		return (it != m_Services.end() ? it->second : nullptr);
 	}
 }

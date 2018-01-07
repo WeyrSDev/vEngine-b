@@ -5,18 +5,18 @@ namespace vEngine {
 	class MatrixHelper {
 	private:
 		MatrixHelper();
-		MatrixHelper(const MatrixHelper& rhs);
-		MatrixHelper& operator=(const MatrixHelper& rhs);
+		MatrixHelper(const MatrixHelper& p_Rhs);
+		MatrixHelper& operator=(const MatrixHelper& p_Rhs);
 	public:
 		static const XMFLOAT4X4 Identity;
 	public:
-		static void GetForward(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void GetUp(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void GetRight(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void GetTranslation(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void SetForward(XMMATRIX& matrix, XMFLOAT3 &forward);
-		static void SetUp(XMMATRIX& matrix, XMFLOAT3 &up);
-		static void SetRight(XMMATRIX& matrix, XMFLOAT3 &right);
-		static void SetTranslation(XMMATRIX& matrix, XMFLOAT3 &translation);
+		static void GetForward(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector);
+		static void GetUp(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector);
+		static void GetRight(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector);
+		static void GetTranslation(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector);
+		static void SetForward(XMMATRIX& p_Matrix, XMFLOAT3 &p_Forward);
+		static void SetUp(XMMATRIX& p_Matrix, XMFLOAT3 &p_Up);
+		static void SetRight(XMMATRIX& p_Matrix, XMFLOAT3 &p_Right);
+		static void SetTranslation(XMMATRIX& p_Matrix, XMFLOAT3 &p_Translation);
 	};
 }

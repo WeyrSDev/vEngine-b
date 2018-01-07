@@ -10,56 +10,56 @@ namespace vEngine {
 
 	RTTI_DEFINITIONS(FpsCounter)
 
-		FpsCounter::FpsCounter(Engine& game)
-		: DrawableComponent(game), mSpriteBatch(nullptr), mSpriteFont(nullptr), mTextPosition(0.0f, 60.0f),
-		mFrameCount(0), mFrameRate(0), mLastTotalElapsedTime(0.0)
+		FpsCounter::FpsCounter(Engine& p_Engine)
+		: DrawableComponent(p_Engine), m_SpriteBatch(nullptr), m_SpriteFont(nullptr), m_TextPosition(0.0f, 60.0f),
+		m_FrameCount(0), m_FrameRate(0), m_LastTotalElapsedTime(0.0)
 	{
 	}
 
 	FpsCounter::~FpsCounter()
 	{
-		DeleteObject(mSpriteFont);
-		DeleteObject(mSpriteBatch);
+		DeleteObject(m_SpriteFont);
+		DeleteObject(m_SpriteBatch);
 	}
 
 	XMFLOAT2& FpsCounter::TextPosition()
 	{
-		return mTextPosition;
+		return m_TextPosition;
 	}
 
 	int FpsCounter::FrameRate() const
 	{
-		return mFrameCount;
+		return m_FrameCount;
 	}
 
 	void FpsCounter::Initialize()
 	{
 		SetCurrentDirectory(Utility::ExecutableDirectory().c_str());
 
-		mSpriteBatch = new SpriteBatch(mGame->Direct3DDeviceContext());
-		mSpriteFont = new SpriteFont(mGame->Direct3DDevice(), L"Content\\Fonts\\Arial_14_Regular.spritefont");
+		m_SpriteBatch = new SpriteBatch(m_Engine->Direct3DDeviceContext());
+		m_SpriteFont = new SpriteFont(m_Engine->Direct3DDevice(), L"Content\\Fonts\\Arial_14_Regular.spritefont");
 	}
 
-	void FpsCounter::Update(const Time& gameTime)
+	void FpsCounter::Update(const Time& p_EngineTime)
 	{
-		if (gameTime.TotalGameTime() - mLastTotalElapsedTime >= 1)
+		if (p_EngineTime.TotalEngineTime() - m_LastTotalElapsedTime >= 1)
 		{
-			mLastTotalElapsedTime = gameTime.TotalGameTime();
-			mFrameRate = mFrameCount;
-			mFrameCount = 0;
+			m_LastTotalElapsedTime = p_EngineTime.TotalEngineTime();
+			m_FrameRate = m_FrameCount;
+			m_FrameCount = 0;
 		}
 
-		mFrameCount++;
+		m_FrameCount++;
 	}
 
-	void FpsCounter::Draw(const Time& gameTime)
+	void FpsCounter::Draw(const Time& p_EngineTime)
 	{
-		mSpriteBatch->Begin();
+		m_SpriteBatch->Begin();
 
 		std::wostringstream fpsLabel;
-		fpsLabel << std::setprecision(4) << L"Frame Rate: " << mFrameRate << "    Total Elapsed Time: " << gameTime.TotalGameTime();
-		mSpriteFont->DrawString(mSpriteBatch, fpsLabel.str().c_str(), mTextPosition);
+		fpsLabel << std::setprecision(4) << L"Frame Rate: " << m_FrameRate << "    Total Elapsed Time: " << p_EngineTime.TotalEngineTime();
+		m_SpriteFont->DrawString(m_SpriteBatch, fpsLabel.str().c_str(), m_TextPosition);
 
-		mSpriteBatch->End();
+		m_SpriteBatch->End();
 	}
 }

@@ -6,8 +6,8 @@ namespace vEngine {
 	{
 	private:
 		ColorHelper();
-		ColorHelper(const ColorHelper& rhs);
-		ColorHelper& operator=(const ColorHelper& rhs);
+		ColorHelper(const ColorHelper& p_Rhs);
+		ColorHelper& operator=(const ColorHelper& p_Rhs);
 	public:
 		static const XMVECTORF32 Black;
 		static const XMVECTORF32 White;

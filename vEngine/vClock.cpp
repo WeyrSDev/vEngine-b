@@ -4,32 +4,32 @@
 
 namespace vEngine {
 	Clock::Clock()
-		: mStartTime(), mCurrentTime(), mLastTime(), mFrequency()
+		: m_StartTime(), m_CurrentTime(), m_LastTime(), m_Frequency()
 	{
-		mFrequency = GetFrequency();
+		m_Frequency = GetFrequency();
 		Reset();
 	}
 
 	const LARGE_INTEGER& Clock::StartTime() const
 	{
-		return mStartTime;
+		return m_StartTime;
 	}
 
 	const LARGE_INTEGER& Clock::CurrentTime() const
 	{
-		return mCurrentTime;
+		return m_CurrentTime;
 	}
 
 	const LARGE_INTEGER& Clock::LastTime() const
 	{
-		return mLastTime;
+		return m_LastTime;
 	}
 
 	void Clock::Reset()
 	{
-		GetTime(mStartTime);
-		mCurrentTime = mStartTime;
-		mLastTime = mCurrentTime;
+		GetTime(m_StartTime);
+		m_CurrentTime = m_StartTime;
+		m_LastTime = m_CurrentTime;
 	}
 
 	double Clock::GetFrequency() const
@@ -44,18 +44,17 @@ namespace vEngine {
 		return (double)frequency.QuadPart;
 	}
 
-	void Clock::GetTime(LARGE_INTEGER& time) const
+	void Clock::GetTime(LARGE_INTEGER& p_Time) const
 	{
-		QueryPerformanceCounter(&time);
+		QueryPerformanceCounter(&p_Time);
 	}
 
-	void Clock::UpdateGameTime(Time& gameTime)
+	void Clock::UpdateEngineTime(Time& p_EngineTime)
 	{
-		GetTime(mCurrentTime);
-		gameTime.SetTotalGameTime((mCurrentTime.QuadPart - mStartTime.QuadPart) / mFrequency);
-		gameTime.SetElapsedGameTime((mCurrentTime.QuadPart - mLastTime.QuadPart) / mFrequency);
+		GetTime(m_CurrentTime);
+		p_EngineTime.SetTotalEngineTime((m_CurrentTime.QuadPart - m_StartTime.QuadPart) / m_Frequency);
+		p_EngineTime.SetElapsedEngineTime((m_CurrentTime.QuadPart - m_LastTime.QuadPart) / m_Frequency);
 
-		mLastTime = mCurrentTime;
+		m_LastTime = m_CurrentTime;
 	}
-
 }

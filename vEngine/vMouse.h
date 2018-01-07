@@ -7,7 +7,7 @@ namespace vEngine {
 	class Mouse : public Component {
 		RTTI_DECLARATIONS(Mouse, Component)
 	public:
-		Mouse(Engine& game, LPDIRECTINPUT8 directInput);
+		Mouse(Engine& p_Engine, LPDIRECTINPUT8 p_DirectInput);
 		~Mouse();
 	private:
 		Mouse();
@@ -17,22 +17,22 @@ namespace vEngine {
 		long X() const;
 		long Y() const;
 		long Wheel() const;
-		bool IsButtonUp(MouseButtons button) const;
-		bool IsButtonDown(MouseButtons button) const;
-		bool WasButtonUp(MouseButtons button) const;
-		bool WasButtonDown(MouseButtons button) const;
-		bool WasButtonPressedThisFrame(MouseButtons button) const;
-		bool WasButtonReleasedThisFrame(MouseButtons button) const;
-		bool IsButtonHeldDown(MouseButtons button) const;
+		bool IsButtonUp(MouseButtons p_Button) const;
+		bool IsButtonDown(MouseButtons p_Button) const;
+		bool WasButtonUp(MouseButtons p_Button) const;
+		bool WasButtonDown(MouseButtons p_Button) const;
+		bool WasButtonPressedThisFrame(MouseButtons p_Button) const;
+		bool WasButtonReleasedThisFrame(MouseButtons p_Button) const;
+		bool IsButtonHeldDown(MouseButtons p_Button) const;
 		virtual void Initialize() override;
-		virtual void Update(const Time& gameTime) override;
+		virtual void Update(const Time& p_EngineTime) override;
 	private:
-		LPDIRECTINPUT8 mDirectInput;
-		LPDIRECTINPUTDEVICE8 mDevice;
-		DIMOUSESTATE mCurrentState;
-		DIMOUSESTATE mLastState;
-		long mX;
-		long mY;
-		long mWheel;
+		LPDIRECTINPUT8 m_DirectInput;
+		LPDIRECTINPUTDEVICE8 m_Device;
+		DIMOUSESTATE m_CurrentState;
+		DIMOUSESTATE m_LastState;
+		long m_X;
+		long m_Y;
+		long m_Wheel;
 	};
 }

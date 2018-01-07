@@ -5,17 +5,17 @@ namespace vEngine {
 	RTTI_DEFINITIONS(DrawableComponent)
 
 		DrawableComponent::DrawableComponent()
-		: Component(), mVisible(true), mCamera(nullptr)
+		: Component(), m_Visible(true), m_Camera(nullptr)
 	{
 	}
 
-	DrawableComponent::DrawableComponent(Engine& game)
-		: Component(game), mVisible(true), mCamera(nullptr)
+	DrawableComponent::DrawableComponent(Engine& p_Engine)
+		: Component(p_Engine), m_Visible(true), m_Camera(nullptr)
 	{
 	}
 
-	DrawableComponent::DrawableComponent(Engine& game, Camera& camera)
-		: Component(game), mVisible(true), mCamera(&camera)
+	DrawableComponent::DrawableComponent(Engine& p_Engine, Camera& p_Camera)
+		: Component(p_Engine), m_Visible(true), m_Camera(&p_Camera)
 	{
 	}
 
@@ -25,25 +25,25 @@ namespace vEngine {
 
 	bool DrawableComponent::Visible() const
 	{
-		return mVisible;
+		return m_Visible;
 	}
 
-	void DrawableComponent::SetVisible(bool visible)
+	void DrawableComponent::SetVisible(bool p_Visible)
 	{
-		mVisible = visible;
+		m_Visible = p_Visible;
 	}
 
 	Camera* DrawableComponent::GetCamera()
 	{
-		return mCamera;
+		return m_Camera;
 	}
 
-	void DrawableComponent::SetCamera(Camera* camera)
+	void DrawableComponent::SetCamera(Camera* p_Camera)
 	{
-		mCamera = camera;
+		m_Camera = p_Camera;
 	}
 
-	void DrawableComponent::Draw(const Time& gameTime)
+	void DrawableComponent::Draw(const Time& p_EngineTime)
 	{
 	}
 }

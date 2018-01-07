@@ -7,13 +7,13 @@ namespace vEngine {
 	public:
 		Service();
 	private:
-		Service(const Service& rhs);
-		Service& operator=(const Service& rhs);
+		Service(const Service& p_Rhs);
+		Service& operator=(const Service& p_Rhs);
 	public:
-		void AddService(UINT typeID, void* service);
-		void RemoveService(UINT typeID);
-		void* GetService(UINT typeID) const;
+		void AddService(UINT p_TypeID, void* p_Service);
+		void RemoveService(UINT p_TypeID);
+		void* GetService(UINT p_TypeID) const;
 	private:
-		std::map<UINT, void*> mServices;
+		std::map<UINT, void*> m_Services;
 	};
 }

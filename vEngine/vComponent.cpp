@@ -5,12 +5,12 @@ namespace vEngine {
 	RTTI_DEFINITIONS(Component)
 
 		Component::Component()
-		: mGame(nullptr), mEnabled(true)
+		: m_Engine(nullptr), m_Enabled(true)
 	{
 	}
 
-	Component::Component(Engine& game)
-		: mGame(&game), mEnabled(true)
+	Component::Component(Engine& p_Engine)
+		: m_Engine(&p_Engine), m_Enabled(true)
 	{
 	}
 
@@ -18,31 +18,31 @@ namespace vEngine {
 	{
 	}
 
-	Engine* Component::GetGame()
+	Engine* Component::GetEngine()
 	{
-		return mGame;
+		return m_Engine;
 	}
 
-	void Component::SetGame(Engine& game)
+	void Component::SetEngine(Engine& p_Engine)
 	{
-		mGame = &game;
+		m_Engine = &p_Engine;
 	}
 
 	bool Component::Enabled() const
 	{
-		return mEnabled;
+		return m_Enabled;
 	}
 
-	void Component::SetEnabled(bool enabled)
+	void Component::SetEnabled(bool p_Enabled)
 	{
-		mEnabled = enabled;
+		m_Enabled = p_Enabled;
 	}
 
 	void Component::Initialize()
 	{
 	}
 
-	void Component::Update(const Time& gameTime)
+	void Component::Update(const Time& p_EngineTime)
 	{
 	}
 }

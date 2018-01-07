@@ -7,81 +7,81 @@
 namespace vEngine {
 	RTTI_DEFINITIONS(Mouse)
 
-		Mouse::Mouse(Engine& game, LPDIRECTINPUT8 directInput)
-		: Component(game), mDirectInput(directInput), mDevice(nullptr), mX(0), mY(0), mWheel(0)
+		Mouse::Mouse(Engine& p_Engine, LPDIRECTINPUT8 p_DirectInput)
+		: Component(p_Engine), m_DirectInput(p_DirectInput), m_Device(nullptr), m_X(0), m_Y(0), m_Wheel(0)
 	{
-		assert(mDirectInput != nullptr);
-		ZeroMemory(&mCurrentState, sizeof(mCurrentState));
-		ZeroMemory(&mLastState, sizeof(mLastState));
+		assert(m_DirectInput != nullptr);
+		ZeroMemory(&m_CurrentState, sizeof(m_CurrentState));
+		ZeroMemory(&m_LastState, sizeof(m_LastState));
 	}
 
 	Mouse::~Mouse()
 	{
-		if (mDevice != nullptr)
+		if (m_Device != nullptr)
 		{
-			mDevice->Unacquire();
-			mDevice->Release();
-			mDevice = nullptr;
+			m_Device->Unacquire();
+			m_Device->Release();
+			m_Device = nullptr;
 		}
 	}
 
 	LPDIMOUSESTATE Mouse::CurrentState()
 	{
-		return &mCurrentState;
+		return &m_CurrentState;
 	}
 
 	LPDIMOUSESTATE Mouse::LastState()
 	{
-		return &mLastState;
+		return &m_LastState;
 	}
 
 	long Mouse::X() const
 	{
-		return mX;
+		return m_X;
 	}
 
 	long Mouse::Y() const
 	{
-		return mY;
+		return m_Y;
 	}
 
 	long Mouse::Wheel() const
 	{
-		return mWheel;
+		return m_Wheel;
 	}
 
 	void Mouse::Initialize()
 	{
-		if (FAILED(mDirectInput->CreateDevice(GUID_SysMouse, &mDevice, nullptr)))
+		if (FAILED(m_DirectInput->CreateDevice(GUID_SysMouse, &m_Device, nullptr)))
 		{
 			throw Exception("IDIRECTINPUT8::CreateDevice() failed");
 		}
 
-		if (FAILED(mDevice->SetDataFormat(&c_dfDIMouse)))
+		if (FAILED(m_Device->SetDataFormat(&c_dfDIMouse)))
 		{
 			throw Exception("IDIRECTINPUTDEVICE8::SetDataFormat() failed");
 		}
 
-		if (FAILED(mDevice->SetCooperativeLevel(mGame->WindowHandle(), DISCL_FOREGROUND | DISCL_NONEXCLUSIVE)))
+		if (FAILED(m_Device->SetCooperativeLevel(m_Engine->WindowHandle(), DISCL_FOREGROUND | DISCL_NONEXCLUSIVE)))
 		{
 			throw Exception("IDIRECTINPUTDEVICE8::SetCooperativeLevel() failed");
 		}
 
-		mDevice->Acquire();
+		m_Device->Acquire();
 	}
 
-	void Mouse::Update(const Time& gameTime)
+	void Mouse::Update(const Time& p_EngineTime)
 	{
-		if (mDevice != nullptr)
+		if (m_Device != nullptr)
 		{
-			memcpy(&mLastState, &mCurrentState, sizeof(mCurrentState));
+			memcpy(&m_LastState, &m_CurrentState, sizeof(m_CurrentState));
 
-			if (FAILED(mDevice->GetDeviceState(sizeof(mCurrentState), &mCurrentState)))
+			if (FAILED(m_Device->GetDeviceState(sizeof(m_CurrentState), &m_CurrentState)))
 			{
 				// Try to reaqcuire the device
-				if (SUCCEEDED(mDevice->Acquire()))
+				if (SUCCEEDED(m_Device->Acquire()))
 				{
-					if (FAILED(mDevice->GetDeviceState(sizeof(mCurrentState), &mCurrentState)))
+					if (FAILED(m_Device->GetDeviceState(sizeof(m_CurrentState), &m_CurrentState)))
 					{
 						return;
 					}
@@ -89,44 +89,44 @@ namespace vEngine {
 			}
 
 			// Accumulate positions
-			mX += mCurrentState.lX;
-			mY += mCurrentState.lY;
-			mWheel += mCurrentState.lZ;
+			m_X += m_CurrentState.lX;
+			m_Y += m_CurrentState.lY;
+			m_Wheel += m_CurrentState.lZ;
 		}
 	}
 
-	bool Mouse::IsButtonUp(MouseButtons button) const
+	bool Mouse::IsButtonUp(MouseButtons p_Button) const
 	{
-		return ((mCurrentState.rgbButtons[button] & 0x80) == 0);
+		return ((m_CurrentState.rgbButtons[p_Button] & 0x80) == 0);
 	}
 
-	bool Mouse::IsButtonDown(MouseButtons button) const
+	bool Mouse::IsButtonDown(MouseButtons p_Button) const
 	{
-		return ((mCurrentState.rgbButtons[button] & 0x80) != 0);
+		return ((m_CurrentState.rgbButtons[p_Button] & 0x80) != 0);
 	}
 
-	bool Mouse::WasButtonUp(MouseButtons button) const
+	bool Mouse::WasButtonUp(MouseButtons p_Button) const
 	{
-		return ((mLastState.rgbButtons[button] & 0x80) == 0);
+		return ((m_LastState.rgbButtons[p_Button] & 0x80) == 0);
 	}
 
-	bool Mouse::WasButtonDown(MouseButtons button) const
+	bool Mouse::WasButtonDown(MouseButtons p_Button) const
 	{
-		return ((mLastState.rgbButtons[button] & 0x80) != 0);
+		return ((m_LastState.rgbButtons[p_Button] & 0x80) != 0);
 	}
 
-	bool Mouse::WasButtonPressedThisFrame(MouseButtons button) const
+	bool Mouse::WasButtonPressedThisFrame(MouseButtons p_Button) const
 	{
-		return (IsButtonDown(button) && WasButtonUp(button));
+		return (IsButtonDown(p_Button) && WasButtonUp(p_Button));
 	}
 
-	bool Mouse::WasButtonReleasedThisFrame(MouseButtons button) const
+	bool Mouse::WasButtonReleasedThisFrame(MouseButtons p_Button) const
 	{
-		return (IsButtonUp(button) && WasButtonDown(button));
+		return (IsButtonUp(p_Button) && WasButtonDown(p_Button));
 	}
 
-	bool Mouse::IsButtonHeldDown(MouseButtons button) const
+	bool Mouse::IsButtonHeldDown(MouseButtons p_Button) const
 	{
-		return (IsButtonDown(button) && WasButtonDown(button));
+		return (IsButtonDown(p_Button) && WasButtonDown(p_Button));
 	}
 }

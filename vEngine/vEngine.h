@@ -9,14 +9,14 @@ namespace vEngine {
 	class Engine
 	{
 	public:
-		Engine(HINSTANCE instance, const std::wstring& windowClass, const std::wstring& windowTitle, int showCommand);
+		Engine(HINSTANCE p_Instance, const std::wstring& p_WindowClass, const std::wstring& p_WindowTitle, int p_ShowCommand);
 		virtual ~Engine();
 	private:
-		Engine(const Engine& rhs);
-		Engine& operator=(const Engine& rhs);
+		Engine(const Engine& p_Rhs);
+		Engine& operator=(const Engine& p_Rhs);
 	private:
-		POINT CenterWindow(int windowWidth, int windowHeight);
-		static LRESULT WINAPI WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
+		POINT CenterWindow(int p_WindowWidth, int p_WindowHeight);
+		static LRESULT WINAPI WndProc(HWND p_WindowHandle, UINT p_Message, WPARAM p_WParam, LPARAM p_LParam);
 	public:
 		HINSTANCE Instance() const;
 		HWND WindowHandle() const;
@@ -34,12 +34,11 @@ namespace vEngine {
 		const D3D11_VIEWPORT& Viewport() const;
 		const std::vector<Component*>& Components() const;
 		const Service& Services() const;
-
 		virtual void Run();
 		virtual void Exit();
 		virtual void Initialize();
-		virtual void Update(const Time& gameTime);
-		virtual void Draw(const Time& gameTime);
+		virtual void Update(const Time& p_EngineTime);
+		virtual void Draw(const Time& p_EngineTime);
 	protected:
 		virtual void InitializeWindow();
 		virtual void InitializeDirectX();
@@ -49,33 +48,32 @@ namespace vEngine {
 		static const UINT DefaultScreenHeight;
 		static const UINT DefaultFrameRate;
 		static const UINT DefaultMultiSamplingCount;
-
-		HINSTANCE mInstance;
-		std::wstring mWindowClass;
-		std::wstring mWindowTitle;
-		int mShowCommand;
-		HWND mWindowHandle;
-		WNDCLASSEX mWindow;
-		UINT mScreenWidth;
-		UINT mScreenHeight;
-		Clock mGameClock;
-		Time mGameTime;
-		std::vector<Component*> mComponents;
-		Service mServices;
-		D3D_FEATURE_LEVEL mFeatureLevel;
-		ID3D11Device1* mDirect3DDevice;
-		ID3D11DeviceContext1* mDirect3DDeviceContext;
-		IDXGISwapChain1* mSwapChain;
-		UINT mFrameRate;
-		bool mIsFullScreen;
-		bool mDepthStencilBufferEnabled;
-		bool mMultiSamplingEnabled;
-		UINT mMultiSamplingCount;
-		UINT mMultiSamplingQualityLevels;
-		ID3D11Texture2D* mDepthStencilBuffer;
-		D3D11_TEXTURE2D_DESC mBackBufferDesc;
-		ID3D11RenderTargetView* mRenderTargetView;
-		ID3D11DepthStencilView* mDepthStencilView;
-		D3D11_VIEWPORT mViewport;
+		HINSTANCE m_Instance;
+		std::wstring m_WindowClass;
+		std::wstring m_WindowTitle;
+		int m_ShowCommand;
+		HWND m_WindowHandle;
+		WNDCLASSEX m_Window;
+		UINT m_ScreenWidth;
+		UINT m_ScreenHeight;
+		Clock m_Clock;
+		Time m_Time;
+		std::vector<Component*> m_Components;
+		Service m_Services;
+		D3D_FEATURE_LEVEL m_FeatureLevel;
+		ID3D11Device1* m_Direct3DDevice;
+		ID3D11DeviceContext1* m_Direct3DDeviceContext;
+		IDXGISwapChain1* m_SwapChain;
+		UINT m_FrameRate;
+		bool m_IsFullScreen;
+		bool m_DepthStencilBufferEnabled;
+		bool m_MultiSamplingEnabled;
+		UINT m_MultiSamplingCount;
+		UINT m_MultiSamplingQualityLevels;
+		ID3D11Texture2D* m_DepthStencilBuffer;
+		D3D11_TEXTURE2D_DESC m_BackBufferDesc;
+		ID3D11RenderTargetView* m_RenderTargetView;
+		ID3D11DepthStencilView* m_DepthStencilView;
+		D3D11_VIEWPORT m_Viewport;
 	};
 }

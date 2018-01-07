@@ -7,20 +7,20 @@ namespace vEngine {
 		RTTI_DECLARATIONS(DrawableComponent, Component)
 	public:
 		DrawableComponent();
-		DrawableComponent(Engine& game);
-		DrawableComponent(Engine& game, Camera& camera);
+		DrawableComponent(Engine& p_Engine);
+		DrawableComponent(Engine& p_Engine, Camera& p_Camera);
 		virtual ~DrawableComponent();
 	private:
-		DrawableComponent(const DrawableComponent& rhs);
-		DrawableComponent& operator=(const DrawableComponent& rhs);
+		DrawableComponent(const DrawableComponent& p_Rhs);
+		DrawableComponent& operator=(const DrawableComponent& p_Rhs);
 	public:
 		bool Visible() const;
-		void SetVisible(bool visible);
+		void SetVisible(bool p_Visible);
 		Camera* GetCamera();
-		void SetCamera(Camera* camera);
-		virtual void Draw(const Time& gameTime);
+		void SetCamera(Camera* p_Camera);
+		virtual void Draw(const Time& p_EngineTime);
 	protected:
-		bool mVisible;
-		Camera* mCamera;
+		bool m_Visible;
+		Camera* m_Camera;
 	};
 }

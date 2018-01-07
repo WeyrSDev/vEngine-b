@@ -8,20 +8,20 @@ namespace vEngine {
 		RTTI_DECLARATIONS(Component, RTTI)
 	public:
 		Component();
-		Component(Engine& game);
+		Component(Engine& p_Engine);
 		virtual ~Component();
 	private:
-		Component(const Component& rhs);
-		Component& operator=(const Component& rhs);
+		Component(const Component& p_Rhs);
+		Component& operator=(const Component& p_Rhs);
 	public:
-		Engine * GetGame();
-		void SetGame(Engine& game);
+		Engine * GetEngine();
+		void SetEngine(Engine& p_Engine);
 		bool Enabled() const;
-		void SetEnabled(bool enabled);
+		void SetEnabled(bool p_Enabled);
 		virtual void Initialize();
-		virtual void Update(const Time& gameTime);
+		virtual void Update(const Time& p_EngineTime);
 	protected:
-		Engine* mGame;
-		bool mEnabled;
+		Engine* m_Engine;
+		bool m_Enabled;
 	};
 }

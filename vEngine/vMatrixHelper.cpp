@@ -7,91 +7,91 @@ namespace vEngine {
 		0.0f, 0.0f, 1.0f, 0.0f,
 		0.0f, 0.0f, 0.0f, 1.0f);
 
-	void MatrixHelper::GetForward(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetForward(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector)
 	{
 		XMFLOAT4 m3;
-		XMStoreFloat4(&m3, matrix.r[2]);
+		XMStoreFloat4(&m3, p_Matrix.r[2]);
 
-		vector.x = -m3.x;
-		vector.y = -m3.y;
-		vector.z = -m3.z;
+		p_Vector.x = -m3.x;
+		p_Vector.y = -m3.y;
+		p_Vector.z = -m3.z;
 	}
 
-	void MatrixHelper::GetUp(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetUp(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector)
 	{
 		XMFLOAT4 m2;
-		XMStoreFloat4(&m2, matrix.r[1]);
+		XMStoreFloat4(&m2, p_Matrix.r[1]);
 
-		vector.x = m2.x;
-		vector.y = m2.y;
-		vector.z = m2.z;
+		p_Vector.x = m2.x;
+		p_Vector.y = m2.y;
+		p_Vector.z = m2.z;
 	}
 
-	void MatrixHelper::GetRight(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetRight(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector)
 	{
 		XMFLOAT4 m1;
-		XMStoreFloat4(&m1, matrix.r[0]);
+		XMStoreFloat4(&m1, p_Matrix.r[0]);
 
-		vector.x = m1.x;
-		vector.y = m1.y;
-		vector.z = m1.z;
+		p_Vector.x = m1.x;
+		p_Vector.y = m1.y;
+		p_Vector.z = m1.z;
 	}
 
-	void MatrixHelper::GetTranslation(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetTranslation(CXMMATRIX p_Matrix, XMFLOAT3 &p_Vector)
 	{
 		XMFLOAT4 m4;
-		XMStoreFloat4(&m4, matrix.r[3]);
+		XMStoreFloat4(&m4, p_Matrix.r[3]);
 
-		vector.x = m4.x;
-		vector.y = m4.y;
-		vector.z = m4.z;
+		p_Vector.x = m4.x;
+		p_Vector.y = m4.y;
+		p_Vector.z = m4.z;
 	}
 
-	void MatrixHelper::SetForward(XMMATRIX& matrix, XMFLOAT3 &forward)
+	void MatrixHelper::SetForward(XMMATRIX& p_Matrix, XMFLOAT3 &p_Forward)
 	{
 		XMFLOAT4 m3;
-		XMStoreFloat4(&m3, matrix.r[2]);
+		XMStoreFloat4(&m3, p_Matrix.r[2]);
 
-		m3.x = -forward.x;
-		m3.y = -forward.y;
-		m3.z = -forward.z;
+		m3.x = -p_Forward.x;
+		m3.y = -p_Forward.y;
+		m3.z = -p_Forward.z;
 
-		matrix.r[2] = XMLoadFloat4(&m3);
+		p_Matrix.r[2] = XMLoadFloat4(&m3);
 	}
 
-	void MatrixHelper::SetUp(XMMATRIX& matrix, XMFLOAT3 &up)
+	void MatrixHelper::SetUp(XMMATRIX& p_Matrix, XMFLOAT3 &p_Up)
 	{
 		XMFLOAT4 m2;
-		XMStoreFloat4(&m2, matrix.r[1]);
+		XMStoreFloat4(&m2, p_Matrix.r[1]);
 
-		m2.x = up.x;
-		m2.y = up.y;
-		m2.z = up.z;
+		m2.x = p_Up.x;
+		m2.y = p_Up.y;
+		m2.z = p_Up.z;
 
-		matrix.r[1] = XMLoadFloat4(&m2);
+		p_Matrix.r[1] = XMLoadFloat4(&m2);
 	}
 
-	void MatrixHelper::SetRight(XMMATRIX& matrix, XMFLOAT3 &right)
+	void MatrixHelper::SetRight(XMMATRIX& p_Matrix, XMFLOAT3 &p_Right)
 	{
 		XMFLOAT4 m1;
-		XMStoreFloat4(&m1, matrix.r[0]);
+		XMStoreFloat4(&m1, p_Matrix.r[0]);
 
-		m1.x = right.x;
-		m1.y = right.y;
-		m1.z = right.z;
+		m1.x = p_Right.x;
+		m1.y = p_Right.y;
+		m1.z = p_Right.z;
 
-		matrix.r[0] = XMLoadFloat4(&m1);
+		p_Matrix.r[0] = XMLoadFloat4(&m1);
 	}
 
-	void MatrixHelper::SetTranslation(XMMATRIX& matrix, XMFLOAT3 &translation)
+	void MatrixHelper::SetTranslation(XMMATRIX& p_Matrix, XMFLOAT3 &p_Translation)
 	{
 		XMFLOAT4 m4;
-		XMStoreFloat4(&m4, matrix.r[3]);
+		XMStoreFloat4(&m4, p_Matrix.r[3]);
 
-		m4.x = translation.x;
-		m4.y = translation.y;
-		m4.z = translation.z;
+		m4.x = p_Translation.x;
+		m4.y = p_Translation.y;
+		m4.z = p_Translation.z;
 
-		matrix.r[3] = XMLoadFloat4(&m4);
+		p_Matrix.r[3] = XMLoadFloat4(&m4);
 	}
 }

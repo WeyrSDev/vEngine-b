@@ -3,28 +3,27 @@
 
 namespace vEngine {
 	Time::Time()
-		: mTotalGameTime(0.0), mElapsedGameTime(0.0)
+		: m_TotalEngineTime(0.0), m_ElapsedEngineTime(0.0)
 	{
 	}
 
-	double Time::TotalGameTime() const
+	double Time::TotalEngineTime() const
 	{
-		return mTotalGameTime;
+		return m_TotalEngineTime;
 	}
 
-	void Time::SetTotalGameTime(double totalGameTime)
+	void Time::SetTotalEngineTime(double p_TotalEngineTime)
 	{
-		mTotalGameTime = totalGameTime;
+		m_TotalEngineTime = p_TotalEngineTime;
 	}
 
-	double Time::ElapsedGameTime() const
+	double Time::ElapsedEngineTime() const
 	{
-		return mElapsedGameTime;
+		return m_ElapsedEngineTime;
 	}
 
-	void Time::SetElapsedGameTime(double elapsedGameTime)
+	void Time::SetElapsedEngineTime(double p_ElapsedEngineTime)
 	{
-		mElapsedGameTime = elapsedGameTime;
+		m_ElapsedEngineTime = p_ElapsedEngineTime;
 	}
-
 }

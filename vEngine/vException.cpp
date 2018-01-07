@@ -2,14 +2,14 @@
 
 
 namespace vEngine {
-	Exception::Exception(const char* const& message, HRESULT hr)
-		: exception(message), mHR(hr)
+	Exception::Exception(const char* const& p_Message, HRESULT hr)
+		: exception(p_Message), m_HR(hr)
 	{
 	}
 
 	HRESULT Exception::HR() const
 	{
-		return mHR;
+		return m_HR;
 	}
 
 	std::wstring Exception::whatw() const
