@@ -10,6 +10,8 @@
 #include <vector>
 #include <map>
 #include <memory>
+#include <mmsystem.h>
+#include <stdio.h>
 #include "vRTTI.h"
 
 #include <d3d11_1.h>
@@ -17,6 +19,11 @@
 #include <DirectXMath.h>
 #include <DirectXPackedVector.h>
 #include <dinput.h>
+#include <dsound.h>
+
+#include <TLFXEffectsLibrary.h>
+#include <TLFXParticleManager.h>
+#include <TLFXEffect.h>
 
 #define DeleteObject(object) if((object) != NULL) { delete object; object = NULL; }
 #define DeleteObjects(objects) if((objects) != NULL) { delete[] objects; objects = NULL; }

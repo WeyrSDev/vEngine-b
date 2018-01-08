@@ -59,9 +59,6 @@
     <ClInclude Include="vGamePad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vAudio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="vColorHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -113,9 +110,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vGamePad.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="vAudio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vColorHelper.cpp">
