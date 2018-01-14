@@ -24,6 +24,8 @@
 #include <TLFXEffectsLibrary.h>
 #include <TLFXParticleManager.h>
 #include <TLFXEffect.h>
+#include <fmod.hpp>
+#include <fmod_errors.h>
 
 #define DeleteObject(object) if((object) != NULL) { delete object; object = NULL; }
 #define DeleteObjects(objects) if((objects) != NULL) { delete[] objects; objects = NULL; }
