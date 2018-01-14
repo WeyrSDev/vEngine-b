@@ -11,7 +11,6 @@ namespace vEngine {
 		AudioFmod(const AudioFmod& rhs);
 		AudioFmod& operator=(const AudioFmod& rhs);
 	public:
-		virtual void Initialize() override;
 		virtual void Update(const Time& gameTime) override;
 	private:
 		FMOD_RESULT mResult;

@@ -6,12 +6,7 @@ namespace vEngine {
 	AudioFmod::AudioFmod(Engine& game) : Component(game)
 	{
 	}
-
-
 	AudioFmod::~AudioFmod()
-	{
-	}
-	void AudioFmod::Initialize()
 	{
 	}
 	void AudioFmod::Update(const Time & gameTime)
