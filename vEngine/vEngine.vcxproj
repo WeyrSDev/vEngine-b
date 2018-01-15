@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vAudioFmod.h" />
+    <ClInclude Include="vCamera.h" />
     <ClInclude Include="vClock.h" />
     <ClInclude Include="vColorHelper.h" />
     <ClInclude Include="vComponent.h" />
@@ -19,8 +20,10 @@
     <ClInclude Include="vEngine.h" />
     <ClInclude Include="vEnums.h" />
     <ClInclude Include="vException.h" />
+    <ClInclude Include="vFPSCamera.h" />
     <ClInclude Include="vFpsCounter.h" />
     <ClInclude Include="vGamePad.h" />
+    <ClInclude Include="vGrid.h" />
     <ClInclude Include="vInclude.h" />
     <ClInclude Include="vJoystick.h" />
     <ClInclude Include="vKeyboard.h" />
@@ -35,14 +38,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vAudioFmod.cpp" />
+    <ClCompile Include="vCamera.cpp" />
     <ClCompile Include="vClock.cpp" />
     <ClCompile Include="vColorHelper.cpp" />
     <ClCompile Include="vComponent.cpp" />
     <ClCompile Include="vDrawableComponent.cpp" />
     <ClCompile Include="vEngine.cpp" />
     <ClCompile Include="vException.cpp" />
+    <ClCompile Include="vFPSCamera.cpp" />
     <ClCompile Include="vFpsCounter.cpp" />
     <ClCompile Include="vGamePad.cpp" />
+    <ClCompile Include="vGrid.cpp" />
     <ClCompile Include="vJoystick.cpp" />
     <ClCompile Include="vKeyboard.cpp" />
     <ClCompile Include="vMatrixHelper.cpp" />
