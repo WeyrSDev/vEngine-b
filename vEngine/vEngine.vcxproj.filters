@@ -83,6 +83,12 @@
     <ClInclude Include="vFPSCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="vPerpspectiveCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vOrthographicCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vEngine.cpp">
@@ -143,6 +149,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vFPSCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vPerpspectiveCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vOrthographicCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

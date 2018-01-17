@@ -24,6 +24,14 @@ namespace vEngine {
 	{
 	}
 
+	Camera::Camera(Engine& game, float nearPlaneDistance, float farPlaneDistance) :
+		Component(game),
+		mNearPlaneDistance(nearPlaneDistance), mFarPlaneDistance(farPlaneDistance),
+		mPosition(), mDirection(), mUp(), mRight(), mViewMatrix(), mProjectionMatrix()
+	{
+	}
+
+
 	Camera::~Camera()
 	{
 	}

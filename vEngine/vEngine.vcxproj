@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="vOrthographicCamera.h" />
     <ClInclude Include="vAudioFmod.h" />
     <ClInclude Include="vCamera.h" />
     <ClInclude Include="vClock.h" />
@@ -29,6 +30,7 @@
     <ClInclude Include="vKeyboard.h" />
     <ClInclude Include="vMatrixHelper.h" />
     <ClInclude Include="vMouse.h" />
+    <ClInclude Include="vPerpspectiveCamera.h" />
     <ClInclude Include="vRTTI.h" />
     <ClInclude Include="vService.h" />
     <ClInclude Include="vStructs.h" />
@@ -37,6 +39,7 @@
     <ClInclude Include="vVectorHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="vOrthographicCamera.cpp" />
     <ClCompile Include="vAudioFmod.cpp" />
     <ClCompile Include="vCamera.cpp" />
     <ClCompile Include="vClock.cpp" />
@@ -53,6 +56,7 @@
     <ClCompile Include="vKeyboard.cpp" />
     <ClCompile Include="vMatrixHelper.cpp" />
     <ClCompile Include="vMouse.cpp" />
+    <ClCompile Include="vPerpspectiveCamera.cpp" />
     <ClCompile Include="vService.cpp" />
     <ClCompile Include="vTime.cpp" />
     <ClCompile Include="vUtility.cpp" />

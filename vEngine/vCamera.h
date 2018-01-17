@@ -8,6 +8,7 @@ namespace vEngine {
 	public:
 		Camera(Engine& game);
 		Camera(Engine& game, float fieldOfView, float aspectRatio, float nearPlaneDistance, float farPlaneDistance);
+		Camera(Engine& game, float nearPlaneDistance, float farPlaneDistance);
 		virtual ~Camera();
 	private:
 		Camera(const Camera& rhs);
