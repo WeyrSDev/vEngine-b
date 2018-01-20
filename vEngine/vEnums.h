@@ -8,4 +8,18 @@ namespace vEngine {
 		MouseButtonsMiddle = 2,
 		MouseButtonsX1 = 3
 	}MouseButtons;
+	typedef enum _TextureType
+	{
+		TextureTypeDifffuse = 0,
+		TextureTypeSpecularMap,
+		TextureTypeAmbient,
+		TextureTypeEmissive,
+		TextureTypeHeightmap,
+		TextureTypeNormalMap,
+		TextureTypeSpecularPowerMap,
+		TextureTypeDisplacementMap,
+		TextureTypeLightMap,
+		TextureTypeEnd
+	}TextureType;
+
 }

@@ -11,6 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="vEffect.h" />
+    <ClInclude Include="vMaterial.h" />
+    <ClInclude Include="vMesh.h" />
+    <ClInclude Include="vModel.h" />
+    <ClInclude Include="vModelMaterial.h" />
     <ClInclude Include="vOrthographicCamera.h" />
     <ClInclude Include="vAudioFmod.h" />
     <ClInclude Include="vCamera.h" />
@@ -30,15 +35,25 @@
     <ClInclude Include="vKeyboard.h" />
     <ClInclude Include="vMatrixHelper.h" />
     <ClInclude Include="vMouse.h" />
+    <ClInclude Include="vPass.h" />
     <ClInclude Include="vPerpspectiveCamera.h" />
+    <ClInclude Include="vRenderStateHelper.h" />
     <ClInclude Include="vRTTI.h" />
     <ClInclude Include="vService.h" />
+    <ClInclude Include="vSkybox.h" />
     <ClInclude Include="vStructs.h" />
+    <ClInclude Include="vTechnique.h" />
     <ClInclude Include="vTime.h" />
     <ClInclude Include="vUtility.h" />
+    <ClInclude Include="vVariable.h" />
     <ClInclude Include="vVectorHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="vEffect.cpp" />
+    <ClCompile Include="vMaterial.cpp" />
+    <ClCompile Include="vMesh.cpp" />
+    <ClCompile Include="vModel.cpp" />
+    <ClCompile Include="vModelMaterial.cpp" />
     <ClCompile Include="vOrthographicCamera.cpp" />
     <ClCompile Include="vAudioFmod.cpp" />
     <ClCompile Include="vCamera.cpp" />
@@ -56,10 +71,15 @@
     <ClCompile Include="vKeyboard.cpp" />
     <ClCompile Include="vMatrixHelper.cpp" />
     <ClCompile Include="vMouse.cpp" />
+    <ClCompile Include="vPass.cpp" />
     <ClCompile Include="vPerpspectiveCamera.cpp" />
+    <ClCompile Include="vRenderStateHelper.cpp" />
     <ClCompile Include="vService.cpp" />
+    <ClCompile Include="vSkybox.cpp" />
+    <ClCompile Include="vTechnique.cpp" />
     <ClCompile Include="vTime.cpp" />
     <ClCompile Include="vUtility.cpp" />
+    <ClCompile Include="vVariable.cpp" />
     <ClCompile Include="vVectorHelper.cpp" />
   </ItemGroup>
   <ItemGroup>

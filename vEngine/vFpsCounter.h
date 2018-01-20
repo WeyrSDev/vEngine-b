@@ -20,7 +20,6 @@ namespace vEngine {
 	public:
 		XMFLOAT2 & TextPosition();
 		int FrameRate() const;
-
 		virtual void Initialize() override;
 		virtual void Update(const Time& gameTime) override;
 		virtual void Draw(const Time& gameTime) override;

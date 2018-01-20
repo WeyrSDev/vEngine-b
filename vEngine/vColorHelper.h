@@ -20,5 +20,11 @@ namespace vEngine {
 		static const XMVECTORF32 CornflowerBlue;
 		static const XMVECTORF32 Wheat;
 		static const XMVECTORF32 LightGray;
+	public:
+		static XMFLOAT4 RandomColor();
+	private:
+		static std::random_device sDevice;
+		static std::default_random_engine sGenerator;
+		static std::uniform_real_distribution<float>sDistribution;
 	};
 }

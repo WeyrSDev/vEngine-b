@@ -34,7 +34,6 @@ namespace vEngine {
 		const D3D11_VIEWPORT& Viewport() const;
 		const std::vector<Component*>& Components() const;
 		const Service& Services() const;
-
 		virtual void Run();
 		virtual void Exit();
 		virtual void Initialize();
@@ -49,7 +48,6 @@ namespace vEngine {
 		static const UINT DefaultScreenHeight;
 		static const UINT DefaultFrameRate;
 		static const UINT DefaultMultiSamplingCount;
-
 		HINSTANCE mInstance;
 		std::wstring mWindowClass;
 		std::wstring mWindowTitle;
