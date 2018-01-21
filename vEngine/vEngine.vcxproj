@@ -12,7 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vBasicMaterial.h" />
+    <ClInclude Include="vDirectionalLight.h" />
     <ClInclude Include="vEffect.h" />
+    <ClInclude Include="vLight.h" />
     <ClInclude Include="vMaterial.h" />
     <ClInclude Include="vMesh.h" />
     <ClInclude Include="vModel.h" />
@@ -37,12 +39,17 @@
     <ClInclude Include="vMatrixHelper.h" />
     <ClInclude Include="vMouse.h" />
     <ClInclude Include="vPass.h" />
-    <ClInclude Include="vPerpspectiveCamera.h" />
+    <ClInclude Include="vPerspectiveCamera.h" />
+    <ClInclude Include="vPointLight.h" />
+    <ClInclude Include="vProxyModel.h" />
+    <ClInclude Include="vRasterizerStates.h" />
     <ClInclude Include="vRenderStateHelper.h" />
     <ClInclude Include="vRTTI.h" />
+    <ClInclude Include="vSamplerStates.h" />
     <ClInclude Include="vService.h" />
     <ClInclude Include="vSkybox.h" />
     <ClInclude Include="vSkyboxMaterial.h" />
+    <ClInclude Include="vSpotLight.h" />
     <ClInclude Include="vStructs.h" />
     <ClInclude Include="vTechnique.h" />
     <ClInclude Include="vTime.h" />
@@ -52,7 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vBasicMaterial.cpp" />
+    <ClCompile Include="vDirectionalLight.cpp" />
     <ClCompile Include="vEffect.cpp" />
+    <ClCompile Include="vLight.cpp" />
     <ClCompile Include="vMaterial.cpp" />
     <ClCompile Include="vMesh.cpp" />
     <ClCompile Include="vModel.cpp" />
@@ -75,11 +84,16 @@
     <ClCompile Include="vMatrixHelper.cpp" />
     <ClCompile Include="vMouse.cpp" />
     <ClCompile Include="vPass.cpp" />
-    <ClCompile Include="vPerpspectiveCamera.cpp" />
+    <ClCompile Include="vPerspectiveCamera.cpp" />
+    <ClCompile Include="vPointLight.cpp" />
+    <ClCompile Include="vProxyModel.cpp" />
+    <ClCompile Include="vRasterizerStates.cpp" />
     <ClCompile Include="vRenderStateHelper.cpp" />
+    <ClCompile Include="vSamplerStates.cpp" />
     <ClCompile Include="vService.cpp" />
     <ClCompile Include="vSkybox.cpp" />
     <ClCompile Include="vSkyboxMaterial.cpp" />
+    <ClCompile Include="vSpotLight.cpp" />
     <ClCompile Include="vTechnique.cpp" />
     <ClCompile Include="vTime.cpp" />
     <ClCompile Include="vUtility.cpp" />

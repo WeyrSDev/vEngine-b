@@ -83,9 +83,6 @@
     <ClInclude Include="vFPSCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vPerpspectiveCamera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="vOrthographicCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -123,6 +120,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vSkyboxMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vDirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vPointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vSpotLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vSamplerStates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vRasterizerStates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vProxyModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vPerspectiveCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -187,9 +208,6 @@
     <ClCompile Include="vFPSCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vPerpspectiveCamera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="vOrthographicCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -227,6 +245,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vSkyboxMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vDirectionalLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vPointLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vSpotLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vSamplerStates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vRasterizerStates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vProxyModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vPerspectiveCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
