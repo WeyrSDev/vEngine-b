@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="vBasicMaterial.h" />
     <ClInclude Include="vEffect.h" />
     <ClInclude Include="vMaterial.h" />
     <ClInclude Include="vMesh.h" />
@@ -41,6 +42,7 @@
     <ClInclude Include="vRTTI.h" />
     <ClInclude Include="vService.h" />
     <ClInclude Include="vSkybox.h" />
+    <ClInclude Include="vSkyboxMaterial.h" />
     <ClInclude Include="vStructs.h" />
     <ClInclude Include="vTechnique.h" />
     <ClInclude Include="vTime.h" />
@@ -49,6 +51,7 @@
     <ClInclude Include="vVectorHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="vBasicMaterial.cpp" />
     <ClCompile Include="vEffect.cpp" />
     <ClCompile Include="vMaterial.cpp" />
     <ClCompile Include="vMesh.cpp" />
@@ -76,6 +79,7 @@
     <ClCompile Include="vRenderStateHelper.cpp" />
     <ClCompile Include="vService.cpp" />
     <ClCompile Include="vSkybox.cpp" />
+    <ClCompile Include="vSkyboxMaterial.cpp" />
     <ClCompile Include="vTechnique.cpp" />
     <ClCompile Include="vTime.cpp" />
     <ClCompile Include="vUtility.cpp" />

@@ -81,4 +81,15 @@ namespace vEngine {
 		_VertexSkinnedPositionTextureNormal(const XMFLOAT4& position, const XMFLOAT2& textureCoordinates, const XMFLOAT3& normal, const XMUINT4& boneIndices, const XMFLOAT4& boneWeights)
 			: Position(position), TextureCoordinates(textureCoordinates), Normal(normal), BoneIndices(boneIndices), BoneWeights(boneWeights) { }
 	} VertexSkinnedPositionTextureNormal;
+	typedef struct _BasicMaterialVertex
+	{
+		XMFLOAT4 Position;
+		XMFLOAT4 Color;
+
+		_BasicMaterialVertex() { }
+
+		_BasicMaterialVertex(XMFLOAT4 position, XMFLOAT4 color)
+			: Position(position), Color(color) { }
+	} BasicMaterialVertex;
+
 }

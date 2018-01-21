@@ -6,7 +6,6 @@ namespace vEngine {
 	class Variable {
 	public:
 		Variable(Effect& effect, ID3DX11EffectVariable* variable);
-		virtual ~Variable();
 	private:
 		Variable(const Variable& rhs);
 		Variable& operator=(const Variable& rhs);

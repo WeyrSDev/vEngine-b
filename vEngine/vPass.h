@@ -7,7 +7,6 @@ namespace vEngine {
 	class Pass {
 	public:
 		Pass(Engine& game, Technique& technique, ID3DX11EffectPass* pass);
-		virtual ~Pass();
 	private:
 		Pass(const Pass& rhs);
 		Pass& operator=(const Pass& rhs);
