@@ -15,12 +15,12 @@ namespace vEngine {
 		Material(const Material& rhs);
 		Material& operator=(const Material& rhs);
 	public:
-		Variable * operator[](const std::string& variableName);
+		Variable* operator[](const std::string& variableName);
 		Effect* GetEffect() const;
 		Technique* CurrentTechnique() const;
 		void SetCurrentTechnique(Technique* currentTechnique);
 		const std::map<Pass*, ID3D11InputLayout*>& InputLayouts() const;
-		virtual void Initialize(Effect* effect);
+		virtual void Initialize(Effect& effect);
 		virtual void CreateVertexBuffer(ID3D11Device* device, const Model& model, std::vector<ID3D11Buffer*>& vertexBuffers) const;
 		virtual void CreateVertexBuffer(ID3D11Device* device, const Mesh& mesh, ID3D11Buffer** vertexBuffer) const = 0;
 		virtual UINT VertexSize() const = 0;
