@@ -21,5 +21,13 @@ namespace vEngine {
 		TextureTypeLightMap,
 		TextureTypeEnd
 	}TextureType;
-
+	typedef enum _FrustumPlane
+	{
+		FrustumPlaneNear = 0,
+		FrustumPlaneFar,
+		FrustumPlaneLeft,
+		FrustumPlaneRight,
+		FrustumPlaneTop,
+		FrustumPlaneBottom
+	}FrustumPlane;
 }

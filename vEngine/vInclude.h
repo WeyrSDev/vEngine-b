@@ -9,6 +9,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <stack>
 #include <memory>
 #include <mmsystem.h>
 #include <stdio.h>
