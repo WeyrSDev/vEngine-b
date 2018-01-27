@@ -3,10 +3,11 @@
 #include "vModel.h"
 
 
-namespace vEngine {
+namespace vEngine
+{
 	RTTI_DEFINITIONS(Material)
 
-		Material::Material()
+	Material::Material()
 		: mEffect(nullptr), mCurrentTechnique(nullptr), mDefaultTechniqueName(), mInputLayouts()
 	{
 	}
@@ -48,9 +49,9 @@ namespace vEngine {
 		return mCurrentTechnique;
 	}
 
-	void Material::SetCurrentTechnique(Technique* currentTechnique)
+	void Material::SetCurrentTechnique(Technique& currentTechnique)
 	{
-		mCurrentTechnique = currentTechnique;
+		mCurrentTechnique = &currentTechnique;
 	}
 
 	const std::map<Pass*, ID3D11InputLayout*>& Material::InputLayouts() const
@@ -58,10 +59,15 @@ namespace vEngine {
 		return mInputLayouts;
 	}
 
-	void Material::Initialize(Effect* effect)
+	void Material::Initialize(Effect& effect)
 	{
-		mEffect = effect;
-		assert(mEffect != nullptr);
+		for (std::pair<Pass*, ID3D11InputLayout*> inputLayout : mInputLayouts)
+		{
+			ReleaseObject(inputLayout.second);
+		}
+		mInputLayouts.clear();
+
+		mEffect = &effect;
 
 		Technique* defaultTechnique = nullptr;
 		assert(mEffect->Techniques().size() > 0);
@@ -75,7 +81,7 @@ namespace vEngine {
 			defaultTechnique = mEffect->Techniques().at(0);
 		}
 
-		SetCurrentTechnique(defaultTechnique);
+		SetCurrentTechnique(*defaultTechnique);
 	}
 
 	void Material::CreateVertexBuffer(ID3D11Device* device, const Model& model, std::vector<ID3D11Buffer*>& vertexBuffers) const
@@ -103,4 +109,11 @@ namespace vEngine {
 		mInputLayouts.insert(std::pair<Pass*, ID3D11InputLayout*>(pass, inputLayout));
 	}
 
+	void Material::CreateInputLayout(Pass& pass, D3D11_INPUT_ELEMENT_DESC* inputElementDescriptions, UINT inputElementDescriptionCount)
+	{
+		ID3D11InputLayout* inputLayout;
+		pass.CreateInputLayout(inputElementDescriptions, inputElementDescriptionCount, &inputLayout);
+
+		mInputLayouts.insert(std::pair<Pass*, ID3D11InputLayout*>(&pass, inputLayout));
+	}
 }

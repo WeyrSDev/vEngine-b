@@ -1,5 +1,6 @@
 #pragma once
 #include "vInclude.h"
+#include "vBufferContainer.h"
 
 struct aiMesh;
 
@@ -12,11 +13,11 @@ namespace vEngine {
 		Mesh(Model& model, ModelMaterial* material);
 		virtual ~Mesh();
 	private:
-		Mesh(Model& model, aiMesh& mesh);
+		Mesh(Model& model, ModelMaterial* material, aiMesh* mesh);
 		Mesh(const Mesh& rhs);
 		Mesh& operator=(const Mesh& rhs);
 	public:
-		Model & GetModel();
+		Model& GetModel();
 		ModelMaterial* GetMaterial();
 		const std::string& Name() const;
 		const std::vector<XMFLOAT3>& Vertices() const;
@@ -27,7 +28,12 @@ namespace vEngine {
 		const std::vector<std::vector<XMFLOAT4>*>& VertexColors() const;
 		UINT FaceCount() const;
 		const std::vector<UINT>& Indices() const;
+		BufferContainer& VertexBuffer();
+		BufferContainer& IndexBuffer();
+		bool HasCachedVertexBuffer() const;
+		bool HasCachedIndexBuffer() const;
 		void CreateIndexBuffer(ID3D11Buffer** indexBuffer);
+		void CreateCachedVertexAndIndexBuffers(ID3D11Device& device, const Material& material);
 	private:
 		Model& mModel;
 		ModelMaterial* mMaterial;
@@ -40,5 +46,7 @@ namespace vEngine {
 		std::vector<std::vector<XMFLOAT4>*> mVertexColors;
 		UINT mFaceCount;
 		std::vector<UINT> mIndices;
+		BufferContainer mVertexBuffer;
+		BufferContainer mIndexBuffer;
 	};
 }

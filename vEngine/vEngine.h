@@ -27,18 +27,26 @@ namespace vEngine {
 		int ScreenHeight() const;
 		ID3D11Device1* Direct3DDevice() const;
 		ID3D11DeviceContext1* Direct3DDeviceContext() const;
-		bool DepthBufferEnabled() const;
+		bool DepthStencilBufferEnabled() const;
+		ID3D11RenderTargetView* RenderTargetView() const;
+		ID3D11DepthStencilView* DepthStencilView() const;
 		float AspectRatio() const;
 		bool IsFullScreen() const;
 		const D3D11_TEXTURE2D_DESC& BackBufferDesc() const;
 		const D3D11_VIEWPORT& Viewport() const;
+		bool MultiSamplingEnabled() const;
+		UINT MultiSamplingCount() const;
+		UINT MultiSamplingQualityLevels() const;
 		const std::vector<Component*>& Components() const;
 		const Service& Services() const;
+	public:
 		virtual void Run();
 		virtual void Exit();
 		virtual void Initialize();
 		virtual void Update(const Time& gameTime);
 		virtual void Draw(const Time& gameTime);
+		virtual void ResetRenderTargets();
+		virtual void UnbindPixelShaderResources(UINT startSlot, UINT count);
 	protected:
 		virtual void InitializeWindow();
 		virtual void InitializeDirectX();
@@ -48,6 +56,7 @@ namespace vEngine {
 		static const UINT DefaultScreenHeight;
 		static const UINT DefaultFrameRate;
 		static const UINT DefaultMultiSamplingCount;
+	protected:
 		HINSTANCE mInstance;
 		std::wstring mWindowClass;
 		std::wstring mWindowTitle;

@@ -16,7 +16,7 @@ namespace vEngine
 
 	
 
-	void SkyboxMaterial::Initialize(Effect* effect)
+	void SkyboxMaterial::Initialize(Effect& effect)
 	{
 		Material::Initialize(effect);
 

@@ -8,7 +8,8 @@
 #include <assimp/postprocess.h>
 
 
-namespace vEngine {
+namespace vEngine
+{
 	Model::Model(Engine& game, const std::string& filename, bool flipUVs)
 		: mGame(game), mMeshes(), mMaterials()
 	{
@@ -40,7 +41,7 @@ namespace vEngine {
 			{
 				ModelMaterial* material = (mMaterials.size() > i ? mMaterials.at(i) : nullptr);
 
-				Mesh* mesh = new Mesh(*this, *(scene->mMeshes[i]));
+				Mesh* mesh = new Mesh(*this, material, scene->mMeshes[i]);
 				mMeshes.push_back(mesh);
 			}
 		}

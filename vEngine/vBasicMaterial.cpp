@@ -17,7 +17,7 @@ namespace vEngine
 
 	
 
-	void BasicMaterial::Initialize(Effect* effect)
+	void BasicMaterial::Initialize(Effect& effect)
 	{
 		Material::Initialize(effect);
 		MATERIAL_VARIABLE_RETRIEVE(WorldViewProjection)

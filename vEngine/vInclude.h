@@ -12,6 +12,7 @@
 #include <stack>
 #include <memory>
 #include <mmsystem.h>
+#include <functional>
 #include <stdio.h>
 #include <random>
 #include "vRTTI.h"

@@ -12,11 +12,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vBasicMaterial.h" />
+    <ClInclude Include="vBloom.h" />
+    <ClInclude Include="vBloomMaterial.h" />
     <ClInclude Include="vBoundingSphere.h" />
     <ClInclude Include="vBufferContainer.h" />
     <ClInclude Include="vDirectionalLight.h" />
+    <ClInclude Include="vDistortionMapping.h" />
+    <ClInclude Include="vDistortionMappingMaterial.h" />
     <ClInclude Include="vEffect.h" />
     <ClInclude Include="vFrustum.h" />
+    <ClInclude Include="vFullScreenQuad.h" />
+    <ClInclude Include="vFullScreenRenderTarget.h" />
+    <ClInclude Include="vGaussianBlur.h" />
+    <ClInclude Include="vGaussianBlurMaterial.h" />
     <ClInclude Include="vLight.h" />
     <ClInclude Include="vMaterial.h" />
     <ClInclude Include="vMathHelper.h" />
@@ -45,6 +53,7 @@
     <ClInclude Include="vPass.h" />
     <ClInclude Include="vPerspectiveCamera.h" />
     <ClInclude Include="vPointLight.h" />
+    <ClInclude Include="vPostProcessingMaterial.h" />
     <ClInclude Include="vProxyModel.h" />
     <ClInclude Include="vRasterizerStates.h" />
     <ClInclude Include="vRay.h" />
@@ -64,11 +73,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vBasicMaterial.cpp" />
+    <ClCompile Include="vBloom.cpp" />
+    <ClCompile Include="vBloomMaterial.cpp" />
     <ClCompile Include="vBoundingSphere.cpp" />
     <ClCompile Include="vBufferContainer.cpp" />
     <ClCompile Include="vDirectionalLight.cpp" />
+    <ClCompile Include="vDistortionMapping.cpp" />
+    <ClCompile Include="vDistortionMappingMaterial.cpp" />
     <ClCompile Include="vEffect.cpp" />
     <ClCompile Include="vFrustum.cpp" />
+    <ClCompile Include="vFullScreenQuad.cpp" />
+    <ClCompile Include="vFullScreenRenderTarget.cpp" />
+    <ClCompile Include="vGaussianBlur.cpp" />
+    <ClCompile Include="vGaussianBlurMaterial.cpp" />
     <ClCompile Include="vLight.cpp" />
     <ClCompile Include="vMaterial.cpp" />
     <ClCompile Include="vMathHelper.cpp" />
@@ -95,6 +112,7 @@
     <ClCompile Include="vPass.cpp" />
     <ClCompile Include="vPerspectiveCamera.cpp" />
     <ClCompile Include="vPointLight.cpp" />
+    <ClCompile Include="vPostProcessingMaterial.cpp" />
     <ClCompile Include="vProxyModel.cpp" />
     <ClCompile Include="vRasterizerStates.cpp" />
     <ClCompile Include="vRay.cpp" />

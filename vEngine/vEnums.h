@@ -8,6 +8,7 @@ namespace vEngine {
 		MouseButtonsMiddle = 2,
 		MouseButtonsX1 = 3
 	}MouseButtons;
+
 	typedef enum _TextureType
 	{
 		TextureTypeDifffuse = 0,
@@ -21,6 +22,7 @@ namespace vEngine {
 		TextureTypeLightMap,
 		TextureTypeEnd
 	}TextureType;
+
 	typedef enum _FrustumPlane
 	{
 		FrustumPlaneNear = 0,
@@ -30,4 +32,19 @@ namespace vEngine {
 		FrustumPlaneTop,
 		FrustumPlaneBottom
 	}FrustumPlane;
+
+	typedef enum _DistortionTechnique
+	{
+		DistortionTechniqueDisplacement = 0,
+		DistortionTechniqueEnd
+	}DistortionTechnique;
+
+	typedef enum _BloomDrawMode
+	{
+		BloomDrawModeNormal = 0,
+		BloomDrawModeExtractedTexture1,
+		BloomDrawModeBlurredTexture,
+		BloomDrawModeEnd
+	}BloomDrawMode;
+
 }

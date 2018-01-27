@@ -70,6 +70,21 @@ namespace vEngine {
 		return mDirect3DDeviceContext;
 	}
 
+	bool Engine::DepthStencilBufferEnabled() const
+	{
+		return mDepthStencilBufferEnabled;
+	}
+
+	ID3D11RenderTargetView* Engine::RenderTargetView() const
+	{
+		return mRenderTargetView;
+	}
+
+	ID3D11DepthStencilView* Engine::DepthStencilView() const
+	{
+		return mDepthStencilView;
+	}
+
 	float Engine::AspectRatio() const
 	{
 		return static_cast<float>(mScreenWidth) / mScreenHeight;
@@ -88,6 +103,21 @@ namespace vEngine {
 	const D3D11_VIEWPORT& Engine::Viewport() const
 	{
 		return mViewport;
+	}
+
+	bool Engine::MultiSamplingEnabled() const
+	{
+		return mMultiSamplingEnabled;
+	}
+
+	UINT Engine::MultiSamplingCount() const
+	{
+		return mMultiSamplingCount;
+	}
+
+	UINT Engine::MultiSamplingQualityLevels() const
+	{
+		return mMultiSamplingQualityLevels;
 	}
 
 	const std::vector<Component*>& Engine::Components() const
@@ -181,6 +211,18 @@ namespace vEngine {
 				drawableGameComponent->Draw(gameTime);
 			}
 		}
+	}
+
+	void Engine::ResetRenderTargets()
+	{
+		mDirect3DDeviceContext->OMSetRenderTargets(1, &mRenderTargetView, mDepthStencilView);
+	}
+
+	void Engine::UnbindPixelShaderResources(UINT startSlot, UINT count)
+	{
+		static ID3D11ShaderResourceView* emptySRV = nullptr;
+
+		mDirect3DDeviceContext->PSSetShaderResources(startSlot, count, &emptySRV);
 	}
 
 	void Engine::InitializeWindow()
@@ -369,7 +411,6 @@ namespace vEngine {
 
 		mDirect3DDeviceContext->RSSetViewports(1, &mViewport);
 	}
-
 
 	LRESULT WINAPI Engine::WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)
 	{

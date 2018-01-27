@@ -92,4 +92,30 @@ namespace vEngine {
 
 		return *this;
 	}
+
+	Variable& Variable::operator<<(const std::vector<float>& values)
+	{
+		ID3DX11EffectScalarVariable* variable = mVariable->AsScalar();
+		if (variable->IsValid() == false)
+		{
+			throw Exception("Invalid effect variable cast.");
+		}
+
+		variable->SetFloatArray(&values[0], 0, values.size());
+
+		return *this;
+	}
+
+	Variable& Variable::operator<<(const std::vector<XMFLOAT2>& values)
+	{
+		ID3DX11EffectVectorVariable* variable = mVariable->AsVector();
+		if (variable->IsValid() == false)
+		{
+			throw Exception("Invalid effect variable cast.");
+		}
+
+		variable->SetFloatVectorArray(reinterpret_cast<const float*>(&values[0]), 0, values.size());
+
+		return *this;
+	}
 }
