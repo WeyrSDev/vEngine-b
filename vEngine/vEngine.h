@@ -4,10 +4,11 @@
 #include "vTime.h"
 #include "vComponent.h"
 #include "vService.h"
+#include "vRenderTarget.h"
 
 namespace vEngine {
-	class Engine
-	{
+	class Engine : public RenderTarget {
+		RTTI_DECLARATIONS(Engine, RenderTarget)
 	public:
 		Engine(HINSTANCE instance, const std::wstring& windowClass, const std::wstring& windowTitle, int showCommand);
 		virtual ~Engine();
@@ -48,6 +49,8 @@ namespace vEngine {
 		virtual void ResetRenderTargets();
 		virtual void UnbindPixelShaderResources(UINT startSlot, UINT count);
 	protected:
+		virtual void Begin() override;
+		virtual void End() override;
 		virtual void InitializeWindow();
 		virtual void InitializeDirectX();
 		virtual void Shutdown();

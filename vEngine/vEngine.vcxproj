@@ -12,10 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vBasicMaterial.h" />
+    <ClInclude Include="vBlendStates.h" />
     <ClInclude Include="vBloom.h" />
     <ClInclude Include="vBloomMaterial.h" />
     <ClInclude Include="vBoundingSphere.h" />
     <ClInclude Include="vBufferContainer.h" />
+    <ClInclude Include="vDepthMap.h" />
+    <ClInclude Include="vDepthMapMaterial.h" />
     <ClInclude Include="vDirectionalLight.h" />
     <ClInclude Include="vDistortionMapping.h" />
     <ClInclude Include="vDistortionMappingMaterial.h" />
@@ -54,13 +57,18 @@
     <ClInclude Include="vPerspectiveCamera.h" />
     <ClInclude Include="vPointLight.h" />
     <ClInclude Include="vPostProcessingMaterial.h" />
+    <ClInclude Include="vProjectiveTextureMappingMaterial.h" />
+    <ClInclude Include="vProjector.h" />
     <ClInclude Include="vProxyModel.h" />
     <ClInclude Include="vRasterizerStates.h" />
     <ClInclude Include="vRay.h" />
+    <ClInclude Include="vRenderableFrustum.h" />
     <ClInclude Include="vRenderStateHelper.h" />
+    <ClInclude Include="vRenderTarget.h" />
     <ClInclude Include="vRTTI.h" />
     <ClInclude Include="vSamplerStates.h" />
     <ClInclude Include="vService.h" />
+    <ClInclude Include="vShadowMappingMaterial.h" />
     <ClInclude Include="vSkybox.h" />
     <ClInclude Include="vSkyboxMaterial.h" />
     <ClInclude Include="vSpotLight.h" />
@@ -73,10 +81,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vBasicMaterial.cpp" />
+    <ClCompile Include="vBlendStates.cpp" />
     <ClCompile Include="vBloom.cpp" />
     <ClCompile Include="vBloomMaterial.cpp" />
     <ClCompile Include="vBoundingSphere.cpp" />
     <ClCompile Include="vBufferContainer.cpp" />
+    <ClCompile Include="vDepthMap.cpp" />
+    <ClCompile Include="vDepthMapMaterial.cpp" />
     <ClCompile Include="vDirectionalLight.cpp" />
     <ClCompile Include="vDistortionMapping.cpp" />
     <ClCompile Include="vDistortionMappingMaterial.cpp" />
@@ -113,12 +124,17 @@
     <ClCompile Include="vPerspectiveCamera.cpp" />
     <ClCompile Include="vPointLight.cpp" />
     <ClCompile Include="vPostProcessingMaterial.cpp" />
+    <ClCompile Include="vProjectiveTextureMappingMaterial.cpp" />
+    <ClCompile Include="vProjector.cpp" />
     <ClCompile Include="vProxyModel.cpp" />
     <ClCompile Include="vRasterizerStates.cpp" />
     <ClCompile Include="vRay.cpp" />
+    <ClCompile Include="vRenderableFrustum.cpp" />
     <ClCompile Include="vRenderStateHelper.cpp" />
+    <ClCompile Include="vRenderTarget.cpp" />
     <ClCompile Include="vSamplerStates.cpp" />
     <ClCompile Include="vService.cpp" />
+    <ClCompile Include="vShadowMappingMaterial.cpp" />
     <ClCompile Include="vSkybox.cpp" />
     <ClCompile Include="vSkyboxMaterial.cpp" />
     <ClCompile Include="vSpotLight.cpp" />

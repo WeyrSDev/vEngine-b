@@ -3,13 +3,14 @@
 #include "vException.h"
 
 namespace vEngine {
+	RTTI_DEFINITIONS(Engine)
 	const UINT Engine::DefaultScreenWidth = 1024;
 	const UINT Engine::DefaultScreenHeight = 768;
 	const UINT Engine::DefaultFrameRate = 60;
 	const UINT Engine::DefaultMultiSamplingCount = 4;
 
 	Engine::Engine(HINSTANCE instance, const std::wstring& windowClass, const std::wstring& windowTitle, int showCommand)
-		: mInstance(instance), mWindowClass(windowClass), mWindowTitle(windowTitle), mShowCommand(showCommand),
+		: RenderTarget(), mInstance(instance), mWindowClass(windowClass), mWindowTitle(windowTitle), mShowCommand(showCommand),
 		mWindowHandle(), mWindow(),
 		mScreenWidth(DefaultScreenWidth), mScreenHeight(DefaultScreenHeight),
 		mGameClock(), mGameTime(),
@@ -225,6 +226,16 @@ namespace vEngine {
 		mDirect3DDeviceContext->PSSetShaderResources(startSlot, count, &emptySRV);
 	}
 
+	void Engine::Begin()
+	{
+		RenderTarget::Begin(mDirect3DDeviceContext, 1, &mRenderTargetView, mDepthStencilView, mViewport);
+	}
+
+	void Engine::End()
+	{
+		RenderTarget::End(mDirect3DDeviceContext);
+	}
+
 	void Engine::InitializeWindow()
 	{
 		ZeroMemory(&mWindow, sizeof(mWindow));
@@ -400,8 +411,6 @@ namespace vEngine {
 			}
 		}
 
-		mDirect3DDeviceContext->OMSetRenderTargets(1, &mRenderTargetView, mDepthStencilView);
-
 		mViewport.TopLeftX = 0.0f;
 		mViewport.TopLeftY = 0.0f;
 		mViewport.Width = static_cast<float>(mScreenWidth);
@@ -409,7 +418,8 @@ namespace vEngine {
 		mViewport.MinDepth = 0.0f;
 		mViewport.MaxDepth = 1.0f;
 
-		mDirect3DDeviceContext->RSSetViewports(1, &mViewport);
+		// Set render targets and viewport through render target stack	
+		Begin();
 	}
 
 	LRESULT WINAPI Engine::WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)

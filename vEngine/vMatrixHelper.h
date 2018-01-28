@@ -9,6 +9,7 @@ namespace vEngine {
 		MatrixHelper& operator=(const MatrixHelper& rhs);
 	public:
 		static const XMFLOAT4X4 Identity;
+		static const XMFLOAT4X4 Zero;
 	public:
 		static void GetForward(CXMMATRIX matrix, XMFLOAT3 &vector);
 		static void GetUp(CXMMATRIX matrix, XMFLOAT3 &vector);
