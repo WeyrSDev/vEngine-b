@@ -461,4 +461,7 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="misc.txt" />
+  </ItemGroup>
 </Project>

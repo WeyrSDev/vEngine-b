@@ -221,9 +221,11 @@ namespace vEngine {
 
 	void Engine::UnbindPixelShaderResources(UINT startSlot, UINT count)
 	{
-		static ID3D11ShaderResourceView* emptySRV = nullptr;
+		static ID3D11ShaderResourceView* emptySRV[5] = { nullptr, nullptr, nullptr, nullptr, nullptr };
+		assert(count < ARRAYSIZE(emptySRV));
 
-		mDirect3DDeviceContext->PSSetShaderResources(startSlot, count, &emptySRV);
+		mDirect3DDeviceContext->PSSetShaderResources(startSlot, count, emptySRV);
+
 	}
 
 	void Engine::Begin()
