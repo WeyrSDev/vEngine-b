@@ -22,6 +22,7 @@ namespace vEngine {
 		Variable& operator<<(float value);
 		Variable& operator<<(const std::vector<float>& values);
 		Variable& operator<<(const std::vector<XMFLOAT2>& values);
+		Variable& operator<<(const std::vector<XMFLOAT4X4>& values);
 	private:
 		Effect& mEffect;
 		ID3DX11EffectVariable* mVariable;

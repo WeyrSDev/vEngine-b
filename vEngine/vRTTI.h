@@ -1,6 +1,9 @@
 #pragma once
+#include "vInclude.h"
 
-namespace vEngine {
+
+namespace vEngine
+{
 	class RTTI
 	{
 	public:
@@ -33,9 +36,8 @@ namespace vEngine {
 		}
 	};
 
-#define RTTI_DECLARATIONS(Type, ParentType)                                                                  \
+#define RTTI_DECLARATIONS(Type, ParentType)                                                              \
         public:                                                                                              \
-            typedef ParentType Parent;                                                                       \
             static std::string TypeName() { return std::string(#Type); }                                     \
             virtual const unsigned int& TypeIdInstance() const { return Type::TypeIdClass(); }               \
             static  const unsigned int& TypeIdClass() { return sRunTimeTypeId; }                             \
@@ -44,23 +46,24 @@ namespace vEngine {
                 if (id == sRunTimeTypeId)                                                                    \
                     { return (RTTI*)this; }                                                                  \
                 else                                                                                         \
-                    { return Parent::QueryInterface(id); }                                                   \
+					{ return ParentType::QueryInterface(id); }                                               \
             }                                                                                                \
             virtual bool Is(const unsigned int id) const                                                     \
             {                                                                                                \
                 if (id == sRunTimeTypeId)                                                                    \
                     { return true; }                                                                         \
                 else                                                                                         \
-                    { return Parent::Is(id); }                                                               \
+                    { return ParentType::Is(id); }                                                           \
             }                                                                                                \
             virtual bool Is(const std::string& name) const                                                   \
             {                                                                                                \
                 if (name == TypeName())                                                                      \
                     { return true; }                                                                         \
                 else                                                                                         \
-                    { return Parent::Is(name); }                                                             \
+                    { return ParentType::Is(name); }                                                         \
             }                                                                                                \
 	   private:                                                                                              \
             static unsigned int sRunTimeTypeId;
+
 #define RTTI_DEFINITIONS(Type) unsigned int Type::sRunTimeTypeId = (unsigned int)& Type::sRunTimeTypeId;
 }

@@ -11,10 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="vAnimationClip.h" />
+    <ClInclude Include="vAnimationPlayer.h" />
     <ClInclude Include="vBasicMaterial.h" />
     <ClInclude Include="vBlendStates.h" />
     <ClInclude Include="vBloom.h" />
     <ClInclude Include="vBloomMaterial.h" />
+    <ClInclude Include="vBone.h" />
+    <ClInclude Include="vBoneAnimation.h" />
     <ClInclude Include="vBoundingSphere.h" />
     <ClInclude Include="vBufferContainer.h" />
     <ClInclude Include="vDepthMap.h" />
@@ -23,11 +27,13 @@
     <ClInclude Include="vDistortionMapping.h" />
     <ClInclude Include="vDistortionMappingMaterial.h" />
     <ClInclude Include="vEffect.h" />
+    <ClInclude Include="vFactory.h" />
     <ClInclude Include="vFrustum.h" />
     <ClInclude Include="vFullScreenQuad.h" />
     <ClInclude Include="vFullScreenRenderTarget.h" />
     <ClInclude Include="vGaussianBlur.h" />
     <ClInclude Include="vGaussianBlurMaterial.h" />
+    <ClInclude Include="vKeyframe.h" />
     <ClInclude Include="vLight.h" />
     <ClInclude Include="vMaterial.h" />
     <ClInclude Include="vMathHelper.h" />
@@ -67,8 +73,10 @@
     <ClInclude Include="vRenderTarget.h" />
     <ClInclude Include="vRTTI.h" />
     <ClInclude Include="vSamplerStates.h" />
+    <ClInclude Include="vSceneNode.h" />
     <ClInclude Include="vService.h" />
     <ClInclude Include="vShadowMappingMaterial.h" />
+    <ClInclude Include="vSkinnedModelMaterial.h" />
     <ClInclude Include="vSkybox.h" />
     <ClInclude Include="vSkyboxMaterial.h" />
     <ClInclude Include="vSpotLight.h" />
@@ -80,10 +88,14 @@
     <ClInclude Include="vVectorHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="vAnimationClip.cpp" />
+    <ClCompile Include="vAnimationPlayer.cpp" />
     <ClCompile Include="vBasicMaterial.cpp" />
     <ClCompile Include="vBlendStates.cpp" />
     <ClCompile Include="vBloom.cpp" />
     <ClCompile Include="vBloomMaterial.cpp" />
+    <ClCompile Include="vBone.cpp" />
+    <ClCompile Include="vBoneAnimation.cpp" />
     <ClCompile Include="vBoundingSphere.cpp" />
     <ClCompile Include="vBufferContainer.cpp" />
     <ClCompile Include="vDepthMap.cpp" />
@@ -97,9 +109,9 @@
     <ClCompile Include="vFullScreenRenderTarget.cpp" />
     <ClCompile Include="vGaussianBlur.cpp" />
     <ClCompile Include="vGaussianBlurMaterial.cpp" />
+    <ClCompile Include="vKeyframe.cpp" />
     <ClCompile Include="vLight.cpp" />
     <ClCompile Include="vMaterial.cpp" />
-    <ClCompile Include="vMathHelper.cpp" />
     <ClCompile Include="vMesh.cpp" />
     <ClCompile Include="vModel.cpp" />
     <ClCompile Include="vModelMaterial.cpp" />
@@ -133,8 +145,10 @@
     <ClCompile Include="vRenderStateHelper.cpp" />
     <ClCompile Include="vRenderTarget.cpp" />
     <ClCompile Include="vSamplerStates.cpp" />
+    <ClCompile Include="vSceneNode.cpp" />
     <ClCompile Include="vService.cpp" />
     <ClCompile Include="vShadowMappingMaterial.cpp" />
+    <ClCompile Include="vSkinnedModelMaterial.cpp" />
     <ClCompile Include="vSkybox.cpp" />
     <ClCompile Include="vSkyboxMaterial.cpp" />
     <ClCompile Include="vSpotLight.cpp" />
