@@ -501,9 +501,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <Text Include="misc.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="misc.txt" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

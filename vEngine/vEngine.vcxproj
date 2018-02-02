@@ -159,10 +159,10 @@
     <ClCompile Include="vVectorHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <Text Include="misc.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="misc.txt" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{e6afd214-5307-445b-9234-90f05422994c}</ProjectGuid>

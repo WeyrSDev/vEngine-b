@@ -9,6 +9,7 @@ namespace vEngine {
 		BlendStates& operator=(const BlendStates& rhs);
 	public:
 		static ID3D11BlendState* MultiplicativeBlending;
+		static ID3D11BlendState* AlphaBlending;
 	public:
 		static void Initialize(ID3D11Device* direct3DDevice);
 		static void Release();

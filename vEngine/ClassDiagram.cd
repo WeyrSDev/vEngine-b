@@ -1,693 +1,756 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="vEngine::Engine" Collapsed="true">
-    <Position X="22.75" Y="3.25" Width="1.5" />
+    <Position X="72.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>koaIIgBACkYFQ8AOAigBESAFABBnMKABZhCgSAAAgAI=</HashCode>
       <FileName>vEngine.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::BasicMaterial" Collapsed="true">
-    <Position X="7" Y="3.25" Width="1.5" />
+    <Position X="52.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>vBasicMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::BloomMaterial" Collapsed="true">
-    <Position X="16" Y="4.75" Width="1.5" />
+    <Position X="61.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vBloomMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::DepthMapMaterial" Collapsed="true">
-    <Position X="11.5" Y="3.25" Width="1.5" />
+    <Position X="57" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>vDepthMapMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::DistortionMappingMaterial" Collapsed="true">
-    <Position X="13.75" Y="3.25" Width="1.5" />
+    <Position X="59.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>vDistortionMappingMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::GaussianBlurMaterial" Collapsed="true">
-    <Position X="18.25" Y="4.75" Width="1.5" />
+    <Position X="63.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vGaussianBlurMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::ModelMaterial" Collapsed="true">
-    <Position X="74.25" Y="2.5" Width="1.5" />
+    <Position X="77.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAACAIABAAAAAAAQEAAAAAAIAAAggAAAAAQA=</HashCode>
       <FileName>vModelMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Model" Collapsed="true">
-    <Position X="72.5" Y="2.5" Width="1.5" />
+    <Position X="86.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AUAACQAAAAAAAAABAAAAQAAAAAIAAAAAAAggEAAAAAA=</HashCode>
+      <HashCode>AUASCQAAABAAAAABAEABUEAYQAJCAAAAhAggEAAAAAA=</HashCode>
       <FileName>vModel.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::PostProcessingMaterial" Collapsed="true">
-    <Position X="17" Y="3.25" Width="1.5" />
+    <Position X="62.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>vPostProcessingMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::ProjectiveTextureMappingMaterial" Collapsed="true">
-    <Position X="19.25" Y="3.25" Width="1.5" />
+    <Position X="66" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>vProjectiveTextureMappingMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::ShadowMappingMaterial" Collapsed="true">
-    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Position X="68.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>vShadowMappingMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::SkyboxMaterial" Collapsed="true">
-    <Position X="9.25" Y="3.25" Width="1.5" />
+    <Position X="50.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>vSkyboxMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="vEngine::SkinnedModelMaterial" Collapsed="true">
+    <Position X="54.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>vSkinnedModelMaterial.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="vEngine::OrthographicCamera" Collapsed="true">
-    <Position X="38.5" Y="4.75" Width="1.5" />
+    <Position X="5.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAIAAAAAEBACAIAACAAAAQACAAAQAAAAAgAAAAAAA=</HashCode>
       <FileName>vOrthographicCamera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Keyboard" Collapsed="true">
-    <Position X="31.75" Y="3.25" Width="1.5" />
+    <Position X="12" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAxAAAYIACIAAUACAAAAACQAAAAQAAAAAAAAYAAAAAA=</HashCode>
       <FileName>vKeyboard.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Mouse" Collapsed="true">
-    <Position X="36.25" Y="3.25" Width="1.5" />
+    <Position X="34.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQRAIAAIAAABCUAAwAAgACAAAEAAAAAUEBCAIAAAYAA=</HashCode>
       <FileName>vMouse.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::FPSCamera" Collapsed="true">
-    <Position X="40.75" Y="4.75" Width="1.5" />
+    <Position X="7.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>UAQACFAACAAABQAASAEABABQAAAABACACAAgABAAAAA=</HashCode>
       <FileName>vFPSCamera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::PerspectiveCamera" Collapsed="true">
-    <Position X="43" Y="4.75" Width="1.5" />
+    <Position X="9.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACIAAAAQgAAIAAAACAAAAACAAAgAAAAAIA=</HashCode>
       <FileName>vPerspectiveCamera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::MathHelper" Collapsed="true">
-    <Position X="77.75" Y="1.5" Width="1.5" />
+    <Position X="81" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vMathHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::ColorHelper" Collapsed="true">
-    <Position X="79.5" Y="0.5" Width="1.5" />
+    <Position X="79.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAfAAAAAAAAAgAAAAAIAAAEBAAAAAAAAAAhQjAAAAA=</HashCode>
       <FileName>vColorHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::MatrixHelper" Collapsed="true">
-    <Position X="79.5" Y="1.5" Width="1.5" />
+    <Position X="82.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIgACAAAIAAAAQAAAAAAAEIgIIACAAA=</HashCode>
       <FileName>vMatrixHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::RenderStateHelper" Collapsed="true">
-    <Position X="81.25" Y="2.5" Width="1.5" />
+    <Position X="84.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAQAAAEEAEAEBBAAADAMAACABAQAAAAAAgACBABAA=</HashCode>
       <FileName>vRenderStateHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Vector2Helper" Collapsed="true">
-    <Position X="76" Y="4.5" Width="1.5" />
+    <Position X="79.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAQAAAAAAAAAgAAAAAIA=</HashCode>
       <FileName>vVectorHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Vector3Helper" Collapsed="true">
-    <Position X="77.75" Y="4.5" Width="1.5" />
+    <Position X="81" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAKAAAAAAAAEAAAAAAgAAQAAAAAACACgAAAAAII=</HashCode>
       <FileName>vVectorHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Vector4Helper" Collapsed="true">
-    <Position X="79.5" Y="4.5" Width="1.5" />
+    <Position X="82.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAEAAQAAAAAAAAAgAAAAAIA=</HashCode>
       <FileName>vVectorHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Effect" Collapsed="true">
-    <Position X="81.25" Y="0.5" Width="1.5" />
+    <Position X="81" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BACACICAAAgEAQgBAAAAACAACAIAAAAAAAQgAAhCgAA=</HashCode>
       <FileName>vEffect.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::FullScreenRenderTarget" Collapsed="true">
-    <Position X="76" Y="1.5" Width="1.5" />
+    <Position X="77.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAIAAQAAAAAAAAABAAAAAAAAAAAgEIAgAAAgAQQAAAA=</HashCode>
       <FileName>vFullScreenRenderTarget.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::FullScreenQuad" Collapsed="true">
-    <Position X="52" Y="4.75" Width="1.5" />
+    <Position X="16.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAACwKAAAAAAgAAAAAABAIMAAAgUCAAAAg=</HashCode>
       <FileName>vFullScreenQuad.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::GaussianBlur" Collapsed="true">
-    <Position X="54.25" Y="4.75" Width="1.5" />
+    <Position X="21" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAgAQAACuAABycAIAEAAAAACAAAAABgQAIwIBAIBAA=</HashCode>
       <FileName>vGaussianBlur.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Bloom" Collapsed="true">
-    <Position X="58.75" Y="4.75" Width="1.5" />
+    <Position X="25.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EQAEIAgCIoAQAyEAABABAAAAABAEACAEQCIwAAALAAA=</HashCode>
       <FileName>vBloom.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::DepthMap" Collapsed="true">
-    <Position X="25" Y="3.25" Width="1.5" />
+    <Position X="75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAIAAQAAAAAAAEABAAABAAAAAAAgEAAgAAAgAAAAAAA=</HashCode>
       <FileName>vDepthMap.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Pass" Collapsed="true">
-    <Position X="76" Y="2.5" Width="1.5" />
+    <Position X="79.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAABQAAAAJAAAAAgQAAAAAAAIEAAggAAAACAA=</HashCode>
       <FileName>vPass.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Mesh" Collapsed="true">
-    <Position X="81.25" Y="1.5" Width="1.5" />
+    <Position X="84.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAEgAEEGgIkIAAQADMAQAECADCAAoEQggAABAEBg=</HashCode>
+      <HashCode>EAAAAEgAEEGgIkIAAQADMAQAECADCBAoUQggAABAEBg=</HashCode>
       <FileName>vMesh.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::DistortionMapping" Collapsed="true">
-    <Position X="49.75" Y="4.75" Width="1.5" />
+    <Position X="14.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AGAEAECAAgAAAwECAAAAAAAgAAAAYAIACBIgoAAJAAA=</HashCode>
       <FileName>vDistortionMapping.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::DirectionalLight" Collapsed="true">
-    <Position X="27.25" Y="4.75" Width="1.5" />
+    <Position X="45.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQAAAAABAAAAAAAACAQAQAAAIAEAAAAAgCAAAAAAAI=</HashCode>
       <FileName>vDirectionalLight.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::PointLight" Collapsed="true">
-    <Position X="29.5" Y="4.75" Width="1.5" />
+    <Position X="48" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAABAgAACAQAAAAAAACgAAAAAAAACAAgA=</HashCode>
       <FileName>vPointLight.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::SpotLight" Collapsed="true">
-    <Position X="29.5" Y="6.25" Width="1.5" />
+    <Position X="48" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>JMQAAQAABAAAAAAAACIiIQAAAIAEAAAAAgCAAAAAAAI=</HashCode>
       <FileName>vSpotLight.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Material" Collapsed="true">
-    <Position X="12.5" Y="1.75" Width="1.5" />
+    <Position X="59.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AGAACAAAoAAEAQgAAAAAAAAICAEAAAAAAQAgAoAACAA=</HashCode>
       <FileName>vMaterial.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::FpsCounter" Collapsed="true">
-    <Position X="56.5" Y="4.75" Width="1.5" />
+    <Position X="18.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAQAAAAAAAAAAwAAAAAAQAAAAAAAIACAASAgAABggBA=</HashCode>
       <FileName>vFpsCounter.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Grid" Collapsed="true">
-    <Position X="61" Y="4.75" Width="1.5" />
+    <Position X="23.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gKgAAgAAAAAAgwAgAQIIAgAACAAACgIACCggkgAAAwg=</HashCode>
       <FileName>vGrid.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::ProxyModel" Collapsed="true">
-    <Position X="63.25" Y="4.75" Width="1.5" />
+    <Position X="27.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQAAAAADAAAAwIgACAAQwAACIAFAhEIAiCgACAAAgo=</HashCode>
       <FileName>vProxyModel.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::RenderableFrustum" Collapsed="true">
-    <Position X="45.25" Y="4.75" Width="1.5" />
+    <Position X="30" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AExAAAAABAAAAwIgACAAQwAAEIAEQ4AYAyCgEAQAAwo=</HashCode>
       <FileName>vRenderableFrustum.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Skybox" Collapsed="true">
-    <Position X="47.5" Y="4.75" Width="1.5" />
+    <Position X="32.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAwIAhAAAAAAACAAAAAEIACAgACAAAIg=</HashCode>
       <FileName>vSkybox.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Light" Collapsed="true">
-    <Position X="28.25" Y="3.25" Width="1.5" />
+    <Position X="47" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAACAAAAAAAAAAAAAAAAAAAgAgAAAAgA=</HashCode>
       <FileName>vLight.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::AudioFmod" Collapsed="true">
-    <Position X="34" Y="3.25" Width="1.5" />
+    <Position X="3" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgQAAAAAAAAAAAAAAAABAAABAACAAAAgAAAgAAAAAgA=</HashCode>
       <FileName>vAudioFmod.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Time" Collapsed="true">
-    <Position X="81.25" Y="3.5" Width="1.5" />
+    <Position X="84.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACBAAAAAAAAAEAAAAAAAAAAACAAAAEAAgAAAAAAAAQA=</HashCode>
       <FileName>vTime.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Camera" Collapsed="true">
-    <Position X="40.75" Y="3.25" Width="1.5" />
+    <Position X="7.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AGRCAAAAFACIBQIgQyAAQQAAEKMEAgACAgSgAQgAAwI=</HashCode>
       <FileName>vCamera.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::DrawableComponent" Collapsed="true">
-    <Position X="54.25" Y="3.25" Width="1.5" />
+    <Position X="23.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAIAgAAAAACIAAAAAAAAAQJAAAkAAAAAAA=</HashCode>
       <FileName>vDrawableComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::GamePad" Collapsed="true">
-    <Position X="65.5" Y="3.25" Width="1.5" />
+    <Position X="36.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>vGamePad.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Joystick" Collapsed="true">
-    <Position X="67.75" Y="3.25" Width="1.5" />
+    <Position X="39" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vJoystick.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Projector" Collapsed="true">
-    <Position X="70" Y="3.25" Width="1.5" />
+    <Position X="41.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EGRAAAAAFACIBQIwQyAAQQAAEKMEAgACAgSgAQgAAwI=</HashCode>
       <FileName>vProjector.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="vEngine::SceneNode" Collapsed="true">
+    <Position X="70.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABABAAEAAAAAAAAAEQAQAAAAAAAAIAEggAAQAAAA=</HashCode>
+      <FileName>vSceneNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="vEngine::AnimationClip" Collapsed="true">
+    <Position X="77.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQoIAQAAAAACAAAAEABAQAQAAAhIACCACAggAAEASAA=</HashCode>
+      <FileName>vAnimationClip.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="vEngine::AnimationPlayer" Collapsed="true">
+    <Position X="43.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQQAIAYAAAKgIAAIEEACABAhAFCEAEAAKAAgkAwAIAA=</HashCode>
+      <FileName>vAnimationPlayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="vEngine::BoundingSphere" Collapsed="true">
-    <Position X="74.25" Y="0.5" Width="1.5" />
+    <Position X="84.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAMAAAAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAIAAA=</HashCode>
       <FileName>vBoundingSphere.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::BufferContainer" Collapsed="true">
-    <Position X="76" Y="0.5" Width="1.5" />
+    <Position X="86.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAQAAiAAAAAAAAAAAAAAAIAAAAgAABAQEA=</HashCode>
       <FileName>vBufferContainer.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Frustum" Collapsed="true">
-    <Position X="74.25" Y="1.5" Width="1.5" />
+    <Position X="86.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>wCAAAgAAgAAAlAAAAAAUEEDAgAAsAAAACgCAAAAAAAA=</HashCode>
       <FileName>vFrustum.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Ray" Collapsed="true">
-    <Position X="79.5" Y="2.5" Width="1.5" />
+    <Position X="82.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAgACAAQAAAAIAAAgAAAgCAAAAAAgA=</HashCode>
       <FileName>vRay.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::RTTI" Collapsed="true">
-    <Position X="37.25" Y="0.5" Width="1.5" />
+    <Position X="39" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAABAwAAAAAAAAAAAAAA=</HashCode>
       <FileName>vRTTI.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Service" Collapsed="true">
-    <Position X="74.25" Y="3.5" Width="1.5" />
+    <Position X="77.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAgACAAAEQ=</HashCode>
       <FileName>vService.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Utility" Collapsed="true">
-    <Position X="72.5" Y="4.5" Width="1.5" />
+    <Position X="86.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEQCAAAAAAAAIAkAAAAAAAAQAAAABAAEAAgBAAAAAA=</HashCode>
       <FileName>vUtility.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="vEngine::Factory&lt;T&gt;" Collapsed="true">
+    <Position X="84.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAACAAAAAAAQBBAAAAAAIEEAAAAAAAAAAAAA=</HashCode>
+      <FileName>vFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="vEngine::BlendStates" Collapsed="true">
-    <Position X="72.5" Y="0.5" Width="1.5" />
+    <Position X="79.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAYAAACAAAAAAAAAAAAAAAAAgABAAAAA=</HashCode>
       <FileName>vBlendStates.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="vEngine::BoneVertexWeights" Collapsed="true">
+    <Position X="82.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACABAAAAAAAAAAACAEAAAAAAAAA=</HashCode>
+      <FileName>vBone.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="vEngine::Bone" Collapsed="true">
+    <Position X="70.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAACBAAAAEQAAAAAAAAAAAAgAEgAAAAAAA=</HashCode>
+      <FileName>vBone.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="vEngine::Clock" Collapsed="true">
-    <Position X="77.75" Y="0.5" Width="1.5" />
+    <Position X="77.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAQAAAAABAAgAAAIAAAAIAIEAAAAAAAggICAAgA=</HashCode>
       <FileName>vClock.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Component" Collapsed="true">
-    <Position X="48.5" Y="1.75" Width="1.5" />
+    <Position X="25.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAQgCAAEAAAAAYABAAAAAAAAAAAAAAAAAABgAAAAAIA=</HashCode>
       <FileName>vComponent.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Exception" Collapsed="true">
-    <Position X="72.5" Y="1.5" Width="1.5" />
+    <Position X="82.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAABAQAAAABAAAAAAAA=</HashCode>
       <FileName>vException.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Technique" Collapsed="true">
-    <Position X="79.5" Y="3.5" Width="1.5" />
+    <Position X="82.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAgCEAAAAAQAAAIAAAGABQACAAAAAIAAAggCAAAAAA=</HashCode>
       <FileName>vTechnique.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::RasterizerStates" Collapsed="true">
-    <Position X="77.75" Y="2.5" Width="1.5" />
+    <Position X="81" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAggAAAAAAAQAAAARAAAAAAAAAAAAAAABgABAAAAA=</HashCode>
       <FileName>vRasterizerStates.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::RenderTarget" Collapsed="true">
-    <Position X="23.75" Y="1.75" Width="1.5" />
+    <Position X="74" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgIAAAAAAAAAAAAAIAAAAAgAAAAAEAAAAAAgAAAAAAA=</HashCode>
       <FileName>vRenderTarget.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::SamplerStates" Collapsed="true">
-    <Position X="72.5" Y="3.5" Width="1.5" />
+    <Position X="86.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAEAACBAAAAAAAAQAiABAAAAg=</HashCode>
       <FileName>vSamplerStates.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="vEngine::Variable" Collapsed="true">
-    <Position X="74.25" Y="4.5" Width="1.5" />
+    <Position X="77.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAUAAAAAAAAAAACAABQACAAAAAAEAQwgAAAARAA=</HashCode>
       <FileName>vVariable.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="vEngine::BoneAnimation" Collapsed="true">
+    <Position X="81" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgBAAAAAAEAIAAQAARBAAAAIAAAAACAAAAgEAAAAAA=</HashCode>
+      <FileName>vBoneAnimation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="vEngine::Keyframe" Collapsed="true">
+    <Position X="79.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAACAwJAAAQAgAAACAEQAAAgAAAAAQQ=</HashCode>
+      <FileName>vKeyframe.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="DirectX::SpriteBatch" Collapsed="true">
-    <Position X="76" Y="3.5" Width="1.5" />
+    <Position X="79.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IIIAAAAAAAAAAgAAAAAAIAAAAAAAEAAAQAAkAAAAAAA=</HashCode>
       <FileName>c:\Users\PC_User\Desktop\vEngine 1b\External\DirectXTK\include\SpriteBatch.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DirectX::SpriteFont" Collapsed="true">
-    <Position X="77.75" Y="3.5" Width="1.5" />
+    <Position X="81" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IIAAIAAEABAAEQAAAQAAAAAAAARAAAAAACAgAAAAAAA=</HashCode>
       <FileName>c:\Users\PC_User\Desktop\vEngine 1b\External\DirectXTK\include\SpriteFont.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="vEngine::_VertexPosition" Collapsed="true">
-    <Position X="6.5" Y="21.5" Width="1.5" />
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_VertexPositionColor" Collapsed="true">
-    <Position X="2.5" Y="21.5" Width="1.5" />
+    <Position X="0.5" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_VertexPositionTexture" Collapsed="true">
-    <Position X="14.5" Y="16.25" Width="1.5" />
+    <Position X="12.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_VertexPositionSize" Collapsed="true">
-    <Position X="14.5" Y="11.25" Width="1.5" />
+    <Position X="12.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_VertexPositionNormal" Collapsed="true">
-    <Position X="10.5" Y="16.5" Width="1.5" />
+    <Position X="8.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAYAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_VertexPositionTextureNormal" Collapsed="true">
-    <Position X="6.5" Y="16.5" Width="1.5" />
+    <Position X="4.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAICAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_VertexSkinnedPositionTextureNormal" Collapsed="true">
-    <Position X="2.5" Y="16.5" Width="1.5" />
+    <Position X="8.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAAAAhAAAAIAAAAAAIABAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_BasicMaterialVertex" Collapsed="true">
-    <Position X="10.5" Y="11.5" Width="1.5" />
+    <Position X="0.5" Y="12.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_PostProcessingMaterialVertex" Collapsed="true">
-    <Position X="6.5" Y="11.5" Width="1.5" />
+    <Position X="4.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAMAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="vEngine::_BloomSettings" Collapsed="true">
-    <Position X="2.5" Y="11.5" Width="1.5" />
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAChAAAAgAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Typedef Name="vEngine::byte" Collapsed="true">
-    <Position X="72.5" Y="5.75" Width="1.5" />
+    <Position X="77.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vInclude.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::MouseButtons" Collapsed="true">
-    <Position X="18.5" Y="19.25" Width="1.5" />
+    <Position X="12.5" Y="18.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::TextureType" Collapsed="true">
-    <Position X="14.5" Y="19.25" Width="1.5" />
+    <Position X="16.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::FrustumPlane" Collapsed="true">
-    <Position X="18.5" Y="14.25" Width="1.5" />
+    <Position X="8.5" Y="18.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::DistortionTechnique" Collapsed="true">
-    <Position X="18.5" Y="9.25" Width="1.5" />
+    <Position X="16.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::BloomDrawMode" Collapsed="true">
-    <Position X="10.5" Y="19.5" Width="1.5" />
+    <Position X="4.5" Y="18.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::VertexPosition" Collapsed="true">
-    <Position X="6.5" Y="19.5" Width="1.5" />
+    <Position X="16.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::VertexPositionColor" Collapsed="true">
-    <Position X="2.5" Y="19.5" Width="1.5" />
+    <Position X="0.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::VertexPositionTexture" Collapsed="true">
-    <Position X="14.5" Y="14.25" Width="1.5" />
+    <Position X="12.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::VertexPositionSize" Collapsed="true">
-    <Position X="14.5" Y="9.25" Width="1.5" />
+    <Position X="12.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::VertexPositionNormal" Collapsed="true">
-    <Position X="10.5" Y="14.5" Width="1.5" />
+    <Position X="8.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::VertexPositionTextureNormal" Collapsed="true">
-    <Position X="6.5" Y="14.5" Width="1.5" />
+    <Position X="4.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::VertexSkinnedPositionTextureNormal" Collapsed="true">
-    <Position X="2.5" Y="14.5" Width="1.5" />
+    <Position X="8.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::BasicMaterialVertex" Collapsed="true">
-    <Position X="10.5" Y="9.5" Width="1.5" />
+    <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::PostProcessingMaterialVertex" Collapsed="true">
-    <Position X="6.5" Y="9.5" Width="1.5" />
+    <Position X="4.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="vEngine::BloomSettings" Collapsed="true">
-    <Position X="2.5" Y="9.5" Width="1.5" />
+    <Position X="0.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>vStructs.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Enum Name="vEngine::_MouseButtons" Collapsed="true">
-    <Position X="18.5" Y="21.25" Width="1.5" />
+    <Position X="12.5" Y="20.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAgACEAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="vEngine::_TextureType" Collapsed="true">
-    <Position X="14.5" Y="21.25" Width="1.5" />
+    <Position X="16.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACACBAIIAAQAAAAAIAAEABAAAAAIAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="vEngine::_FrustumPlane" Collapsed="true">
-    <Position X="18.5" Y="16.25" Width="1.5" />
+    <Position X="8.5" Y="20.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAADAAAAAQ=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="vEngine::_DistortionTechnique" Collapsed="true">
-    <Position X="18.5" Y="11.25" Width="1.5" />
+    <Position X="16.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="vEngine::_BloomDrawMode" Collapsed="true">
-    <Position X="10.5" Y="21.5" Width="1.5" />
+    <Position X="4.5" Y="20.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAgAAAAACAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>vEnums.h</FileName>
