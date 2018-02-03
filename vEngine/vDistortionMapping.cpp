@@ -90,7 +90,7 @@ namespace vEngine
 		mGame->Direct3DDeviceContext()->ClearDepthStencilView(mRenderTarget->DepthStencilView(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 	}
 
-	void DistortionMapping::DrawMeshToDistortionMap(Mesh& mesh, CXMMATRIX worldMatrix)
+	void DistortionMapping::DrawMeshToDistortionMap(Mesh& mesh, DirectX::CXMMATRIX worldMatrix)
 	{
 		assert(mesh.HasCachedVertexBuffer());
 		assert(mesh.HasCachedIndexBuffer());

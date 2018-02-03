@@ -13,7 +13,7 @@ namespace vEngine {
 		static ID3D11SamplerState* TrilinearMirror;
 		static ID3D11SamplerState* TrilinearClamp;
 		static ID3D11SamplerState* TrilinerBorder;
-		static XMVECTORF32 BorderColor;
+		static DirectX::XMVECTORF32 BorderColor;
 	public:
 		static void Initialize(ID3D11Device* direct3DDevice);
 		static void Release();

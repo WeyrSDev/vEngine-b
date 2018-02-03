@@ -19,7 +19,7 @@ namespace vEngine
 		mVertices.reserve(mesh.mNumVertices);
 		for (UINT i = 0; i < mesh.mNumVertices; i++)
 		{
-			mVertices.push_back(XMFLOAT3(reinterpret_cast<const float*>(&mesh.mVertices[i])));
+			mVertices.push_back(DirectX::XMFLOAT3(reinterpret_cast<const float*>(&mesh.mVertices[i])));
 		}
 
 		// Normals
@@ -28,7 +28,7 @@ namespace vEngine
 			mNormals.reserve(mesh.mNumVertices);
 			for (UINT i = 0; i < mesh.mNumVertices; i++)
 			{
-				mNormals.push_back(XMFLOAT3(reinterpret_cast<const float*>(&mesh.mNormals[i])));
+				mNormals.push_back(DirectX::XMFLOAT3(reinterpret_cast<const float*>(&mesh.mNormals[i])));
 			}
 		}
 
@@ -39,8 +39,8 @@ namespace vEngine
 			mBiNormals.reserve(mesh.mNumVertices);
 			for (UINT i = 0; i < mesh.mNumVertices; i++)
 			{
-				mTangents.push_back(XMFLOAT3(reinterpret_cast<const float*>(&mesh.mTangents[i])));
-				mBiNormals.push_back(XMFLOAT3(reinterpret_cast<const float*>(&mesh.mBitangents[i])));
+				mTangents.push_back(DirectX::XMFLOAT3(reinterpret_cast<const float*>(&mesh.mTangents[i])));
+				mBiNormals.push_back(DirectX::XMFLOAT3(reinterpret_cast<const float*>(&mesh.mBitangents[i])));
 			}
 		}
 
@@ -48,14 +48,14 @@ namespace vEngine
 		UINT uvChannelCount = mesh.GetNumUVChannels();
 		for (UINT i = 0; i < uvChannelCount; i++)
 		{
-			std::vector<XMFLOAT3>* textureCoordinates = new std::vector<XMFLOAT3>();
+			std::vector<DirectX::XMFLOAT3>* textureCoordinates = new std::vector<DirectX::XMFLOAT3>();
 			textureCoordinates->reserve(mesh.mNumVertices);
 			mTextureCoordinates.push_back(textureCoordinates);
 
 			aiVector3D* aiTextureCoordinates = mesh.mTextureCoords[i];
 			for (UINT j = 0; j < mesh.mNumVertices; j++)
 			{
-				textureCoordinates->push_back(XMFLOAT3(reinterpret_cast<const float*>(&aiTextureCoordinates[j])));
+				textureCoordinates->push_back(DirectX::XMFLOAT3(reinterpret_cast<const float*>(&aiTextureCoordinates[j])));
 			}
 		}
 
@@ -63,14 +63,14 @@ namespace vEngine
 		UINT colorChannelCount = mesh.GetNumColorChannels();
 		for (UINT i = 0; i < colorChannelCount; i++)
 		{
-			std::vector<XMFLOAT4>* vertexColors = new std::vector<XMFLOAT4>();
+			std::vector<DirectX::XMFLOAT4>* vertexColors = new std::vector<DirectX::XMFLOAT4>();
 			vertexColors->reserve(mesh.mNumVertices);
 			mVertexColors.push_back(vertexColors);
 
 			aiColor4D* aiVertexColors = mesh.mColors[i];
 			for (UINT j = 0; j < mesh.mNumVertices; j++)
 			{
-				vertexColors->push_back(XMFLOAT4(reinterpret_cast<const float*>(&aiVertexColors[j])));
+				vertexColors->push_back(DirectX::XMFLOAT4(reinterpret_cast<const float*>(&aiVertexColors[j])));
 			}
 		}
 
@@ -109,8 +109,8 @@ namespace vEngine
 				else
 				{
 					boneIndex = mModel.mBones.size();
-					XMMATRIX offsetMatrix = XMLoadFloat4x4(&(XMFLOAT4X4(reinterpret_cast<const float*>(meshBone->mOffsetMatrix[0]))));
-					XMFLOAT4X4 offset;
+					DirectX::XMMATRIX offsetMatrix = XMLoadFloat4x4(&(DirectX::XMFLOAT4X4(reinterpret_cast<const float*>(meshBone->mOffsetMatrix[0]))));
+					DirectX::XMFLOAT4X4 offset;
 					XMStoreFloat4x4(&offset, XMMatrixTranspose(offsetMatrix));
 
 					Bone* modelBone = new Bone(boneName, boneIndex, offset);
@@ -129,12 +129,12 @@ namespace vEngine
 
 	Mesh::~Mesh()
 	{
-		for (std::vector<XMFLOAT3>* textureCoordinates : mTextureCoordinates)
+		for (std::vector<DirectX::XMFLOAT3>* textureCoordinates : mTextureCoordinates)
 		{
 			delete textureCoordinates;
 		}
 
-		for (std::vector<XMFLOAT4>* vertexColors : mVertexColors)
+		for (std::vector<DirectX::XMFLOAT4>* vertexColors : mVertexColors)
 		{
 			delete vertexColors;
 		}
@@ -158,32 +158,32 @@ namespace vEngine
 		return mName;
 	}
 
-	const std::vector<XMFLOAT3>& Mesh::Vertices() const
+	const std::vector<DirectX::XMFLOAT3>& Mesh::Vertices() const
 	{
 		return mVertices;
 	}
 
-	const std::vector<XMFLOAT3>& Mesh::Normals() const
+	const std::vector<DirectX::XMFLOAT3>& Mesh::Normals() const
 	{
 		return mNormals;
 	}
 
-	const std::vector<XMFLOAT3>& Mesh::Tangents() const
+	const std::vector<DirectX::XMFLOAT3>& Mesh::Tangents() const
 	{
 		return mTangents;
 	}
 
-	const std::vector<XMFLOAT3>& Mesh::BiNormals() const
+	const std::vector<DirectX::XMFLOAT3>& Mesh::BiNormals() const
 	{
 		return mBiNormals;
 	}
 
-	const std::vector<std::vector<XMFLOAT3>*>& Mesh::TextureCoordinates() const
+	const std::vector<std::vector<DirectX::XMFLOAT3>*>& Mesh::TextureCoordinates() const
 	{
 		return mTextureCoordinates;
 	}
 
-	const std::vector<std::vector<XMFLOAT4>*>& Mesh::VertexColors() const
+	const std::vector<std::vector<DirectX::XMFLOAT4>*>& Mesh::VertexColors() const
 	{
 		return mVertexColors;
 	}

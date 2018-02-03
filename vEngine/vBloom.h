@@ -16,7 +16,6 @@ namespace vEngine {
 		Bloom(Engine& game, Camera& camera);
 		Bloom(Engine& game, Camera& camera, const BloomSettings& bloomSettings);
 		~Bloom();
-
 	public:
 		ID3D11ShaderResourceView* SceneTexture();
 		void SetSceneTexture(ID3D11ShaderResourceView& sceneTexture);

@@ -15,32 +15,32 @@ namespace vEngine {
 	{
 	}
 
-	const XMFLOAT3& SpotLight::Direction() const
+	const DirectX::XMFLOAT3& SpotLight::Direction() const
 	{
 		return mDirection;
 	}
 
-	const XMFLOAT3& SpotLight::Up() const
+	const DirectX::XMFLOAT3& SpotLight::Up() const
 	{
 		return mUp;
 	}
 
-	const XMFLOAT3& SpotLight::Right() const
+	const DirectX::XMFLOAT3& SpotLight::Right() const
 	{
 		return mRight;
 	}
 
-	XMVECTOR SpotLight::DirectionVector() const
+	DirectX::XMVECTOR SpotLight::DirectionVector() const
 	{
 		return XMLoadFloat3(&mDirection);
 	}
 
-	XMVECTOR SpotLight::UpVector() const
+	DirectX::XMVECTOR SpotLight::UpVector() const
 	{
 		return XMLoadFloat3(&mUp);
 	}
 
-	XMVECTOR SpotLight::RightVector() const
+	DirectX::XMVECTOR SpotLight::RightVector() const
 	{
 		return XMLoadFloat3(&mRight);
 	}
@@ -65,10 +65,10 @@ namespace vEngine {
 		mOuterAngle = value;
 	}
 
-	void SpotLight::ApplyRotation(CXMMATRIX transform)
+	void SpotLight::ApplyRotation(DirectX::CXMMATRIX transform)
 	{
-		XMVECTOR direction = XMLoadFloat3(&mDirection);
-		XMVECTOR up = XMLoadFloat3(&mUp);
+		DirectX::XMVECTOR direction = XMLoadFloat3(&mDirection);
+		DirectX::XMVECTOR up = XMLoadFloat3(&mUp);
 
 		direction = XMVector3TransformNormal(direction, transform);
 		direction = XMVector3Normalize(direction);
@@ -76,7 +76,7 @@ namespace vEngine {
 		up = XMVector3TransformNormal(up, transform);
 		up = XMVector3Normalize(up);
 
-		XMVECTOR right = XMVector3Cross(direction, up);
+		DirectX::XMVECTOR right = XMVector3Cross(direction, up);
 		up = XMVector3Cross(right, direction);
 
 		XMStoreFloat3(&mDirection, direction);
@@ -84,9 +84,9 @@ namespace vEngine {
 		XMStoreFloat3(&mRight, right);
 	}
 
-	void SpotLight::ApplyRotation(const XMFLOAT4X4& transform)
+	void SpotLight::ApplyRotation(const DirectX::XMFLOAT4X4& transform)
 	{
-		XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
+		DirectX::XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
 		ApplyRotation(transformMatrix);
 	}
 }

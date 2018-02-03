@@ -39,7 +39,7 @@ namespace vEngine {
 
 	void PerspectiveCamera::UpdateProjectionMatrix()
 	{
-		XMMATRIX projectionMatrix = XMMatrixPerspectiveFovRH(mFieldOfView, mAspectRatio, mNearPlaneDistance, mFarPlaneDistance);
+		DirectX::XMMATRIX projectionMatrix = XMMatrixPerspectiveFovRH(mFieldOfView, mAspectRatio, mNearPlaneDistance, mFarPlaneDistance);
 		XMStoreFloat4x4(&mProjectionMatrix, projectionMatrix);
 	}
 }

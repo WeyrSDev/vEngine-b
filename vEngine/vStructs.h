@@ -4,101 +4,115 @@
 namespace vEngine {
 	typedef struct _VertexPosition
 	{
-		XMFLOAT4 Position;
+		DirectX::XMFLOAT4 Position;
 
 		_VertexPosition() { }
 
-		_VertexPosition(const XMFLOAT4& position)
+		_VertexPosition(const DirectX::XMFLOAT4& position)
 			: Position(position) { }
 	} VertexPosition;
 
 	typedef struct _VertexPositionColor
 	{
-		XMFLOAT4 Position;
-		XMFLOAT4 Color;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT4 Color;
 
 		_VertexPositionColor() { }
 
-		_VertexPositionColor(const XMFLOAT4& position, const XMFLOAT4& color)
+		_VertexPositionColor(const DirectX::XMFLOAT4& position, const DirectX::XMFLOAT4& color)
 			: Position(position), Color(color) { }
 	} VertexPositionColor;
 
 	typedef struct _VertexPositionTexture
 	{
-		XMFLOAT4 Position;
-		XMFLOAT2 TextureCoordinates;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT2 TextureCoordinates;
 
 		_VertexPositionTexture() { }
 
-		_VertexPositionTexture(const XMFLOAT4& position, const XMFLOAT2& textureCoordinates)
+		_VertexPositionTexture(const DirectX::XMFLOAT4& position, const DirectX::XMFLOAT2& textureCoordinates)
 			: Position(position), TextureCoordinates(textureCoordinates) { }
 	} VertexPositionTexture;
 
 	typedef struct _VertexPositionSize
 	{
-		XMFLOAT4 Position;
-		XMFLOAT2 Size;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT2 Size;
 
 		_VertexPositionSize() { }
 
-		_VertexPositionSize(const XMFLOAT4& position, const XMFLOAT2& size)
+		_VertexPositionSize(const DirectX::XMFLOAT4& position, const DirectX::XMFLOAT2& size)
 			: Position(position), Size(size) { }
 	} VertexPositionSize;
 
 	typedef struct _VertexPositionNormal
 	{
-		XMFLOAT4 Position;
-		XMFLOAT3 Normal;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT3 Normal;
 
 		_VertexPositionNormal() { }
 
-		_VertexPositionNormal(const XMFLOAT4& position, const XMFLOAT3& normal)
+		_VertexPositionNormal(const DirectX::XMFLOAT4& position, const DirectX::XMFLOAT3& normal)
 			: Position(position), Normal(normal) { }
 	} VertexPositionNormal;
 
 	typedef struct _VertexPositionTextureNormal
 	{
-		XMFLOAT4 Position;
-		XMFLOAT2 TextureCoordinates;
-		XMFLOAT3 Normal;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT2 TextureCoordinates;
+		DirectX::XMFLOAT3 Normal;
 
 		_VertexPositionTextureNormal() { }
 
-		_VertexPositionTextureNormal(const XMFLOAT4& position, const XMFLOAT2& textureCoordinates, const XMFLOAT3& normal)
+		_VertexPositionTextureNormal(const DirectX::XMFLOAT4& position, const DirectX::XMFLOAT2& textureCoordinates, const DirectX::XMFLOAT3& normal)
 			: Position(position), TextureCoordinates(textureCoordinates), Normal(normal) { }
 	} VertexPositionTextureNormal;
 
 	typedef struct _VertexSkinnedPositionTextureNormal
 	{
-		XMFLOAT4 Position;
-		XMFLOAT2 TextureCoordinates;
-		XMFLOAT3 Normal;
-		XMUINT4 BoneIndices;
-		XMFLOAT4 BoneWeights;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT2 TextureCoordinates;
+		DirectX::XMFLOAT3 Normal;
+		DirectX::XMUINT4 BoneIndices;
+		DirectX::XMFLOAT4 BoneWeights;
 
 		_VertexSkinnedPositionTextureNormal() { }
 
-		_VertexSkinnedPositionTextureNormal(const XMFLOAT4& position, const XMFLOAT2& textureCoordinates, const XMFLOAT3& normal, const XMUINT4& boneIndices, const XMFLOAT4& boneWeights)
+		_VertexSkinnedPositionTextureNormal(const DirectX::XMFLOAT4& position, const DirectX::XMFLOAT2& textureCoordinates, const DirectX::XMFLOAT3& normal, const DirectX::XMUINT4& boneIndices, const DirectX::XMFLOAT4& boneWeights)
 			: Position(position), TextureCoordinates(textureCoordinates), Normal(normal), BoneIndices(boneIndices), BoneWeights(boneWeights) { }
 	} VertexSkinnedPositionTextureNormal;
 
+	struct VertexPositionTextureNormalTangent
+	{
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT2 TextureCoordinates;
+		DirectX::XMFLOAT3 Normal;
+		DirectX::XMFLOAT3 Tangent;
+
+		VertexPositionTextureNormalTangent() { }
+
+		VertexPositionTextureNormalTangent(const DirectX::XMFLOAT4& position, const DirectX::XMFLOAT2& textureCoordinates, const DirectX::XMFLOAT3& normal, const DirectX::XMFLOAT3& tangent)
+			: Position(position), TextureCoordinates(textureCoordinates), Normal(normal), Tangent(tangent) { }
+	};
+
+
 	typedef struct _BasicMaterialVertex
 	{
-		XMFLOAT4 Position;
-		XMFLOAT4 Color;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT4 Color;
 
 		_BasicMaterialVertex() { }
 
-		_BasicMaterialVertex(XMFLOAT4 position, XMFLOAT4 color)
+		_BasicMaterialVertex(DirectX::XMFLOAT4 position, DirectX::XMFLOAT4 color)
 			: Position(position), Color(color) { }
 	} BasicMaterialVertex;
 
 	typedef struct _PostProcessingMaterialVertex
 	{
-		XMFLOAT4 Position;
-		XMFLOAT2 TextureCoordinates;
+		DirectX::XMFLOAT4 Position;
+		DirectX::XMFLOAT2 TextureCoordinates;
 		_PostProcessingMaterialVertex() { }
-		_PostProcessingMaterialVertex(XMFLOAT4 position, XMFLOAT2 textureCoordinates)
+		_PostProcessingMaterialVertex(DirectX::XMFLOAT4 position, DirectX::XMFLOAT2 textureCoordinates)
 			: Position(position), TextureCoordinates(textureCoordinates) { }
 	} PostProcessingMaterialVertex;
 

@@ -39,7 +39,7 @@ namespace vEngine
 		return mCurrentKeyframe;
 	}
 
-	const std::vector<XMFLOAT4X4>& AnimationPlayer::BoneTransforms() const
+	const std::vector<DirectX::XMFLOAT4X4>& AnimationPlayer::BoneTransforms() const
 	{
 		return mFinalTransforms;
 	}
@@ -71,7 +71,7 @@ namespace vEngine
 		mCurrentKeyframe = 0;
 		mIsPlayingClip = true;
 
-		XMMATRIX inverseRootTransform = XMMatrixInverse(&XMMatrixDeterminant(mModel->RootNode()->TransformMatrix()), mModel->RootNode()->TransformMatrix());
+		DirectX::XMMATRIX inverseRootTransform = XMMatrixInverse(&XMMatrixDeterminant(mModel->RootNode()->TransformMatrix()), mModel->RootNode()->TransformMatrix());
 		XMStoreFloat4x4(&mInverseRootTransform, inverseRootTransform);
 		GetBindPose(*(mModel->RootNode()));
 	}
@@ -128,7 +128,7 @@ namespace vEngine
 
 	void AnimationPlayer::GetBindPoseBottomUp(SceneNode& sceneNode)
 	{
-		XMMATRIX toRootTransform = sceneNode.TransformMatrix();
+		DirectX::XMMATRIX toRootTransform = sceneNode.TransformMatrix();
 
 		SceneNode* parentNode = sceneNode.Parent();
 		while (parentNode != nullptr)
@@ -151,8 +151,8 @@ namespace vEngine
 
 	void AnimationPlayer::GetBindPose(SceneNode& sceneNode)
 	{
-		XMMATRIX toParentTransform = sceneNode.TransformMatrix();
-		XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? toParentTransform * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : toParentTransform);
+		DirectX::XMMATRIX toParentTransform = sceneNode.TransformMatrix();
+		DirectX::XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? toParentTransform * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : toParentTransform);
 		XMStoreFloat4x4(&(mToRootTransforms[&sceneNode]), toRootTransform);
 
 		Bone* bone = sceneNode.As<Bone>();
@@ -169,7 +169,7 @@ namespace vEngine
 
 	void AnimationPlayer::GetPose(float time, SceneNode& sceneNode)
 	{
-		XMFLOAT4X4 toParentTransform;
+		DirectX::XMFLOAT4X4 toParentTransform;
 		Bone* bone = sceneNode.As<Bone>();
 		if (bone != nullptr)
 		{
@@ -180,7 +180,7 @@ namespace vEngine
 			toParentTransform = sceneNode.Transform();
 		}
 
-		XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? XMLoadFloat4x4(&toParentTransform) * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : XMLoadFloat4x4(&toParentTransform));
+		DirectX::XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? XMLoadFloat4x4(&toParentTransform) * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : XMLoadFloat4x4(&toParentTransform));
 		XMStoreFloat4x4(&(mToRootTransforms[&sceneNode]), toRootTransform);
 
 		if (bone != nullptr)
@@ -196,7 +196,7 @@ namespace vEngine
 
 	void AnimationPlayer::GetPoseAtKeyframe(UINT keyframe, SceneNode& sceneNode)
 	{
-		XMFLOAT4X4 toParentTransform;
+		DirectX::XMFLOAT4X4 toParentTransform;
 		Bone* bone = sceneNode.As<Bone>();
 		if (bone != nullptr)
 		{
@@ -207,7 +207,7 @@ namespace vEngine
 			toParentTransform = sceneNode.Transform();
 		}
 
-		XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? XMLoadFloat4x4(&toParentTransform) * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : XMLoadFloat4x4(&toParentTransform));
+		DirectX::XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? XMLoadFloat4x4(&toParentTransform) * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : XMLoadFloat4x4(&toParentTransform));
 		XMStoreFloat4x4(&(mToRootTransforms[&sceneNode]), toRootTransform);
 
 		if (bone != nullptr)
@@ -223,7 +223,7 @@ namespace vEngine
 
 	void AnimationPlayer::GetInterpolatedPose(float time, SceneNode& sceneNode)
 	{
-		XMFLOAT4X4 toParentTransform;
+		DirectX::XMFLOAT4X4 toParentTransform;
 		Bone* bone = sceneNode.As<Bone>();
 		if (bone != nullptr)
 		{
@@ -234,7 +234,7 @@ namespace vEngine
 			toParentTransform = sceneNode.Transform();
 		}
 
-		XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? XMLoadFloat4x4(&toParentTransform) * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : XMLoadFloat4x4(&toParentTransform));
+		DirectX::XMMATRIX toRootTransform = (sceneNode.Parent() != nullptr ? XMLoadFloat4x4(&toParentTransform) * XMLoadFloat4x4(&(mToRootTransforms.at(sceneNode.Parent()))) : XMLoadFloat4x4(&toParentTransform));
 		XMStoreFloat4x4(&(mToRootTransforms[&sceneNode]), toRootTransform);
 
 		if (bone != nullptr)

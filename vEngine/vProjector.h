@@ -13,32 +13,32 @@ namespace vEngine {
 		Projector(const Projector& rhs);
 		Projector& operator=(const Projector& rhs);
 	public:
-		const XMFLOAT3& Position() const;
-		const XMFLOAT3& Direction() const;
-		const XMFLOAT3& Up() const;
-		const XMFLOAT3& Right() const;
-		XMVECTOR PositionVector() const;
-		XMVECTOR DirectionVector() const;
-		XMVECTOR UpVector() const;
-		XMVECTOR RightVector() const;
+		const DirectX::XMFLOAT3& Position() const;
+		const DirectX::XMFLOAT3& Direction() const;
+		const DirectX::XMFLOAT3& Up() const;
+		const DirectX::XMFLOAT3& Right() const;
+		DirectX::XMVECTOR PositionVector() const;
+		DirectX::XMVECTOR DirectionVector() const;
+		DirectX::XMVECTOR UpVector() const;
+		DirectX::XMVECTOR RightVector() const;
 		float AspectRatio() const;
 		float FieldOfView() const;
 		float NearPlaneDistance() const;
 		float FarPlaneDistance() const;
-		XMMATRIX ViewMatrix() const;
-		XMMATRIX ProjectionMatrix() const;
-		XMMATRIX ViewProjectionMatrix() const;
+		DirectX::XMMATRIX ViewMatrix() const;
+		DirectX::XMMATRIX ProjectionMatrix() const;
+		DirectX::XMMATRIX ViewProjectionMatrix() const;
 	public:
 		virtual void SetPosition(FLOAT x, FLOAT y, FLOAT z);
-		virtual void SetPosition(FXMVECTOR position);
-		virtual void SetPosition(const XMFLOAT3& position);
+		virtual void SetPosition(DirectX::FXMVECTOR position);
+		virtual void SetPosition(const DirectX::XMFLOAT3& position);
 		virtual void Reset();
 		virtual void Initialize() override;
 		virtual void Update(const Time& gameTime) override;
 		virtual void UpdateViewMatrix();
 		virtual void UpdateProjectionMatrix();
-		virtual void ApplyRotation(CXMMATRIX transform);
-		virtual void ApplyRotation(const XMFLOAT4X4& transform);
+		virtual void ApplyRotation(DirectX::CXMMATRIX transform);
+		virtual void ApplyRotation(const DirectX::XMFLOAT4X4& transform);
 	public:
 		static const float DefaultFieldOfView;
 		static const float DefaultAspectRatio;
@@ -49,12 +49,12 @@ namespace vEngine {
 		float mAspectRatio;
 		float mNearPlaneDistance;
 		float mFarPlaneDistance;
-		XMFLOAT3 mPosition;
-		XMFLOAT3 mDirection;
-		XMFLOAT3 mUp;
-		XMFLOAT3 mRight;
-		XMFLOAT4X4 mViewMatrix;
-		XMFLOAT4X4 mProjectionMatrix;
+		DirectX::XMFLOAT3 mPosition;
+		DirectX::XMFLOAT3 mDirection;
+		DirectX::XMFLOAT3 mUp;
+		DirectX::XMFLOAT3 mRight;
+		DirectX::XMFLOAT4X4 mViewMatrix;
+		DirectX::XMFLOAT4X4 mProjectionMatrix;
 	};
 }
 

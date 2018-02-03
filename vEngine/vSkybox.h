@@ -26,7 +26,7 @@ namespace vEngine {
 		ID3D11Buffer* mVertexBuffer;
 		ID3D11Buffer* mIndexBuffer;
 		UINT mIndexCount;
-		XMFLOAT4X4 mWorldMatrix;
-		XMFLOAT4X4 mScaleMatrix;
+		DirectX::XMFLOAT4X4 mWorldMatrix;
+		DirectX::XMFLOAT4X4 mScaleMatrix;
 	};
 }

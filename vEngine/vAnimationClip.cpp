@@ -73,7 +73,7 @@ namespace vEngine
 		return mKeyframeCount;
 	}
 
-	UINT AnimationClip::GetTransform(float time, Bone& bone, XMFLOAT4X4& transform) const
+	UINT AnimationClip::GetTransform(float time, Bone& bone, DirectX::XMFLOAT4X4& transform) const
 	{
 		auto foundBoneAnimation = mBoneAnimationsByBone.find(&bone);
 		if (foundBoneAnimation != mBoneAnimationsByBone.end())
@@ -87,7 +87,7 @@ namespace vEngine
 		}
 	}
 
-	void AnimationClip::GetTransforms(float time, std::vector<XMFLOAT4X4>& boneTransforms) const
+	void AnimationClip::GetTransforms(float time, std::vector<DirectX::XMFLOAT4X4>& boneTransforms) const
 	{
 		for (BoneAnimation* boneAnimation : mBoneAnimations)
 		{
@@ -95,7 +95,7 @@ namespace vEngine
 		}
 	}
 
-	void AnimationClip::GetTransformAtKeyframe(UINT keyframe, Bone& bone, XMFLOAT4X4& transform) const
+	void AnimationClip::GetTransformAtKeyframe(UINT keyframe, Bone& bone, DirectX::XMFLOAT4X4& transform) const
 	{
 		auto foundBoneAnimation = mBoneAnimationsByBone.find(&bone);
 		if (foundBoneAnimation != mBoneAnimationsByBone.end())
@@ -108,7 +108,7 @@ namespace vEngine
 		}
 	}
 
-	void AnimationClip::GetTransformsAtKeyframe(UINT keyframe, std::vector<XMFLOAT4X4>& boneTransforms) const
+	void AnimationClip::GetTransformsAtKeyframe(UINT keyframe, std::vector<DirectX::XMFLOAT4X4>& boneTransforms) const
 	{
 		for (BoneAnimation* boneAnimation : mBoneAnimations)
 		{
@@ -116,7 +116,7 @@ namespace vEngine
 		}
 	}
 
-	void AnimationClip::GetInteropolatedTransform(float time, Bone& bone, XMFLOAT4X4& transform) const
+	void AnimationClip::GetInteropolatedTransform(float time, Bone& bone, DirectX::XMFLOAT4X4& transform) const
 	{
 		auto foundBoneAnimation = mBoneAnimationsByBone.find(&bone);
 		if (foundBoneAnimation != mBoneAnimationsByBone.end())
@@ -129,7 +129,7 @@ namespace vEngine
 		}
 	}
 
-	void AnimationClip::GetInteropolatedTransforms(float time, std::vector<XMFLOAT4X4>& boneTransforms) const
+	void AnimationClip::GetInteropolatedTransforms(float time, std::vector<DirectX::XMFLOAT4X4>& boneTransforms) const
 	{
 		for (BoneAnimation* boneAnimation : mBoneAnimations)
 		{

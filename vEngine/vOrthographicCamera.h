@@ -9,8 +9,8 @@ namespace vEngine {
 		OrthographicCamera(Engine& game, float viewWidth, float viewHeight, float nearPlaneDistance, float farPlaneDistance);
 		virtual ~OrthographicCamera();
 	private:
-		OrthographicCamera(const OrthographicCamera & rhs);
-		OrthographicCamera& operator=(const OrthographicCamera & rhs);
+		OrthographicCamera(const OrthographicCamera& rhs);
+		OrthographicCamera& operator=(const OrthographicCamera& rhs);
 	public:
 		float ViewWidth() const;
 		void SetViewWidth(float viewWidth);

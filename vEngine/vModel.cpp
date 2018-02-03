@@ -168,7 +168,7 @@ namespace vEngine
 			sceneNode = mBones[boneMapping->second];
 		}
 
-		XMMATRIX transform = XMLoadFloat4x4(&(XMFLOAT4X4(reinterpret_cast<const float*>(node.mTransformation[0]))));
+		DirectX::XMMATRIX transform = XMLoadFloat4x4(&(DirectX::XMFLOAT4X4(reinterpret_cast<const float*>(node.mTransformation[0]))));
 		sceneNode->SetTransform(XMMatrixTranspose(transform));
 		sceneNode->SetParent(parentSceneNode);
 

@@ -44,8 +44,8 @@ namespace vEngine {
 		FullScreenRenderTarget* mHorizontalBlurTarget;
 		FullScreenRenderTarget* mVerticalBlurTarget;
 		FullScreenQuad* mFullScreenQuad;
-		std::vector<XMFLOAT2> mHorizontalSampleOffsets;
-		std::vector<XMFLOAT2> mVerticalSampleOffsets;
+		std::vector<DirectX::XMFLOAT2> mHorizontalSampleOffsets;
+		std::vector<DirectX::XMFLOAT2> mVerticalSampleOffsets;
 		std::vector<float> mSampleWeights;
 		float mBlurAmount;
 	};

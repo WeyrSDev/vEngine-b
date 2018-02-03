@@ -14,7 +14,7 @@ namespace vEngine {
 		Component(const Component& rhs);
 		Component& operator=(const Component& rhs);
 	public:
-		Engine * GetGame();
+		Engine* GetGame();
 		void SetGame(Engine& game);
 		bool Enabled() const;
 		void SetEnabled(bool enabled);

@@ -7,18 +7,18 @@ namespace vEngine
 	{
 	}
 
-	BoundingSphere::BoundingSphere(FXMVECTOR center, float radius)
+	BoundingSphere::BoundingSphere(DirectX::FXMVECTOR center, float radius)
 		: mCenter(), mRadius(radius)
 	{
 		XMStoreFloat3(&mCenter, center);
 	}
 
-	BoundingSphere::BoundingSphere(const XMFLOAT3& center, float radius)
+	BoundingSphere::BoundingSphere(const DirectX::XMFLOAT3& center, float radius)
 		: mCenter(center), mRadius(radius)
 	{
 	}
 
-	XMFLOAT3& BoundingSphere::Center()
+	DirectX::XMFLOAT3& BoundingSphere::Center()
 	{
 		return mCenter;
 	}

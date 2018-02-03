@@ -36,42 +36,42 @@ namespace vEngine {
 	{
 	}
 
-	const XMFLOAT3& Camera::Position() const
+	const DirectX::XMFLOAT3& Camera::Position() const
 	{
 		return mPosition;
 	}
 
-	const XMFLOAT3& Camera::Direction() const
+	const DirectX::XMFLOAT3& Camera::Direction() const
 	{
 		return mDirection;
 	}
 
-	const XMFLOAT3& Camera::Up() const
+	const DirectX::XMFLOAT3& Camera::Up() const
 	{
 		return mUp;
 	}
 
-	const XMFLOAT3& Camera::Right() const
+	const DirectX::XMFLOAT3& Camera::Right() const
 	{
 		return mRight;
 	}
 
-	XMVECTOR Camera::PositionVector() const
+	DirectX::XMVECTOR Camera::PositionVector() const
 	{
 		return XMLoadFloat3(&mPosition);
 	}
 
-	XMVECTOR Camera::DirectionVector() const
+	DirectX::XMVECTOR Camera::DirectionVector() const
 	{
 		return XMLoadFloat3(&mDirection);
 	}
 
-	XMVECTOR Camera::UpVector() const
+	DirectX::XMVECTOR Camera::UpVector() const
 	{
 		return XMLoadFloat3(&mUp);
 	}
 
-	XMVECTOR Camera::RightVector() const
+	DirectX::XMVECTOR Camera::RightVector() const
 	{
 		return XMLoadFloat3(&mRight);
 	}
@@ -96,36 +96,36 @@ namespace vEngine {
 		return mFarPlaneDistance;
 	}
 
-	XMMATRIX Camera::ViewMatrix() const
+	DirectX::XMMATRIX Camera::ViewMatrix() const
 	{
 		return XMLoadFloat4x4(&mViewMatrix);
 	}
 
-	XMMATRIX Camera::ProjectionMatrix() const
+	DirectX::XMMATRIX Camera::ProjectionMatrix() const
 	{
 		return XMLoadFloat4x4(&mProjectionMatrix);
 	}
 
-	XMMATRIX Camera::ViewProjectionMatrix() const
+	DirectX::XMMATRIX Camera::ViewProjectionMatrix() const
 	{
-		XMMATRIX viewMatrix = XMLoadFloat4x4(&mViewMatrix);
-		XMMATRIX projectionMatrix = XMLoadFloat4x4(&mProjectionMatrix);
+		DirectX::XMMATRIX viewMatrix = XMLoadFloat4x4(&mViewMatrix);
+		DirectX::XMMATRIX projectionMatrix = XMLoadFloat4x4(&mProjectionMatrix);
 
 		return XMMatrixMultiply(viewMatrix, projectionMatrix);
 	}
 
 	void Camera::SetPosition(FLOAT x, FLOAT y, FLOAT z)
 	{
-		XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
+		DirectX::XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
 		SetPosition(position);
 	}
 
-	void Camera::SetPosition(FXMVECTOR position)
+	void Camera::SetPosition(DirectX::FXMVECTOR position)
 	{
 		XMStoreFloat3(&mPosition, position);
 	}
 
-	void Camera::SetPosition(const XMFLOAT3& position)
+	void Camera::SetPosition(const DirectX::XMFLOAT3& position)
 	{
 		mPosition = position;
 	}
@@ -153,24 +153,24 @@ namespace vEngine {
 
 	void Camera::UpdateViewMatrix()
 	{
-		XMVECTOR eyePosition = XMLoadFloat3(&mPosition);
-		XMVECTOR direction = XMLoadFloat3(&mDirection);
-		XMVECTOR upDirection = XMLoadFloat3(&mUp);
+		DirectX::XMVECTOR eyePosition = XMLoadFloat3(&mPosition);
+		DirectX::XMVECTOR direction = XMLoadFloat3(&mDirection);
+		DirectX::XMVECTOR upDirection = XMLoadFloat3(&mUp);
 
-		XMMATRIX viewMatrix = XMMatrixLookToRH(eyePosition, direction, upDirection);
+		DirectX::XMMATRIX viewMatrix = XMMatrixLookToRH(eyePosition, direction, upDirection);
 		XMStoreFloat4x4(&mViewMatrix, viewMatrix);
 	}
 
 	void Camera::UpdateProjectionMatrix()
 	{
-		XMMATRIX projectionMatrix = XMMatrixPerspectiveFovRH(mFieldOfView, mAspectRatio, mNearPlaneDistance, mFarPlaneDistance);
+		DirectX::XMMATRIX projectionMatrix = XMMatrixPerspectiveFovRH(mFieldOfView, mAspectRatio, mNearPlaneDistance, mFarPlaneDistance);
 		XMStoreFloat4x4(&mProjectionMatrix, projectionMatrix);
 	}
 
-	void Camera::ApplyRotation(CXMMATRIX transform)
+	void Camera::ApplyRotation(DirectX::CXMMATRIX transform)
 	{
-		XMVECTOR direction = XMLoadFloat3(&mDirection);
-		XMVECTOR up = XMLoadFloat3(&mUp);
+		DirectX::XMVECTOR direction = XMLoadFloat3(&mDirection);
+		DirectX::XMVECTOR up = XMLoadFloat3(&mUp);
 
 		direction = XMVector3TransformNormal(direction, transform);
 		direction = XMVector3Normalize(direction);
@@ -178,7 +178,7 @@ namespace vEngine {
 		up = XMVector3TransformNormal(up, transform);
 		up = XMVector3Normalize(up);
 
-		XMVECTOR right = XMVector3Cross(direction, up);
+		DirectX::XMVECTOR right = XMVector3Cross(direction, up);
 		up = XMVector3Cross(right, direction);
 
 		XMStoreFloat3(&mDirection, direction);
@@ -186,9 +186,9 @@ namespace vEngine {
 		XMStoreFloat3(&mRight, right);
 	}
 
-	void Camera::ApplyRotation(const XMFLOAT4X4& transform)
+	void Camera::ApplyRotation(const DirectX::XMFLOAT4X4& transform)
 	{
-		XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
+		DirectX::XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
 		ApplyRotation(transformMatrix);
 	}
 

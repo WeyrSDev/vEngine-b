@@ -4,7 +4,7 @@
 
 namespace vEngine
 {
-	Keyframe::Keyframe(float time, const XMFLOAT3& translation, const XMFLOAT4& rotationQuaternion, const XMFLOAT3& scale)
+	Keyframe::Keyframe(float time, const DirectX::XMFLOAT3& translation, const DirectX::XMFLOAT4& rotationQuaternion, const DirectX::XMFLOAT3& scale)
 		: mTime(time), mTranslation(translation), mRotationQuaternion(rotationQuaternion), mScale(scale)
 	{
 	}
@@ -14,39 +14,39 @@ namespace vEngine
 		return mTime;
 	}
 
-	const XMFLOAT3& Keyframe::Translation() const
+	const DirectX::XMFLOAT3& Keyframe::Translation() const
 	{
 		return mTranslation;
 	}
 
-	const XMFLOAT4& Keyframe::RotationQuaternion() const
+	const DirectX::XMFLOAT4& Keyframe::RotationQuaternion() const
 	{
 		return mRotationQuaternion;
 	}
 
-	const XMFLOAT3& Keyframe::Scale() const
+	const DirectX::XMFLOAT3& Keyframe::Scale() const
 	{
 		return mScale;
 	}
 
-	XMVECTOR Keyframe::TranslationVector() const
+	DirectX::XMVECTOR Keyframe::TranslationVector() const
 	{
 		return XMLoadFloat3(&mTranslation);
 	}
 
-	XMVECTOR Keyframe::RotationQuaternionVector() const
+	DirectX::XMVECTOR Keyframe::RotationQuaternionVector() const
 	{
 		return XMLoadFloat4(&mRotationQuaternion);
 	}
 
-	XMVECTOR Keyframe::ScaleVector() const
+	DirectX::XMVECTOR Keyframe::ScaleVector() const
 	{
 		return XMLoadFloat3(&mScale);
 	}
 
-	XMMATRIX Keyframe::Transform() const
+	DirectX::XMMATRIX Keyframe::Transform() const
 	{
-		static XMVECTOR rotationOrigin = XMLoadFloat4(&Vector4Helper::Zero);
+		static DirectX::XMVECTOR rotationOrigin = XMLoadFloat4(&Vector4Helper::Zero);
 
 		return XMMatrixAffineTransformation(ScaleVector(), rotationOrigin, RotationQuaternionVector(), TranslationVector());
 	}

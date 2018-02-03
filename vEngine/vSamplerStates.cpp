@@ -7,7 +7,7 @@ namespace vEngine
 	ID3D11SamplerState* SamplerStates::TrilinearMirror = nullptr;
 	ID3D11SamplerState* SamplerStates::TrilinearClamp = nullptr;
 	ID3D11SamplerState* SamplerStates::TrilinerBorder = nullptr;
-	XMVECTORF32 SamplerStates::BorderColor = { 0.0f, 0.0f, 0.0f, 1.0f };
+	DirectX::XMVECTORF32 SamplerStates::BorderColor = { 0.0f, 0.0f, 0.0f, 1.0f };
 	void SamplerStates::Initialize(ID3D11Device* direct3DDevice)
 	{
 		assert(direct3DDevice != nullptr);

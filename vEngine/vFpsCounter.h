@@ -18,7 +18,7 @@ namespace vEngine {
 		FpsCounter(const FpsCounter& rhs);
 		FpsCounter& operator=(const FpsCounter& rhs);
 	public:
-		XMFLOAT2 & TextPosition();
+		DirectX::XMFLOAT2& TextPosition();
 		int FrameRate() const;
 		virtual void Initialize() override;
 		virtual void Update(const Time& gameTime) override;
@@ -26,7 +26,7 @@ namespace vEngine {
 	private:
 		SpriteBatch* mSpriteBatch;
 		SpriteFont* mSpriteFont;
-		XMFLOAT2 mTextPosition;
+		DirectX::XMFLOAT2 mTextPosition;
 		int mFrameCount;
 		int mFrameRate;
 		double mLastTotalElapsedTime;

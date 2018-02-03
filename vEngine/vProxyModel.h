@@ -15,20 +15,20 @@ namespace vEngine {
 		ProxyModel(const ProxyModel& rhs);
 		ProxyModel& operator=(const ProxyModel& rhs);
 	public:
-		const XMFLOAT3& Position() const;
-		const XMFLOAT3& Direction() const;
-		const XMFLOAT3& Up() const;
-		const XMFLOAT3& Right() const;
-		XMVECTOR PositionVector() const;
-		XMVECTOR DirectionVector() const;
-		XMVECTOR UpVector() const;
-		XMVECTOR RightVector() const;
+		const DirectX::XMFLOAT3& Position() const;
+		const DirectX::XMFLOAT3& Direction() const;
+		const DirectX::XMFLOAT3& Up() const;
+		const DirectX::XMFLOAT3& Right() const;
+		DirectX::XMVECTOR PositionVector() const;
+		DirectX::XMVECTOR DirectionVector() const;
+		DirectX::XMVECTOR UpVector() const;
+		DirectX::XMVECTOR RightVector() const;
 		bool& DisplayWireframe();
 		void SetPosition(FLOAT x, FLOAT y, FLOAT z);
-		void SetPosition(FXMVECTOR position);
-		void SetPosition(const XMFLOAT3& position);
-		void ApplyRotation(CXMMATRIX transform);
-		void ApplyRotation(const XMFLOAT4X4& transform);
+		void SetPosition(DirectX::FXMVECTOR position);
+		void SetPosition(const DirectX::XMFLOAT3& position);
+		void ApplyRotation(DirectX::CXMMATRIX transform);
+		void ApplyRotation(const DirectX::XMFLOAT4X4& transform);
 	public:
 		virtual void Initialize() override;
 		virtual void Update(const Time& gameTime) override;
@@ -40,12 +40,12 @@ namespace vEngine {
 		ID3D11Buffer* mVertexBuffer;
 		ID3D11Buffer* mIndexBuffer;
 		UINT mIndexCount;
-		XMFLOAT4X4 mWorldMatrix;
-		XMFLOAT4X4 mScaleMatrix;
+		DirectX::XMFLOAT4X4 mWorldMatrix;
+		DirectX::XMFLOAT4X4 mScaleMatrix;
 		bool mDisplayWireframe;
-		XMFLOAT3 mPosition;
-		XMFLOAT3 mDirection;
-		XMFLOAT3 mUp;
-		XMFLOAT3 mRight;
+		DirectX::XMFLOAT3 mPosition;
+		DirectX::XMFLOAT3 mDirection;
+		DirectX::XMFLOAT3 mUp;
+		DirectX::XMFLOAT3 mRight;
 	};
 }

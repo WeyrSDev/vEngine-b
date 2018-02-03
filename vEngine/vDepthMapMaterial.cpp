@@ -32,14 +32,14 @@ namespace vEngine
 
 	void DepthMapMaterial::CreateVertexBuffer(ID3D11Device* device, const Mesh& mesh, ID3D11Buffer** vertexBuffer) const
 	{
-		const std::vector<XMFLOAT3>& sourceVertices = mesh.Vertices();
+		const std::vector<DirectX::XMFLOAT3>& sourceVertices = mesh.Vertices();
 
 		std::vector<VertexPosition> vertices;
 		vertices.reserve(sourceVertices.size());
 		for (UINT i = 0; i < sourceVertices.size(); i++)
 		{
-			XMFLOAT3 position = sourceVertices.at(i);
-			vertices.push_back(VertexPosition(XMFLOAT4(position.x, position.y, position.z, 1.0f)));
+			DirectX::XMFLOAT3 position = sourceVertices.at(i);
+			vertices.push_back(VertexPosition(DirectX::XMFLOAT4(position.x, position.y, position.z, 1.0f)));
 		}
 		CreateVertexBuffer(device, &vertices[0], vertices.size(), vertexBuffer);
 	}

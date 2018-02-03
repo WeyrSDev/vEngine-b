@@ -9,17 +9,17 @@ namespace vEngine {
 		DirectionalLight(Engine& game);
 		virtual ~DirectionalLight();
 	public:
-		const XMFLOAT3& Direction() const;
-		const XMFLOAT3& Up() const;
-		const XMFLOAT3& Right() const;
-		XMVECTOR DirectionVector() const;
-		XMVECTOR UpVector() const;
-		XMVECTOR RightVector() const;
-		void ApplyRotation(CXMMATRIX transform);
-		void ApplyRotation(const XMFLOAT4X4& transform);
+		const DirectX::XMFLOAT3& Direction() const;
+		const DirectX::XMFLOAT3& Up() const;
+		const DirectX::XMFLOAT3& Right() const;
+		DirectX::XMVECTOR DirectionVector() const;
+		DirectX::XMVECTOR UpVector() const;
+		DirectX::XMVECTOR RightVector() const;
+		void ApplyRotation(DirectX::CXMMATRIX transform);
+		void ApplyRotation(const DirectX::XMFLOAT4X4& transform);
 	protected:
-		XMFLOAT3 mDirection;
-		XMFLOAT3 mUp;
-		XMFLOAT3 mRight;
+		DirectX::XMFLOAT3 mDirection;
+		DirectX::XMFLOAT3 mUp;
+		DirectX::XMFLOAT3 mRight;
 	};
 }

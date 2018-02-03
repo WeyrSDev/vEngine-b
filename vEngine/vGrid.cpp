@@ -13,7 +13,7 @@ namespace vEngine {
 	RTTI_DEFINITIONS(Grid)
 	const UINT Grid::DefaultSize = 16;
 	const UINT Grid::DefaultScale = 16;
-	const XMFLOAT4 Grid::DefaultColor = XMFLOAT4(0.961f, 0.871f, 0.702f, 1.0f);
+	const DirectX::XMFLOAT4 Grid::DefaultColor = DirectX::XMFLOAT4(0.961f, 0.871f, 0.702f, 1.0f);
 
 	Grid::Grid(Engine& game, Camera& camera)
 		: DrawableComponent(game), mEffect(nullptr), mTechnique(nullptr), mPass(nullptr), mWvpVariable(nullptr), mInputLayout(nullptr), mVertexBuffer(nullptr),
@@ -22,7 +22,7 @@ namespace vEngine {
 		mCamera = &camera;
 	}
 
-	Grid::Grid(Engine& game, Camera& camera, UINT size, UINT scale, XMFLOAT4 color)
+	Grid::Grid(Engine& game, Camera& camera, UINT size, UINT scale, DirectX::XMFLOAT4 color)
 		: DrawableComponent(game), mEffect(nullptr), mTechnique(nullptr), mPass(nullptr), mWvpVariable(nullptr), mInputLayout(nullptr), mVertexBuffer(nullptr),
 		mPosition(Vector3Helper::Zero), mSize(size), mScale(scale), mColor(color), mWorldMatrix(MatrixHelper::Identity)
 	{
@@ -39,12 +39,12 @@ namespace vEngine {
 		ReleaseObject(mVertexBuffer);
 	}
 
-	const XMFLOAT3& Grid::Position() const
+	const DirectX::XMFLOAT3& Grid::Position() const
 	{
 		return mPosition;
 	}
 
-	const XMFLOAT4& Grid::Color() const
+	const DirectX::XMFLOAT4& Grid::Color() const
 	{
 		return mColor;
 	}
@@ -59,11 +59,11 @@ namespace vEngine {
 		return mScale;
 	}
 
-	void Grid::SetPosition(const XMFLOAT3& position)
+	void Grid::SetPosition(const DirectX::XMFLOAT3& position)
 	{
 		mPosition = position;
 
-		XMMATRIX translation = XMMatrixTranslation(mPosition.x, mPosition.y, mPosition.z);
+		DirectX::XMMATRIX translation = XMMatrixTranslation(mPosition.x, mPosition.y, mPosition.z);
 		XMStoreFloat4x4(&mWorldMatrix, translation);
 	}
 
@@ -73,11 +73,11 @@ namespace vEngine {
 		mPosition.y = y;
 		mPosition.z = z;
 
-		XMMATRIX translation = XMMatrixTranslation(mPosition.x, mPosition.y, mPosition.z);
+		DirectX::XMMATRIX translation = XMMatrixTranslation(mPosition.x, mPosition.y, mPosition.z);
 		XMStoreFloat4x4(&mWorldMatrix, translation);
 	}
 
-	void Grid::SetColor(const XMFLOAT4& color)
+	void Grid::SetColor(const DirectX::XMFLOAT4& color)
 	{
 		mColor = color;
 		InitializeGrid();
@@ -161,8 +161,8 @@ namespace vEngine {
 		UINT offset = 0;
 		direct3DDeviceContext->IASetVertexBuffers(0, 1, &mVertexBuffer, &stride, &offset);
 
-		XMMATRIX world = XMLoadFloat4x4(&mWorldMatrix);
-		XMMATRIX wvp = world * mCamera->ViewMatrix() * mCamera->ProjectionMatrix();
+		DirectX::XMMATRIX world = XMLoadFloat4x4(&mWorldMatrix);
+		DirectX::XMMATRIX wvp = world * mCamera->ViewMatrix() * mCamera->ProjectionMatrix();
 		mWvpVariable->SetMatrix(reinterpret_cast<const float*>(&wvp));
 
 		mPass->Apply(0, direct3DDeviceContext);
@@ -188,12 +188,12 @@ namespace vEngine {
 			float position = maxPosition - (i * adjustedScale);
 
 			// Vertical line
-			vertices[j] = VertexPositionColor(XMFLOAT4(position, 0.0f, maxPosition, 1.0f), mColor);
-			vertices[j + 1] = VertexPositionColor(XMFLOAT4(position, 0.0f, -maxPosition, 1.0f), mColor);
+			vertices[j] = VertexPositionColor(DirectX::XMFLOAT4(position, 0.0f, maxPosition, 1.0f), mColor);
+			vertices[j + 1] = VertexPositionColor(DirectX::XMFLOAT4(position, 0.0f, -maxPosition, 1.0f), mColor);
 
 			// Horizontal line
-			vertices[j + 2] = VertexPositionColor(XMFLOAT4(maxPosition, 0.0f, position, 1.0f), mColor);
-			vertices[j + 3] = VertexPositionColor(XMFLOAT4(-maxPosition, 0.0f, position, 1.0f), mColor);
+			vertices[j + 2] = VertexPositionColor(DirectX::XMFLOAT4(maxPosition, 0.0f, position, 1.0f), mColor);
+			vertices[j + 3] = VertexPositionColor(DirectX::XMFLOAT4(-maxPosition, 0.0f, position, 1.0f), mColor);
 		}
 
 		D3D11_BUFFER_DESC vertexBufferDesc;

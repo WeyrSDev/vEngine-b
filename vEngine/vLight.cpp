@@ -12,28 +12,28 @@ namespace vEngine {
 	{
 	}
 
-	const XMCOLOR& Light::Color() const
+	const DirectX::PackedVector::XMCOLOR& Light::Color() const
 	{
 		return mColor;
 	}
 
-	XMVECTOR Light::ColorVector() const
+	DirectX::XMVECTOR Light::ColorVector() const
 	{
 		return XMLoadColor(&mColor);
 	}
 
 	void Light::SetColor(FLOAT r, FLOAT g, FLOAT b, FLOAT a)
 	{
-		XMCOLOR color(r, g, b, a);
+		DirectX::PackedVector::XMCOLOR color(r, g, b, a);
 		SetColor(color);
 	}
 
-	void Light::SetColor(XMCOLOR color)
+	void Light::SetColor(DirectX::PackedVector::XMCOLOR color)
 	{
 		mColor = color;
 	}
 
-	void Light::SetColor(FXMVECTOR color)
+	void Light::SetColor(DirectX::FXMVECTOR color)
 	{
 		XMStoreColor(&mColor, color);
 	}

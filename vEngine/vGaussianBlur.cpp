@@ -169,11 +169,11 @@ namespace vEngine
 			float horizontalOffset = horizontalPixelSize * sampleOffset;
 			float verticalOffset = verticalPixelSize * sampleOffset;
 
-			mHorizontalSampleOffsets[i * 2 + 1] = XMFLOAT2(horizontalOffset, 0.0f);
-			mHorizontalSampleOffsets[i * 2 + 2] = XMFLOAT2(-horizontalOffset, 0.0f);
+			mHorizontalSampleOffsets[i * 2 + 1] = DirectX::XMFLOAT2(horizontalOffset, 0.0f);
+			mHorizontalSampleOffsets[i * 2 + 2] = DirectX::XMFLOAT2(-horizontalOffset, 0.0f);
 
-			mVerticalSampleOffsets[i * 2 + 1] = XMFLOAT2(0.0f, verticalOffset);
-			mVerticalSampleOffsets[i * 2 + 2] = XMFLOAT2(0.0f, -verticalOffset);
+			mVerticalSampleOffsets[i * 2 + 1] = DirectX::XMFLOAT2(0.0f, verticalOffset);
+			mVerticalSampleOffsets[i * 2 + 2] = DirectX::XMFLOAT2(0.0f, -verticalOffset);
 		}
 	}
 

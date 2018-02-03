@@ -2,19 +2,19 @@
 
 
 namespace vEngine {
-	const XMFLOAT4X4 MatrixHelper::Identity = XMFLOAT4X4(1.0f, 0.0f, 0.0f, 0.0f,
+	const DirectX::XMFLOAT4X4 MatrixHelper::Identity = DirectX::XMFLOAT4X4(1.0f, 0.0f, 0.0f, 0.0f,
 		0.0f, 1.0f, 0.0f, 0.0f,
 		0.0f, 0.0f, 1.0f, 0.0f,
 		0.0f, 0.0f, 0.0f, 1.0f);
 
-	const XMFLOAT4X4 MatrixHelper::Zero = XMFLOAT4X4(0.0f, 0.0f, 0.0f, 0.0f,
+	const DirectX::XMFLOAT4X4 MatrixHelper::Zero = DirectX::XMFLOAT4X4(0.0f, 0.0f, 0.0f, 0.0f,
 		0.0f, 0.0f, 0.0f, 0.0f,
 		0.0f, 0.0f, 0.0f, 0.0f,
 		0.0f, 0.0f, 0.0f, 0.0f);
 
-	void MatrixHelper::GetForward(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetForward(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector)
 	{
-		XMFLOAT4 m3;
+		DirectX::XMFLOAT4 m3;
 		XMStoreFloat4(&m3, matrix.r[2]);
 
 		vector.x = -m3.x;
@@ -22,9 +22,9 @@ namespace vEngine {
 		vector.z = -m3.z;
 	}
 
-	void MatrixHelper::GetUp(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetUp(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector)
 	{
-		XMFLOAT4 m2;
+		DirectX::XMFLOAT4 m2;
 		XMStoreFloat4(&m2, matrix.r[1]);
 
 		vector.x = m2.x;
@@ -32,9 +32,9 @@ namespace vEngine {
 		vector.z = m2.z;
 	}
 
-	void MatrixHelper::GetRight(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetRight(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector)
 	{
-		XMFLOAT4 m1;
+		DirectX::XMFLOAT4 m1;
 		XMStoreFloat4(&m1, matrix.r[0]);
 
 		vector.x = m1.x;
@@ -42,9 +42,9 @@ namespace vEngine {
 		vector.z = m1.z;
 	}
 
-	void MatrixHelper::GetTranslation(CXMMATRIX matrix, XMFLOAT3 &vector)
+	void MatrixHelper::GetTranslation(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector)
 	{
-		XMFLOAT4 m4;
+		DirectX::XMFLOAT4 m4;
 		XMStoreFloat4(&m4, matrix.r[3]);
 
 		vector.x = m4.x;
@@ -52,9 +52,9 @@ namespace vEngine {
 		vector.z = m4.z;
 	}
 
-	void MatrixHelper::SetForward(XMMATRIX& matrix, XMFLOAT3 &forward)
+	void MatrixHelper::SetForward(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &forward)
 	{
-		XMFLOAT4 m3;
+		DirectX::XMFLOAT4 m3;
 		XMStoreFloat4(&m3, matrix.r[2]);
 
 		m3.x = -forward.x;
@@ -64,9 +64,9 @@ namespace vEngine {
 		matrix.r[2] = XMLoadFloat4(&m3);
 	}
 
-	void MatrixHelper::SetUp(XMMATRIX& matrix, XMFLOAT3 &up)
+	void MatrixHelper::SetUp(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &up)
 	{
-		XMFLOAT4 m2;
+		DirectX::XMFLOAT4 m2;
 		XMStoreFloat4(&m2, matrix.r[1]);
 
 		m2.x = up.x;
@@ -76,9 +76,9 @@ namespace vEngine {
 		matrix.r[1] = XMLoadFloat4(&m2);
 	}
 
-	void MatrixHelper::SetRight(XMMATRIX& matrix, XMFLOAT3 &right)
+	void MatrixHelper::SetRight(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &right)
 	{
-		XMFLOAT4 m1;
+		DirectX::XMFLOAT4 m1;
 		XMStoreFloat4(&m1, matrix.r[0]);
 
 		m1.x = right.x;
@@ -88,9 +88,9 @@ namespace vEngine {
 		matrix.r[0] = XMLoadFloat4(&m1);
 	}
 
-	void MatrixHelper::SetTranslation(XMMATRIX& matrix, XMFLOAT3 &translation)
+	void MatrixHelper::SetTranslation(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &translation)
 	{
-		XMFLOAT4 m4;
+		DirectX::XMFLOAT4 m4;
 		XMStoreFloat4(&m4, matrix.r[3]);
 
 		m4.x = translation.x;

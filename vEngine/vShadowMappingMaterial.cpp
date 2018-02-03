@@ -63,20 +63,20 @@ namespace vEngine
 
 	void ShadowMappingMaterial::CreateVertexBuffer(ID3D11Device* device, const Mesh& mesh, ID3D11Buffer** vertexBuffer) const
 	{
-		const std::vector<XMFLOAT3>& sourceVertices = mesh.Vertices();
-		std::vector<XMFLOAT3>* textureCoordinates = mesh.TextureCoordinates().at(0);
+		const std::vector<DirectX::XMFLOAT3>& sourceVertices = mesh.Vertices();
+		std::vector<DirectX::XMFLOAT3>* textureCoordinates = mesh.TextureCoordinates().at(0);
 		assert(textureCoordinates->size() == sourceVertices.size());
-		const std::vector<XMFLOAT3>& normals = mesh.Normals();
+		const std::vector<DirectX::XMFLOAT3>& normals = mesh.Normals();
 		assert(textureCoordinates->size() == sourceVertices.size());
 
 		std::vector<VertexPositionTextureNormal> vertices;
 		vertices.reserve(sourceVertices.size());
 		for (UINT i = 0; i < sourceVertices.size(); i++)
 		{
-			XMFLOAT3 position = sourceVertices.at(i);
-			XMFLOAT3 uv = textureCoordinates->at(i);
-			XMFLOAT3 normal = normals.at(i);
-			vertices.push_back(VertexPositionTextureNormal(XMFLOAT4(position.x, position.y, position.z, 1.0f), XMFLOAT2(uv.x, uv.y), normal));
+			DirectX::XMFLOAT3 position = sourceVertices.at(i);
+			DirectX::XMFLOAT3 uv = textureCoordinates->at(i);
+			DirectX::XMFLOAT3 normal = normals.at(i);
+			vertices.push_back(VertexPositionTextureNormal(DirectX::XMFLOAT4(position.x, position.y, position.z, 1.0f), DirectX::XMFLOAT2(uv.x, uv.y), normal));
 		}
 
 		CreateVertexBuffer(device, &vertices[0], vertices.size(), vertexBuffer);

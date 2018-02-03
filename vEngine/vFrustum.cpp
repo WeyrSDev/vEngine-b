@@ -4,90 +4,90 @@
 
 namespace vEngine
 {
-	Frustum::Frustum(CXMMATRIX matrix)
+	Frustum::Frustum(DirectX::CXMMATRIX matrix)
 		: mMatrix(), mCorners(), mPlanes()
 	{
 		SetMatrix(matrix);
 	}
 
-	const XMFLOAT4& Frustum::Near() const
+	const DirectX::XMFLOAT4& Frustum::Near() const
 	{
 		return mPlanes[FrustumPlaneNear];
 	}
 
-	const XMFLOAT4& Frustum::Far() const
+	const DirectX::XMFLOAT4& Frustum::Far() const
 	{
 		return mPlanes[FrustumPlaneFar];
 	}
 
-	const XMFLOAT4& Frustum::Left() const
+	const DirectX::XMFLOAT4& Frustum::Left() const
 	{
 		return mPlanes[FrustumPlaneLeft];
 	}
 
-	const XMFLOAT4& Frustum::Right() const
+	const DirectX::XMFLOAT4& Frustum::Right() const
 	{
 		return mPlanes[FrustumPlaneRight];
 	}
 
-	const XMFLOAT4& Frustum::Top() const
+	const DirectX::XMFLOAT4& Frustum::Top() const
 	{
 		return mPlanes[FrustumPlaneTop];
 	}
 
-	const XMFLOAT4& Frustum::Bottom() const
+	const DirectX::XMFLOAT4& Frustum::Bottom() const
 	{
 		return mPlanes[FrustumPlaneBottom];
 	}
 
-	XMVECTOR Frustum::NearVector() const
+	DirectX::XMVECTOR Frustum::NearVector() const
 	{
 		return XMLoadFloat4(&mPlanes[FrustumPlaneNear]);
 	}
 
-	XMVECTOR Frustum::FarVector() const
+	DirectX::XMVECTOR Frustum::FarVector() const
 	{
 		return XMLoadFloat4(&mPlanes[FrustumPlaneFar]);
 	}
 
-	XMVECTOR Frustum::LeftVector() const
+	DirectX::XMVECTOR Frustum::LeftVector() const
 	{
 		return XMLoadFloat4(&mPlanes[FrustumPlaneLeft]);
 	}
 
-	XMVECTOR Frustum::RightVector() const
+	DirectX::XMVECTOR Frustum::RightVector() const
 	{
 		return XMLoadFloat4(&mPlanes[FrustumPlaneRight]);
 	}
 
-	XMVECTOR Frustum::TopVector() const
+	DirectX::XMVECTOR Frustum::TopVector() const
 	{
 		return XMLoadFloat4(&mPlanes[FrustumPlaneTop]);
 	}
 
-	XMVECTOR Frustum::BottomVector() const
+	DirectX::XMVECTOR Frustum::BottomVector() const
 	{
 		return XMLoadFloat4(&mPlanes[FrustumPlaneBottom]);
 	}
 
-	const XMFLOAT3* Frustum::Corners() const
+	const DirectX::XMFLOAT3* Frustum::Corners() const
 	{
 		return mCorners;
 	}
 
-	XMMATRIX Frustum::Matrix() const
+	DirectX::XMMATRIX Frustum::Matrix() const
 	{
 		return XMLoadFloat4x4(&mMatrix);
 	}
 
-	void Frustum::SetMatrix(CXMMATRIX matrix)
+	void Frustum::SetMatrix(DirectX::CXMMATRIX matrix)
 	{
-		XMFLOAT4X4 m;
+		DirectX::XMFLOAT4X4 m;
 		XMStoreFloat4x4(&m, matrix);
 		SetMatrix(m);
 	}
 
-	void Frustum::SetMatrix(const XMFLOAT4X4& matrix)
+	void Frustum::SetMatrix(const DirectX::XMFLOAT4X4& matrix)
 	{
 		mMatrix = matrix;
 
@@ -123,8 +123,8 @@ namespace vEngine
 
 		for (int i = 0; i < 6; i++)
 		{
-			XMVECTOR vector = XMVectorSet(mPlanes[i].x, mPlanes[i].y, mPlanes[i].z, mPlanes[i].w);
-			XMVECTOR length = XMVector3Length(vector);
+			DirectX::XMVECTOR vector = XMVectorSet(mPlanes[i].x, mPlanes[i].y, mPlanes[i].z, mPlanes[i].w);
+			DirectX::XMVECTOR length = XMVector3Length(vector);
 
 			XMStoreFloat4(&mPlanes[i], XMVectorDivide(vector, length));
 		}
@@ -146,16 +146,16 @@ namespace vEngine
 		XMStoreFloat3(&mCorners[6], ComputeIntersection(XMLoadFloat4(&mPlanes[5]), ray));
 	}
 
-	Ray Frustum::ComputeIntersectionLine(FXMVECTOR p1, FXMVECTOR p2)
+	Ray Frustum::ComputeIntersectionLine(DirectX::FXMVECTOR p1, DirectX::FXMVECTOR p2)
 	{
-		XMVECTOR direction = XMVector3Cross(p1, p2);
-		XMVECTOR lengthSquared = XMVector3LengthSq(direction);
-		XMVECTOR position = XMVector3Cross((-XMVectorGetW(p1) * p2) + (XMVectorGetW(p2) * p1), direction) / lengthSquared;
+		DirectX::XMVECTOR direction = XMVector3Cross(p1, p2);
+		DirectX::XMVECTOR lengthSquared = XMVector3LengthSq(direction);
+		DirectX::XMVECTOR position = XMVector3Cross((-XMVectorGetW(p1) * p2) + (XMVectorGetW(p2) * p1), direction) / lengthSquared;
 
 		return Ray(position, direction);
 	}
 
-	XMVECTOR Frustum::ComputeIntersection(FXMVECTOR& plane, Ray& ray)
+	DirectX::XMVECTOR Frustum::ComputeIntersection(DirectX::FXMVECTOR& plane, Ray& ray)
 	{
 		float value = (-XMVectorGetW(plane) - XMVectorGetX(XMVector3Dot(plane, ray.PositionVector()))) / XMVectorGetX(XMVector3Dot(plane, ray.DirectionVector()));
 

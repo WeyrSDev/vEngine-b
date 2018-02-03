@@ -59,10 +59,10 @@ namespace vEngine
 
 	void SkinnedModelMaterial::CreateVertexBuffer(ID3D11Device* device, const Mesh& mesh, ID3D11Buffer** vertexBuffer) const
 	{
-		const std::vector<XMFLOAT3>& sourceVertices = mesh.Vertices();
-		std::vector<XMFLOAT3>* textureCoordinates = mesh.TextureCoordinates().at(0);
+		const std::vector<DirectX::XMFLOAT3>& sourceVertices = mesh.Vertices();
+		std::vector<DirectX::XMFLOAT3>* textureCoordinates = mesh.TextureCoordinates().at(0);
 		assert(textureCoordinates->size() == sourceVertices.size());
-		const std::vector<XMFLOAT3>& normals = mesh.Normals();
+		const std::vector<DirectX::XMFLOAT3>& normals = mesh.Normals();
 		assert(normals.size() == sourceVertices.size());
 		const std::vector<BoneVertexWeights>& boneWeights = mesh.BoneWeights();
 		assert(boneWeights.size() == sourceVertices.size());
@@ -71,9 +71,9 @@ namespace vEngine
 		vertices.reserve(sourceVertices.size());
 		for (UINT i = 0; i < sourceVertices.size(); i++)
 		{
-			XMFLOAT3 position = sourceVertices.at(i);
-			XMFLOAT3 uv = textureCoordinates->at(i);
-			XMFLOAT3 normal = normals.at(i);
+			DirectX::XMFLOAT3 position = sourceVertices.at(i);
+			DirectX::XMFLOAT3 uv = textureCoordinates->at(i);
+			DirectX::XMFLOAT3 normal = normals.at(i);
 			BoneVertexWeights vertexWeights = boneWeights.at(i);
 
 			float weights[BoneVertexWeights::MaxBoneWeightsPerVertex];
@@ -87,7 +87,7 @@ namespace vEngine
 				indices[i] = vertexWeight.BoneIndex;
 			}
 
-			vertices.push_back(VertexSkinnedPositionTextureNormal(XMFLOAT4(position.x, position.y, position.z, 1.0f), XMFLOAT2(uv.x, uv.y), normal, XMUINT4(indices), XMFLOAT4(weights)));
+			vertices.push_back(VertexSkinnedPositionTextureNormal(DirectX::XMFLOAT4(position.x, position.y, position.z, 1.0f), DirectX::XMFLOAT2(uv.x, uv.y), normal, DirectX::XMUINT4(indices), DirectX::XMFLOAT4(weights)));
 		}
 
 		CreateVertexBuffer(device, &vertices[0], vertices.size(), vertexBuffer);

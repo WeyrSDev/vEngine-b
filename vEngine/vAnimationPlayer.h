@@ -6,7 +6,7 @@ namespace vEngine {
 	class Model;
 	class SceneNode;
 	class AnimationClip;
-	class AnimationPlayer : public Component 	{
+	class AnimationPlayer : public Component {
 		RTTI_DECLARATIONS(AnimationPlayer, Component)
 	public:
 		AnimationPlayer(Engine& game, Model& model, bool interpolationEnabled = true);
@@ -19,7 +19,7 @@ namespace vEngine {
 		const AnimationClip* CurrentClip() const;
 		float CurrentTime() const;
 		UINT CurrentKeyframe() const;
-		const std::vector<XMFLOAT4X4>& BoneTransforms() const;
+		const std::vector<DirectX::XMFLOAT4X4>& BoneTransforms() const;
 		bool InterpolationEnabled() const;
 		bool IsPlayingClip() const;
 		bool IsClipLooped() const;
@@ -41,9 +41,9 @@ namespace vEngine {
 		AnimationClip* mCurrentClip;
 		float mCurrentTime;
 		UINT mCurrentKeyframe;
-		std::map<SceneNode*, XMFLOAT4X4> mToRootTransforms;
-		std::vector<XMFLOAT4X4> mFinalTransforms;
-		XMFLOAT4X4 mInverseRootTransform;
+		std::map<SceneNode*, DirectX::XMFLOAT4X4> mToRootTransforms;
+		std::vector<DirectX::XMFLOAT4X4> mFinalTransforms;
+		DirectX::XMFLOAT4X4 mInverseRootTransform;
 		bool mInterpolationEnabled;
 		bool mIsPlayingClip;
 		bool mIsClipLooped;

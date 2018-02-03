@@ -26,7 +26,7 @@ namespace vEngine {
 		void SetSceneTexture(ID3D11ShaderResourceView& sceneTexture);
 		DistortionMappingMaterial* GetMaterial();
 		void BeginDistortionMap();
-		void DrawMeshToDistortionMap(Mesh& mesh, CXMMATRIX worldMatrix);
+		void DrawMeshToDistortionMap(Mesh& mesh, DirectX::CXMMATRIX worldMatrix);
 		void EndDistortionMap();
 	public:
 		virtual void Initialize() override;

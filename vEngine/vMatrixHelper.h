@@ -8,16 +8,16 @@ namespace vEngine {
 		MatrixHelper(const MatrixHelper& rhs);
 		MatrixHelper& operator=(const MatrixHelper& rhs);
 	public:
-		static const XMFLOAT4X4 Identity;
-		static const XMFLOAT4X4 Zero;
+		static const DirectX::XMFLOAT4X4 Identity;
+		static const DirectX::XMFLOAT4X4 Zero;
 	public:
-		static void GetForward(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void GetUp(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void GetRight(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void GetTranslation(CXMMATRIX matrix, XMFLOAT3 &vector);
-		static void SetForward(XMMATRIX& matrix, XMFLOAT3 &forward);
-		static void SetUp(XMMATRIX& matrix, XMFLOAT3 &up);
-		static void SetRight(XMMATRIX& matrix, XMFLOAT3 &right);
-		static void SetTranslation(XMMATRIX& matrix, XMFLOAT3 &translation);
+		static void GetForward(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector);
+		static void GetUp(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector);
+		static void GetRight(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector);
+		static void GetTranslation(DirectX::CXMMATRIX matrix, DirectX::XMFLOAT3 &vector);
+		static void SetForward(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &forward);
+		static void SetUp(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &up);
+		static void SetRight(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &right);
+		static void SetTranslation(DirectX::XMMATRIX& matrix, DirectX::XMFLOAT3 &translation);
 	};
 }

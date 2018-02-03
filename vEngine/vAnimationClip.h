@@ -23,12 +23,12 @@ namespace vEngine {
 		const std::vector<BoneAnimation*>& BoneAnimations() const;
 		const std::map<Bone*, BoneAnimation*>& BoneAnimationsByBone() const;
 		const UINT KeyframeCount() const;
-		UINT GetTransform(float time, Bone& bone, XMFLOAT4X4& transform) const;
-		void GetTransforms(float time, std::vector<XMFLOAT4X4>& boneTransforms) const;
-		void GetTransformAtKeyframe(UINT keyframe, Bone& bone, XMFLOAT4X4& transform) const;
-		void GetTransformsAtKeyframe(UINT keyframe, std::vector<XMFLOAT4X4>& boneTransforms) const;
-		void GetInteropolatedTransform(float time, Bone& bone, XMFLOAT4X4& transform) const;
-		void GetInteropolatedTransforms(float time, std::vector<XMFLOAT4X4>& boneTransforms) const;
+		UINT GetTransform(float time, Bone& bone, DirectX::XMFLOAT4X4& transform) const;
+		void GetTransforms(float time, std::vector<DirectX::XMFLOAT4X4>& boneTransforms) const;
+		void GetTransformAtKeyframe(UINT keyframe, Bone& bone, DirectX::XMFLOAT4X4& transform) const;
+		void GetTransformsAtKeyframe(UINT keyframe, std::vector<DirectX::XMFLOAT4X4>& boneTransforms) const;
+		void GetInteropolatedTransform(float time, Bone& bone, DirectX::XMFLOAT4X4& transform) const;
+		void GetInteropolatedTransforms(float time, std::vector<DirectX::XMFLOAT4X4>& boneTransforms) const;
 	private:
 		std::string mName;
 		float mDuration;

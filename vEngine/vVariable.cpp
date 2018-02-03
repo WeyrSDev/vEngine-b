@@ -41,7 +41,7 @@ namespace vEngine {
 		return mName;
 	}
 
-	Variable& Variable::operator<<(CXMMATRIX value)
+	Variable& Variable::operator<<(DirectX::CXMMATRIX value)
 	{
 		ID3DX11EffectMatrixVariable* variable = mVariable->AsMatrix();
 		if (variable->IsValid() == false)
@@ -67,7 +67,7 @@ namespace vEngine {
 		return *this;
 	}
 
-	Variable& Variable::operator<<(FXMVECTOR value)
+	Variable& Variable::operator<<(DirectX::FXMVECTOR value)
 	{
 		ID3DX11EffectVectorVariable* variable = mVariable->AsVector();
 		if (variable->IsValid() == false)
@@ -106,7 +106,7 @@ namespace vEngine {
 		return *this;
 	}
 
-	Variable& Variable::operator<<(const std::vector<XMFLOAT2>& values)
+	Variable& Variable::operator<<(const std::vector<DirectX::XMFLOAT2>& values)
 	{
 		ID3DX11EffectVectorVariable* variable = mVariable->AsVector();
 		if (variable->IsValid() == false)
@@ -119,7 +119,7 @@ namespace vEngine {
 		return *this;
 	}
 
-	Variable& Variable::operator<<(const std::vector<XMFLOAT4X4>& values)
+	Variable& Variable::operator<<(const std::vector<DirectX::XMFLOAT4X4>& values)
 	{
 		ID3DX11EffectMatrixVariable* variable = mVariable->AsMatrix();
 		if (variable->IsValid() == false)

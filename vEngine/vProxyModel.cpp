@@ -32,42 +32,42 @@ namespace vEngine {
 		ReleaseObject(mIndexBuffer);
 	}
 
-	const XMFLOAT3& ProxyModel::Position() const
+	const DirectX::XMFLOAT3& ProxyModel::Position() const
 	{
 		return mPosition;
 	}
 
-	const XMFLOAT3& ProxyModel::Direction() const
+	const DirectX::XMFLOAT3& ProxyModel::Direction() const
 	{
 		return mDirection;
 	}
 
-	const XMFLOAT3& ProxyModel::Up() const
+	const DirectX::XMFLOAT3& ProxyModel::Up() const
 	{
 		return mUp;
 	}
 
-	const XMFLOAT3& ProxyModel::Right() const
+	const DirectX::XMFLOAT3& ProxyModel::Right() const
 	{
 		return mRight;
 	}
 
-	XMVECTOR ProxyModel::PositionVector() const
+	DirectX::XMVECTOR ProxyModel::PositionVector() const
 	{
 		return XMLoadFloat3(&mPosition);
 	}
 
-	XMVECTOR ProxyModel::DirectionVector() const
+	DirectX::XMVECTOR ProxyModel::DirectionVector() const
 	{
 		return XMLoadFloat3(&mDirection);
 	}
 
-	XMVECTOR ProxyModel::UpVector() const
+	DirectX::XMVECTOR ProxyModel::UpVector() const
 	{
 		return XMLoadFloat3(&mUp);
 	}
 
-	XMVECTOR ProxyModel::RightVector() const
+	DirectX::XMVECTOR ProxyModel::RightVector() const
 	{
 		return XMLoadFloat3(&mRight);
 	}
@@ -79,24 +79,24 @@ namespace vEngine {
 
 	void ProxyModel::SetPosition(FLOAT x, FLOAT y, FLOAT z)
 	{
-		XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
+		DirectX::XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
 		SetPosition(position);
 	}
 
-	void ProxyModel::SetPosition(FXMVECTOR position)
+	void ProxyModel::SetPosition(DirectX::FXMVECTOR position)
 	{
 		XMStoreFloat3(&mPosition, position);
 	}
 
-	void ProxyModel::SetPosition(const XMFLOAT3& position)
+	void ProxyModel::SetPosition(const DirectX::XMFLOAT3& position)
 	{
 		mPosition = position;
 	}
 
-	void ProxyModel::ApplyRotation(CXMMATRIX transform)
+	void ProxyModel::ApplyRotation(DirectX::CXMMATRIX transform)
 	{
-		XMVECTOR direction = XMLoadFloat3(&mDirection);
-		XMVECTOR up = XMLoadFloat3(&mUp);
+		DirectX::XMVECTOR direction = XMLoadFloat3(&mDirection);
+		DirectX::XMVECTOR up = XMLoadFloat3(&mUp);
 
 		direction = XMVector3TransformNormal(direction, transform);
 		direction = XMVector3Normalize(direction);
@@ -104,7 +104,7 @@ namespace vEngine {
 		up = XMVector3TransformNormal(up, transform);
 		up = XMVector3Normalize(up);
 
-		XMVECTOR right = XMVector3Cross(direction, up);
+		DirectX::XMVECTOR right = XMVector3Cross(direction, up);
 		up = XMVector3Cross(right, direction);
 
 		XMStoreFloat3(&mDirection, direction);
@@ -112,9 +112,9 @@ namespace vEngine {
 		XMStoreFloat3(&mRight, right);
 	}
 
-	void ProxyModel::ApplyRotation(const XMFLOAT4X4& transform)
+	void ProxyModel::ApplyRotation(const DirectX::XMFLOAT4X4& transform)
 	{
-		XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
+		DirectX::XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
 		ApplyRotation(transformMatrix);
 	}
 
@@ -138,7 +138,7 @@ namespace vEngine {
 
 	void ProxyModel::Update(const Time& gameTime)
 	{
-		XMMATRIX worldMatrix = XMMatrixIdentity();
+		DirectX::XMMATRIX worldMatrix = XMMatrixIdentity();
 		MatrixHelper::SetForward(worldMatrix, mDirection);
 		MatrixHelper::SetUp(worldMatrix, mUp);
 		MatrixHelper::SetRight(worldMatrix, mRight);
@@ -161,7 +161,7 @@ namespace vEngine {
 		direct3DDeviceContext->IASetVertexBuffers(0, 1, &mVertexBuffer, &stride, &offset);
 		direct3DDeviceContext->IASetIndexBuffer(mIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
-		XMMATRIX wvp = XMLoadFloat4x4(&mWorldMatrix) * mCamera->ViewMatrix() * mCamera->ProjectionMatrix();
+		DirectX::XMMATRIX wvp = XMLoadFloat4x4(&mWorldMatrix) * mCamera->ViewMatrix() * mCamera->ProjectionMatrix();
 		mMaterial->WorldViewProjection() << wvp;
 
 		pass->Apply(0, direct3DDeviceContext);

@@ -57,7 +57,7 @@ namespace vEngine {
 
 	void Skybox::Update(const Time& gameTime)
 	{
-		const XMFLOAT3& position = mCamera->Position();
+		const DirectX::XMFLOAT3& position = mCamera->Position();
 
 		XMStoreFloat4x4(&mWorldMatrix, XMLoadFloat4x4(&mScaleMatrix) * XMMatrixTranslation(position.x, position.y, position.z));
 	}
@@ -76,7 +76,7 @@ namespace vEngine {
 		direct3DDeviceContext->IASetVertexBuffers(0, 1, &mVertexBuffer, &stride, &offset);
 		direct3DDeviceContext->IASetIndexBuffer(mIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
-		XMMATRIX wvp = XMLoadFloat4x4(&mWorldMatrix) * mCamera->ViewMatrix() * mCamera->ProjectionMatrix();
+		DirectX::XMMATRIX wvp = XMLoadFloat4x4(&mWorldMatrix) * mCamera->ViewMatrix() * mCamera->ProjectionMatrix();
 		mMaterial->WorldViewProjection() << wvp;
 		mMaterial->SkyboxTexture() << mCubeMapShaderResourceView;
 

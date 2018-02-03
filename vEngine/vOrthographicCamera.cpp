@@ -57,7 +57,7 @@ namespace vEngine {
 
 	void OrthographicCamera::UpdateProjectionMatrix()
 	{
-		XMMATRIX projectionMatrix = XMMatrixOrthographicRH(mViewWidth, mViewHeight, mNearPlaneDistance, mFarPlaneDistance);
+		DirectX::XMMATRIX projectionMatrix = XMMatrixOrthographicRH(mViewWidth, mViewHeight, mNearPlaneDistance, mFarPlaneDistance);
 		XMStoreFloat4x4(&mProjectionMatrix, projectionMatrix);
 	}
 }

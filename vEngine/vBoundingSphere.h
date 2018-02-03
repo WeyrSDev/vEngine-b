@@ -5,13 +5,13 @@ namespace vEngine {
 	class BoundingSphere {
 	public:
 		BoundingSphere();
-		BoundingSphere(FXMVECTOR center, float radius);
-		BoundingSphere(const XMFLOAT3& center, float radius);
+		BoundingSphere(DirectX::FXMVECTOR center, float radius);
+		BoundingSphere(const DirectX::XMFLOAT3& center, float radius);
 	public:
-		XMFLOAT3& Center();
+		DirectX::XMFLOAT3& Center();
 		float& Radius();
 	private:
-		XMFLOAT3 mCenter;
+		DirectX::XMFLOAT3 mCenter;
 		float mRadius;
 	};
 }

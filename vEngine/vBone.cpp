@@ -24,7 +24,7 @@ namespace vEngine
 
 	RTTI_DEFINITIONS(Bone)
 
-	Bone::Bone(const std::string& name, UINT index, const XMFLOAT4X4& offsetTransform)
+	Bone::Bone(const std::string& name, UINT index, const DirectX::XMFLOAT4X4& offsetTransform)
 		: SceneNode(name), mIndex(index), mOffsetTransform(offsetTransform)
 	{
 	}
@@ -39,12 +39,12 @@ namespace vEngine
 		mIndex = index;
 	}
 
-	const XMFLOAT4X4& Bone::OffsetTransform() const
+	const DirectX::XMFLOAT4X4& Bone::OffsetTransform() const
 	{
 		return mOffsetTransform;
 	}
 
-	XMMATRIX Bone::OffsetTransformMatrix() const
+	DirectX::XMMATRIX Bone::OffsetTransformMatrix() const
 	{
 		return XMLoadFloat4x4(&mOffsetTransform);
 	}

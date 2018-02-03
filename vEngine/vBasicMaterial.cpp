@@ -31,29 +31,29 @@ namespace vEngine
 
 	void BasicMaterial::CreateVertexBuffer(ID3D11Device* device, const Mesh& mesh, ID3D11Buffer** vertexBuffer) const
 	{
-		const std::vector<XMFLOAT3>& sourceVertices = mesh.Vertices();
+		const std::vector<DirectX::XMFLOAT3>& sourceVertices = mesh.Vertices();
 
 		std::vector<BasicMaterialVertex> vertices;
 		vertices.reserve(sourceVertices.size());
 		if (mesh.VertexColors().size() > 0)
 		{
-			std::vector<XMFLOAT4>* vertexColors = mesh.VertexColors().at(0);
+			std::vector<DirectX::XMFLOAT4>* vertexColors = mesh.VertexColors().at(0);
 			assert(vertexColors->size() == sourceVertices.size());
 
 			for (UINT i = 0; i < sourceVertices.size(); i++)
 			{
-				XMFLOAT3 position = sourceVertices.at(i);
-				XMFLOAT4 color = vertexColors->at(i);
-				vertices.push_back(BasicMaterialVertex(XMFLOAT4(position.x, position.y, position.z, 1.0f), color));
+				DirectX::XMFLOAT3 position = sourceVertices.at(i);
+				DirectX::XMFLOAT4 color = vertexColors->at(i);
+				vertices.push_back(BasicMaterialVertex(DirectX::XMFLOAT4(position.x, position.y, position.z, 1.0f), color));
 			}
 		}
 		else
 		{
-			XMFLOAT4 color = XMFLOAT4(reinterpret_cast<const float*>(&ColorHelper::White));
+			DirectX::XMFLOAT4 color = DirectX::XMFLOAT4(reinterpret_cast<const float*>(&ColorHelper::White));
 			for (UINT i = 0; i < sourceVertices.size(); i++)
 			{
-				XMFLOAT3 position = sourceVertices.at(i);
-				vertices.push_back(BasicMaterialVertex(XMFLOAT4(position.x, position.y, position.z, 1.0f), color));
+				DirectX::XMFLOAT3 position = sourceVertices.at(i);
+				vertices.push_back(BasicMaterialVertex(DirectX::XMFLOAT4(position.x, position.y, position.z, 1.0f), color));
 			}
 		}
 

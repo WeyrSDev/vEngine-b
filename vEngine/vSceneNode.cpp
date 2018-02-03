@@ -11,7 +11,7 @@ namespace vEngine
 	{
 	}
 
-	SceneNode::SceneNode(const std::string& name, const XMFLOAT4X4& transform)
+	SceneNode::SceneNode(const std::string& name, const DirectX::XMFLOAT4X4& transform)
 		: mName(name), mParent(nullptr), mChildren(), mTransform(transform)
 	{
 	}
@@ -31,12 +31,12 @@ namespace vEngine
 		return mChildren;
 	}
 
-	const XMFLOAT4X4& SceneNode::Transform() const
+	const DirectX::XMFLOAT4X4& SceneNode::Transform() const
 	{
 		return mTransform;
 	}
 
-	XMMATRIX SceneNode::TransformMatrix() const
+	DirectX::XMMATRIX SceneNode::TransformMatrix() const
 	{
 		return XMLoadFloat4x4(&mTransform);
 	}
@@ -46,14 +46,14 @@ namespace vEngine
 		mParent = parent;
 	}
 
-	void SceneNode::SetTransform(XMFLOAT4X4& transform)
+	void SceneNode::SetTransform(DirectX::XMFLOAT4X4& transform)
 	{
 		mTransform = transform;
 	}
 
-	void SceneNode::SetTransform(CXMMATRIX transform)
+	void SceneNode::SetTransform(DirectX::CXMMATRIX transform)
 	{
-		XMFLOAT4X4 t;
+		DirectX::XMFLOAT4X4 t;
 		XMStoreFloat4x4(&t, transform);
 
 		SetTransform(t);

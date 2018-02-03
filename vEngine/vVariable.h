@@ -16,13 +16,13 @@ namespace vEngine {
 		ID3DX11EffectType* Type() const;
 		const D3DX11_EFFECT_TYPE_DESC& TypeDesc() const;
 		const std::string& Name() const;
-		Variable& operator<<(CXMMATRIX value);
+		Variable& operator<<(DirectX::CXMMATRIX value);
 		Variable& operator<<(ID3D11ShaderResourceView* value);
-		Variable& operator<<(FXMVECTOR value);
+		Variable& operator<<(DirectX::FXMVECTOR value);
 		Variable& operator<<(float value);
 		Variable& operator<<(const std::vector<float>& values);
-		Variable& operator<<(const std::vector<XMFLOAT2>& values);
-		Variable& operator<<(const std::vector<XMFLOAT4X4>& values);
+		Variable& operator<<(const std::vector<DirectX::XMFLOAT2>& values);
+		Variable& operator<<(const std::vector<DirectX::XMFLOAT4X4>& values);
 	private:
 		Effect& mEffect;
 		ID3DX11EffectVariable* mVariable;

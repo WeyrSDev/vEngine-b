@@ -10,7 +10,7 @@ namespace vEngine {
 
 	RTTI_DEFINITIONS(FpsCounter)
 
-		FpsCounter::FpsCounter(Engine& game)
+	FpsCounter::FpsCounter(Engine& game)
 		: DrawableComponent(game), mSpriteBatch(nullptr), mSpriteFont(nullptr), mTextPosition(0.0f, 60.0f),
 		mFrameCount(0), mFrameRate(0), mLastTotalElapsedTime(0.0)
 	{
@@ -22,7 +22,7 @@ namespace vEngine {
 		DeleteObject(mSpriteBatch);
 	}
 
-	XMFLOAT2& FpsCounter::TextPosition()
+	DirectX::XMFLOAT2& FpsCounter::TextPosition()
 	{
 		return mTextPosition;
 	}

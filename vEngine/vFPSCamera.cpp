@@ -77,7 +77,7 @@ namespace vEngine {
 
 	void FPSCamera::Update(const Time& gameTime)
 	{
-		XMFLOAT2 movementAmount = Vector2Helper::Zero;
+		DirectX::XMFLOAT2 movementAmount = Vector2Helper::Zero;
 		if (mKeyboard != nullptr)
 		{
 			if (mKeyboard->IsKeyDown(DIK_W))
@@ -101,7 +101,7 @@ namespace vEngine {
 			}
 		}
 
-		XMFLOAT2 rotationAmount = Vector2Helper::Zero;
+		DirectX::XMFLOAT2 rotationAmount = Vector2Helper::Zero;
 		if ((mMouse != nullptr) && (mMouse->IsButtonHeldDown(MouseButtonsLeft)))
 		{
 			LPDIMOUSESTATE mouseState = mMouse->CurrentState();
@@ -110,21 +110,21 @@ namespace vEngine {
 		}
 
 		float elapsedTime = (float)gameTime.ElapsedGameTime();
-		XMVECTOR rotationVector = XMLoadFloat2(&rotationAmount) * mRotationRate * elapsedTime;
-		XMVECTOR right = XMLoadFloat3(&mRight);
+		DirectX::XMVECTOR rotationVector = XMLoadFloat2(&rotationAmount) * mRotationRate * elapsedTime;
+		DirectX::XMVECTOR right = XMLoadFloat3(&mRight);
 
-		XMMATRIX pitchMatrix = XMMatrixRotationAxis(right, XMVectorGetY(rotationVector));
-		XMMATRIX yawMatrix = XMMatrixRotationY(XMVectorGetX(rotationVector));
+		DirectX::XMMATRIX pitchMatrix = XMMatrixRotationAxis(right, XMVectorGetY(rotationVector));
+		DirectX::XMMATRIX yawMatrix = XMMatrixRotationY(XMVectorGetX(rotationVector));
 
 		ApplyRotation(XMMatrixMultiply(pitchMatrix, yawMatrix));
 
-		XMVECTOR position = XMLoadFloat3(&mPosition);
-		XMVECTOR movement = XMLoadFloat2(&movementAmount) * mMovementRate * elapsedTime;
+		DirectX::XMVECTOR position = XMLoadFloat3(&mPosition);
+		DirectX::XMVECTOR movement = XMLoadFloat2(&movementAmount) * mMovementRate * elapsedTime;
 
-		XMVECTOR strafe = right * XMVectorGetX(movement);
+		DirectX::XMVECTOR strafe = right * XMVectorGetX(movement);
 		position += strafe;
 
-		XMVECTOR forward = XMLoadFloat3(&mDirection) * XMVectorGetY(movement);
+		DirectX::XMVECTOR forward = XMLoadFloat3(&mDirection) * XMVectorGetY(movement);
 		position += forward;
 
 		XMStoreFloat3(&mPosition, position);

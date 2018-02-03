@@ -13,12 +13,12 @@ namespace vEngine {
 	{
 	}
 
-	XMFLOAT3& PointLight::Position()
+	DirectX::XMFLOAT3& PointLight::Position()
 	{
 		return mPosition;
 	}
 
-	XMVECTOR PointLight::PositionVector() const
+	DirectX::XMVECTOR PointLight::PositionVector() const
 	{
 		return XMLoadFloat3(&mPosition);
 	}
@@ -30,16 +30,16 @@ namespace vEngine {
 
 	void PointLight::SetPosition(FLOAT x, FLOAT y, FLOAT z)
 	{
-		XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
+		DirectX::XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
 		SetPosition(position);
 	}
 
-	void PointLight::SetPosition(FXMVECTOR position)
+	void PointLight::SetPosition(DirectX::FXMVECTOR position)
 	{
 		XMStoreFloat3(&mPosition, position);
 	}
 
-	void PointLight::SetPosition(const XMFLOAT3& position)
+	void PointLight::SetPosition(const DirectX::XMFLOAT3& position)
 	{
 		mPosition = position;
 	}

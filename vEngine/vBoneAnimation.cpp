@@ -28,8 +28,8 @@ namespace vEngine
 			assert(positionKey.mTime == rotationKey.mTime);
 			assert(positionKey.mTime == scaleKey.mTime);
 
-			Keyframe* keyframe = new Keyframe(static_cast<float>(positionKey.mTime), XMFLOAT3(positionKey.mValue.x, positionKey.mValue.y, positionKey.mValue.z),
-				XMFLOAT4(rotationKey.mValue.x, rotationKey.mValue.y, rotationKey.mValue.z, rotationKey.mValue.w), XMFLOAT3(scaleKey.mValue.x, scaleKey.mValue.y, scaleKey.mValue.z));
+			Keyframe* keyframe = new Keyframe(static_cast<float>(positionKey.mTime), DirectX::XMFLOAT3(positionKey.mValue.x, positionKey.mValue.y, positionKey.mValue.z),
+				DirectX::XMFLOAT4(rotationKey.mValue.x, rotationKey.mValue.y, rotationKey.mValue.z, rotationKey.mValue.w), DirectX::XMFLOAT3(scaleKey.mValue.x, scaleKey.mValue.y, scaleKey.mValue.z));
 			mKeyframes.push_back(keyframe);
 		}
 	}
@@ -52,7 +52,7 @@ namespace vEngine
 		return mKeyframes;
 	}
 
-	UINT BoneAnimation::GetTransform(float time, XMFLOAT4X4& transform) const
+	UINT BoneAnimation::GetTransform(float time, DirectX::XMFLOAT4X4& transform) const
 	{
 		UINT keyframeIndex = FindKeyframeIndex(time);
 		Keyframe* keyframe = mKeyframes[keyframeIndex];
@@ -62,7 +62,7 @@ namespace vEngine
 		return keyframeIndex;
 	}
 
-	void BoneAnimation::GetTransformAtKeyframe(UINT keyframeIndex, XMFLOAT4X4& transform) const
+	void BoneAnimation::GetTransformAtKeyframe(UINT keyframeIndex, DirectX::XMFLOAT4X4& transform) const
 	{
 		// Clamp the keyframe
 		if (keyframeIndex >= mKeyframes.size())
@@ -75,7 +75,7 @@ namespace vEngine
 		XMStoreFloat4x4(&transform, keyframe->Transform());
 	}
 
-	void BoneAnimation::GetInteropolatedTransform(float time, XMFLOAT4X4& transform) const
+	void BoneAnimation::GetInteropolatedTransform(float time, DirectX::XMFLOAT4X4& transform) const
 	{
 		Keyframe* firstKeyframe = mKeyframes.front();
 		Keyframe* lastKeyframe = mKeyframes.back();
@@ -97,20 +97,20 @@ namespace vEngine
 			Keyframe* keyframeOne = mKeyframes[keyframeIndex];
 			Keyframe* keyframeTwo = mKeyframes[keyframeIndex + 1];
 
-			XMVECTOR translationOne = keyframeOne->TranslationVector();
-			XMVECTOR rotationQuaternionOne = keyframeOne->RotationQuaternionVector();
-			XMVECTOR scaleOne = keyframeOne->ScaleVector();
+			DirectX::XMVECTOR translationOne = keyframeOne->TranslationVector();
+			DirectX::XMVECTOR rotationQuaternionOne = keyframeOne->RotationQuaternionVector();
+			DirectX::XMVECTOR scaleOne = keyframeOne->ScaleVector();
 
-			XMVECTOR translationTwo = keyframeTwo->TranslationVector();
-			XMVECTOR rotationQuaternionTwo = keyframeTwo->RotationQuaternionVector();
-			XMVECTOR scaleTwo = keyframeTwo->ScaleVector();
+			DirectX::XMVECTOR translationTwo = keyframeTwo->TranslationVector();
+			DirectX::XMVECTOR rotationQuaternionTwo = keyframeTwo->RotationQuaternionVector();
+			DirectX::XMVECTOR scaleTwo = keyframeTwo->ScaleVector();
 
 			float lerpValue = ((time - keyframeOne->Time()) / (keyframeTwo->Time() - keyframeOne->Time()));
-			XMVECTOR translation = XMVectorLerp(translationOne, translationTwo, lerpValue);
-			XMVECTOR rotationQuaternion = XMQuaternionSlerp(rotationQuaternionOne, rotationQuaternionTwo, lerpValue);
-			XMVECTOR scale = XMVectorLerp(scaleOne, scaleTwo, lerpValue);
+			DirectX::XMVECTOR translation = XMVectorLerp(translationOne, translationTwo, lerpValue);
+			DirectX::XMVECTOR rotationQuaternion = XMQuaternionSlerp(rotationQuaternionOne, rotationQuaternionTwo, lerpValue);
+			DirectX::XMVECTOR scale = XMVectorLerp(scaleOne, scaleTwo, lerpValue);
 
-			static XMVECTOR rotationOrigin = XMLoadFloat4(&Vector4Helper::Zero);
+			static DirectX::XMVECTOR rotationOrigin = XMLoadFloat4(&Vector4Helper::Zero);
 			XMStoreFloat4x4(&transform, XMMatrixAffineTransformation(scale, rotationOrigin, rotationQuaternion, translation));
 		}
 	}

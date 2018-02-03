@@ -9,13 +9,12 @@ namespace vEngine {
 		Light(Engine& game);
 		virtual ~Light();
 	public:
-		const XMCOLOR& Color() const;
-		XMVECTOR ColorVector() const;
+		const DirectX::PackedVector::XMCOLOR& Color() const;
+		DirectX::XMVECTOR ColorVector() const;
 		void SetColor(FLOAT r, FLOAT g, FLOAT b, FLOAT a);
-		void SetColor(XMCOLOR color);
-		void SetColor(FXMVECTOR color);
+		void SetColor(DirectX::PackedVector::XMCOLOR color);
+		void SetColor(DirectX::FXMVECTOR color);
 	protected:
-		XMCOLOR mColor;
+		DirectX::PackedVector::XMCOLOR mColor;
 	};
-
 }

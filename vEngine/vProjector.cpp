@@ -31,42 +31,42 @@ namespace vEngine
 	{
 	}
 
-	const XMFLOAT3& Projector::Position() const
+	const DirectX::XMFLOAT3& Projector::Position() const
 	{
 		return mPosition;
 	}
 
-	const XMFLOAT3& Projector::Direction() const
+	const DirectX::XMFLOAT3& Projector::Direction() const
 	{
 		return mDirection;
 	}
 
-	const XMFLOAT3& Projector::Up() const
+	const DirectX::XMFLOAT3& Projector::Up() const
 	{
 		return mUp;
 	}
 
-	const XMFLOAT3& Projector::Right() const
+	const DirectX::XMFLOAT3& Projector::Right() const
 	{
 		return mRight;
 	}
 
-	XMVECTOR Projector::PositionVector() const
+	DirectX::XMVECTOR Projector::PositionVector() const
 	{
 		return XMLoadFloat3(&mPosition);
 	}
 
-	XMVECTOR Projector::DirectionVector() const
+	DirectX::XMVECTOR Projector::DirectionVector() const
 	{
 		return XMLoadFloat3(&mDirection);
 	}
 
-	XMVECTOR Projector::UpVector() const
+	DirectX::XMVECTOR Projector::UpVector() const
 	{
 		return XMLoadFloat3(&mUp);
 	}
 
-	XMVECTOR Projector::RightVector() const
+	DirectX::XMVECTOR Projector::RightVector() const
 	{
 		return XMLoadFloat3(&mRight);
 	}
@@ -91,36 +91,36 @@ namespace vEngine
 		return mFarPlaneDistance;
 	}
 
-	XMMATRIX Projector::ViewMatrix() const
+	DirectX::XMMATRIX Projector::ViewMatrix() const
 	{
 		return XMLoadFloat4x4(&mViewMatrix);
 	}
 
-	XMMATRIX Projector::ProjectionMatrix() const
+	DirectX::XMMATRIX Projector::ProjectionMatrix() const
 	{
 		return XMLoadFloat4x4(&mProjectionMatrix);
 	}
 
-	XMMATRIX Projector::ViewProjectionMatrix() const
+	DirectX::XMMATRIX Projector::ViewProjectionMatrix() const
 	{
-		XMMATRIX viewMatrix = XMLoadFloat4x4(&mViewMatrix);
-		XMMATRIX projectionMatrix = XMLoadFloat4x4(&mProjectionMatrix);
+		DirectX::XMMATRIX viewMatrix = XMLoadFloat4x4(&mViewMatrix);
+		DirectX::XMMATRIX projectionMatrix = XMLoadFloat4x4(&mProjectionMatrix);
 
 		return XMMatrixMultiply(viewMatrix, projectionMatrix);
 	}
 
 	void Projector::SetPosition(FLOAT x, FLOAT y, FLOAT z)
 	{
-		XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
+		DirectX::XMVECTOR position = XMVectorSet(x, y, z, 1.0f);
 		SetPosition(position);
 	}
 
-	void Projector::SetPosition(FXMVECTOR position)
+	void Projector::SetPosition(DirectX::FXMVECTOR position)
 	{
 		XMStoreFloat3(&mPosition, position);
 	}
 
-	void Projector::SetPosition(const XMFLOAT3& position)
+	void Projector::SetPosition(const DirectX::XMFLOAT3& position)
 	{
 		mPosition = position;
 	}
@@ -148,24 +148,24 @@ namespace vEngine
 
 	void Projector::UpdateViewMatrix()
 	{
-		XMVECTOR eyePosition = XMLoadFloat3(&mPosition);
-		XMVECTOR direction = XMLoadFloat3(&mDirection);
-		XMVECTOR upDirection = XMLoadFloat3(&mUp);
+		DirectX::XMVECTOR eyePosition = XMLoadFloat3(&mPosition);
+		DirectX::XMVECTOR direction = XMLoadFloat3(&mDirection);
+		DirectX::XMVECTOR upDirection = XMLoadFloat3(&mUp);
 
-		XMMATRIX viewMatrix = XMMatrixLookToRH(eyePosition, direction, upDirection);
+		DirectX::XMMATRIX viewMatrix = XMMatrixLookToRH(eyePosition, direction, upDirection);
 		XMStoreFloat4x4(&mViewMatrix, viewMatrix);
 	}
 
 	void Projector::UpdateProjectionMatrix()
 	{
-		XMMATRIX projectionMatrix = XMMatrixPerspectiveFovRH(mFieldOfView, mAspectRatio, mNearPlaneDistance, mFarPlaneDistance);
+		DirectX::XMMATRIX projectionMatrix = XMMatrixPerspectiveFovRH(mFieldOfView, mAspectRatio, mNearPlaneDistance, mFarPlaneDistance);
 		XMStoreFloat4x4(&mProjectionMatrix, projectionMatrix);
 	}
 
-	void Projector::ApplyRotation(CXMMATRIX transform)
+	void Projector::ApplyRotation(DirectX::CXMMATRIX transform)
 	{
-		XMVECTOR direction = XMLoadFloat3(&mDirection);
-		XMVECTOR up = XMLoadFloat3(&mUp);
+		DirectX::XMVECTOR direction = XMLoadFloat3(&mDirection);
+		DirectX::XMVECTOR up = XMLoadFloat3(&mUp);
 
 		direction = XMVector3TransformNormal(direction, transform);
 		direction = XMVector3Normalize(direction);
@@ -173,7 +173,7 @@ namespace vEngine
 		up = XMVector3TransformNormal(up, transform);
 		up = XMVector3Normalize(up);
 
-		XMVECTOR right = XMVector3Cross(direction, up);
+		DirectX::XMVECTOR right = XMVector3Cross(direction, up);
 		up = XMVector3Cross(right, direction);
 
 		XMStoreFloat3(&mDirection, direction);
@@ -181,9 +181,9 @@ namespace vEngine
 		XMStoreFloat3(&mRight, right);
 	}
 
-	void Projector::ApplyRotation(const XMFLOAT4X4& transform)
+	void Projector::ApplyRotation(const DirectX::XMFLOAT4X4& transform)
 	{
-		XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
+		DirectX::XMMATRIX transformMatrix = XMLoadFloat4x4(&transform);
 		ApplyRotation(transformMatrix);
 	}
 }

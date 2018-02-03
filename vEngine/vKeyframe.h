@@ -6,24 +6,24 @@ namespace vEngine {
 	class Keyframe {
 		friend class BoneAnimation;
 	private:
-		Keyframe(float time, const XMFLOAT3& translation, const XMFLOAT4& rotationQuaternion, const XMFLOAT3& scale);
+		Keyframe(float time, const DirectX::XMFLOAT3& translation, const DirectX::XMFLOAT4& rotationQuaternion, const DirectX::XMFLOAT3& scale);
 	private:
 		Keyframe();
 		Keyframe(const Keyframe& rhs);
 		Keyframe& operator=(const Keyframe& rhs);
 	public:
 		float Time() const;
-		const XMFLOAT3& Translation() const;
-		const XMFLOAT4& RotationQuaternion() const;
-		const XMFLOAT3& Scale() const;
-		XMVECTOR TranslationVector() const;
-		XMVECTOR RotationQuaternionVector() const;
-		XMVECTOR ScaleVector() const;
-		XMMATRIX Transform() const;
+		const DirectX::XMFLOAT3& Translation() const;
+		const DirectX::XMFLOAT4& RotationQuaternion() const;
+		const DirectX::XMFLOAT3& Scale() const;
+		DirectX::XMVECTOR TranslationVector() const;
+		DirectX::XMVECTOR RotationQuaternionVector() const;
+		DirectX::XMVECTOR ScaleVector() const;
+		DirectX::XMMATRIX Transform() const;
 	private:
 		float mTime;
-		XMFLOAT3 mTranslation;
-		XMFLOAT4 mRotationQuaternion;
-		XMFLOAT3 mScale;
+		DirectX::XMFLOAT3 mTranslation;
+		DirectX::XMFLOAT4 mRotationQuaternion;
+		DirectX::XMFLOAT3 mScale;
 	};
 }

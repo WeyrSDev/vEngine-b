@@ -24,7 +24,7 @@ namespace vEngine {
 	class Bone : public SceneNode {
 		RTTI_DECLARATIONS(Bone, SceneNode)
 	public:
-		Bone(const std::string& name, UINT index, const XMFLOAT4X4& offsetTransform);
+		Bone(const std::string& name, UINT index, const DirectX::XMFLOAT4X4& offsetTransform);
 	private:
 		Bone();
 		Bone(const Bone& rhs);
@@ -32,10 +32,10 @@ namespace vEngine {
 	public:
 		UINT Index() const;
 		void SetIndex(UINT index);
-		const XMFLOAT4X4& OffsetTransform() const;
-		XMMATRIX OffsetTransformMatrix() const;
+		const DirectX::XMFLOAT4X4& OffsetTransform() const;
+		DirectX::XMMATRIX OffsetTransformMatrix() const;
 	private:
 		UINT mIndex;					// Index into the model's bone container
-		XMFLOAT4X4 mOffsetTransform;	// Transforms from mesh space to bone space
+		DirectX::XMFLOAT4X4 mOffsetTransform;	// Transforms from mesh space to bone space
 	};
 }
